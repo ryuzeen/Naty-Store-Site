@@ -59,6 +59,7 @@
                     <div class="ml-10 flex items-baseline space-x-4">
                         <a href="#" class="nav-link active px-3 py-2 rounded-md text-sm font-medium border-b-2 border-transparent" onclick="showPage('precos', this)">Preços</a>
                         <a href="#" class="nav-link text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium border-b-2 border-transparent" onclick="showPage('features', this)">Funções</a>
+                        <a href="#" class="nav-link text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium border-b-2 border-transparent" onclick="showPage('comprar', this)">Como Comprar</a>
                     </div>
                 </div>
                 <!-- Mobile menu button -->
@@ -75,6 +76,7 @@
                 <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                     <a href="#" class="nav-link active block px-3 py-2 rounded-md text-base font-medium" onclick="showPage('precos', this); toggleMobileMenu();">Preços</a>
                     <a href="#" class="nav-link text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium" onclick="showPage('features', this); toggleMobileMenu();">Funções</a>
+                    <a href="#" class="nav-link text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium" onclick="showPage('comprar', this); toggleMobileMenu();">Como Comprar</a>
                 </div>
             </div>
         </nav>
@@ -177,7 +179,7 @@
                             <a href="#" onclick="goToFeature('unicore')" class="block w-full"><div class="bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col h-full transform hover:scale-105 transition-transform duration-300"><p class="text-sm text-center text-gray-400 mb-1">Genshin Impact</p><h3 class="text-xl font-bold text-center mb-4 text-cyan-400">Unicore</h3><ul class="space-y-3 text-center flex-grow"><li><span class="font-semibold">2 dias:</span> <span class="font-mono text-pink-300">R$ 16,90</span></li><li><span class="font-semibold">7 dias:</span> <span class="font-mono text-pink-300">R$ 38,90</span></li><li><span class="font-semibold">30 dias:</span> <span class="font-mono text-pink-300">R$ 88,90</span></li></ul></div></a>
                             <a href="#" onclick="goToFeature('uniwaves')" class="block w-full"><div class="bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col h-full transform hover:scale-105 transition-transform duration-300"><p class="text-sm text-center text-gray-400 mb-1">Wuthering Waves</p><h3 class="text-xl font-bold text-center mb-4 text-blue-400">Uniwaves</h3><ul class="space-y-3 text-center flex-grow"><li><span class="font-semibold">2 dias:</span> <span class="font-mono text-pink-300">R$ 16,90</span></li><li><span class="font-semibold">7 dias:</span> <span class="font-mono text-pink-300">R$ 38,90</span></li><li><span class="font-semibold">30 dias:</span> <span class="font-mono text-pink-300">R$ 88,90</span></li></ul></div></a>
                             <a href="#" onclick="goToFeature('unizone')" class="block w-full"><div class="bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col h-full transform hover:scale-105 transition-transform duration-300"><p class="text-sm text-center text-gray-400 mb-1">Zenless Zone Zero</p><h3 class="text-xl font-bold text-center mb-4 text-indigo-400">Unizone</h3><ul class="space-y-3 text-center flex-grow"><li><span class="font-semibold">2 dias:</span> <span class="font-mono text-pink-300">R$ 16,90</span></li><li><span class="font-semibold">7 dias:</span> <span class="font-mono text-pink-300">R$ 38,90</span></li><li><span class="font-semibold">30 dias:</span> <span class="font-mono text-pink-300">R$ 88,90</span></li></ul></div></a>
-                            <a href="#" onclick="goToFeature('unistar')" class="block w-full"><div class="bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col h-full transform hover:scale-105 transition-transform duration-300"><p class="text-sm text-center text-gray-400 mb-1">Honkai: Star Rail</p><h3 class="text-xl font-bold text-center mb-4 text-yellow-400">Unistar</h3><ul class="space-y-3 text-center flex-grow"><li><span class="font-semibold">2 dias:</span> <span class="font-mono text-pink-300">R$ 11,90</span></li><li><span class="font-semibold">7 dias:</span> <span class="font-mono text-pink-300">R$ 27,90</span></li><li><span class="font-semibold">30 dias:</span> <span class="font-mono text-pink-300">R$ 55,90</span></li></ul></div></a>
+                            <a href="#" onclick="goToFeature('unistar')" class="block w-full lg:col-start-1"><div class="bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col h-full transform hover:scale-105 transition-transform duration-300"><p class="text-sm text-center text-gray-400 mb-1">Honkai: Star Rail</p><h3 class="text-xl font-bold text-center mb-4 text-yellow-400">Unistar</h3><ul class="space-y-3 text-center flex-grow"><li><span class="font-semibold">2 dias:</span> <span class="font-mono text-pink-300">R$ 11,90</span></li><li><span class="font-semibold">7 dias:</span> <span class="font-mono text-pink-300">R$ 27,90</span></li><li><span class="font-semibold">30 dias:</span> <span class="font-mono text-pink-300">R$ 55,90</span></li></ul></div></a>
                             <a href="#" onclick="goToFeature('kittenwaves')" class="block w-full lg:col-start-3"><div class="bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col h-full transform hover:scale-105 transition-transform duration-300"><p class="text-sm text-center text-gray-400 mb-1">Wuthering Waves</p><h3 class="text-xl font-bold text-center mb-4 text-rose-400">KittenWaves</h3><ul class="space-y-3 text-center flex-grow"><li><span class="font-semibold">Vitalício:</span> <span class="font-mono text-pink-300">R$ 139,90</span></li></ul></div></a>
                         </div>
                     </div>
@@ -262,6 +264,39 @@
                         <div><h4 class="font-semibold text-white mb-2">Miscellaneous</h4><ul class="list-disc list-inside space-y-1"><li>Freecam & Hide UI</li><li>UID & FOV Changer</li><li>FPS Unlocker & Display</li><li>CPU Saver</li></ul></div>
                         <div><h4 class="font-semibold text-white mb-2">Settings</h4><ul class="list-disc list-inside space-y-1"><li>Themes</li><li>Hotkeys</li><li>Multi-language Support</li></ul></div>
                     </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Página Como Comprar -->
+        <div id="comprar" class="page-content hidden">
+            <div class="max-w-2xl mx-auto px-4">
+                <header class="text-center mb-10">
+                    <h1 class="text-3xl sm:text-4xl font-bold text-pink-400">Como Comprar</h1>
+                    <p class="text-gray-400 mt-2">Siga os passos abaixo para adquirir nossos produtos com segurança.</p>
+                </header>
+
+                <div class="bg-gray-800 rounded-lg shadow-xl p-8 flex flex-col items-center">
+                    <!-- Profile Icon -->
+                    <div class="w-32 h-32 mb-6">
+                        <img src="https://risibank.fr/cache/medias/0/2/227/22729/full.png" alt="Foto de Perfil" class="w-full h-full rounded-full object-cover border-4 border-gray-700" onerror="this.onerror=null; this.src='https://placehold.co/128x128/374151/E5E7EB?text=Perfil';">
+                    </div>
+
+                    <h2 class="text-2xl font-bold text-white mb-2">Contato Oficial</h2>
+                    <p class="text-lg text-gray-300 mb-4">Adicione no Discord para comprar:</p>
+                    <div class="bg-gray-900 text-pink-300 text-xl font-mono py-3 px-6 rounded-lg mb-8">
+                        ryuzeen._
+                    </div>
+
+                    <div class="w-full border-t border-gray-700 my-4"></div>
+
+                    <h3 class="text-xl font-semibold text-yellow-400 mb-4">🚨 Dicas de Segurança (Anti-Scam) 🚨</h3>
+                    <ul class="list-disc list-outside space-y-4 text-gray-300 text-left w-full max-w-md ml-4">
+                        <li><span class="font-semibold text-white">Confirmação é chave:</span> Certifique-se de que o Discord é <strong class="text-pink-400">ryuzeen._</strong>. Não aceite contato de nicks parecidos.</li>
+                        <li><span class="font-semibold text-white">Vendedor único:</span> Eu sou a única pessoa que realiza as vendas. Ninguém está autorizado a vender em meu nome.</li>
+                        <li><span class="font-semibold text-white">Nunca compartilhe dados:</span> Jamais peça ou forneça a senha da sua conta. Apenas o login é necessário para recargas.</li>
+                        <li><span class="font-semibold text-white">Canal oficial:</span> Toda a negociação e pagamento são feitos exclusivamente através do contato direto no Discord.</li>
+                    </ul>
                 </div>
             </div>
         </div>
