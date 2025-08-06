@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naty Store - Preços e Features</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111827;
+        }
+        .nav-link {
+            transition: all 0.3s ease;
+        }
+        .nav-link.active {
+            color: #f472b6; /* text-pink-400 */
+            border-bottom-color: #f472b6;
+        }
+        .feature-tab.active {
+            background-color: #f472b6; /* bg-pink-400 */
+            color: #111827; /* text-gray-900 */
+        }
+        .page-content {
+            display: none;
+        }
+        .page-content.active {
+            display: block;
+        }
+        .feature-content {
+            display: none;
+        }
+        .feature-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body class="text-white">
+
+    <!-- Cabeçalho e Navegação -->
+    <div class="bg-gray-800/50 backdrop-blur-sm sticky top-0 z-50 shadow-lg">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                         <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-pink-400 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                        <span class="text-xl font-bold text-white">Naty Store</span>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#" class="nav-link active text-white px-3 py-2 rounded-md text-sm font-medium border-b-2 border-transparent" onclick="showPage('precos', this)">Preços</a>
+                        <a href="#" class="nav-link text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium border-b-2 border-transparent" onclick="showPage('features', this)">Features</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <main class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+        <!-- Página de Preços -->
+        <div id="precos" class="page-content active">
+             <div class="max-w-4xl mx-auto">
+                <div>
+                    <header class="text-center mb-10">
+                        <h1 class="text-3xl sm:text-4xl font-bold text-pink-400">Tabela de Preços</h1>
+                        <p class="text-gray-400 mt-2">Aproveite nossos preços com desconto!</p>
+                    </header>
+
+                    <!-- Seção Principal - Pertamax -->
+                    <div class="mb-16">
+                        <div class="flex items-center mb-6 justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mr-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                            </svg>
+                            <h2 class="text-3xl font-bold text-center text-yellow-400">Serviço Principal: Pertamax</h2>
+                        </div>
+                        <p class="text-center text-gray-400 mb-8 -mt-4">Para Genshin Impact</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                            <!-- Básico -->
+                            <div class="bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col border-2 border-gray-700 hover:border-pink-500 transition-all duration-300"><h3 class="text-xl font-bold text-center mb-2 text-white">BÁSICO - 1 DIA</h3><p class="text-3xl font-bold text-center text-pink-400 mb-4">R$ 6,00</p><ul class="space-y-2 text-center flex-grow text-gray-300"><li>✓ 100% Das funções</li><li>✓ Farm AFK (Teleports)</li><li class="text-red-400">✗ Não possui pause</li></ul></div>
+                            <!-- Médio -->
+                            <div class="bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col border-2 border-gray-700 hover:border-pink-500 transition-all duration-300"><h3 class="text-xl font-bold text-center mb-2 text-white">MÉDIO - 7 DIAS</h3><p class="text-3xl font-bold text-center text-pink-400 mb-4">R$ 15,90</p><ul class="space-y-2 text-center flex-grow text-gray-300"><li>✓ 100% Das funções</li><li>✓ Farm AFK (Teleports)</li><li class="text-red-400">✗ Não possui pause</li></ul></div>
+                            <!-- Pro -->
+                            <div class="bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col border-2 border-gray-700 hover:border-pink-500 transition-all duration-300"><h3 class="text-xl font-bold text-center mb-2 text-white">PRO - 30 DIAS</h3><p class="text-3xl font-bold text-center text-pink-400 mb-4">R$ 34,90</p><ul class="space-y-2 text-center flex-grow text-gray-300"><li>✓ 100% Das funções</li><li>✓ Farm AFK (Teleports)</li><li>✓ Possui pause</li></ul></div>
+                            <!-- Elite -->
+                            <div class="bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col border-2 border-gray-700 hover:border-pink-500 transition-all duration-300"><h3 class="text-xl font-bold text-center mb-2 text-white">ELITE - 60 DIAS</h3><p class="text-3xl font-bold text-center text-pink-400 mb-4">R$ 60,90</p><ul class="space-y-2 text-center flex-grow text-gray-300"><li>✓ 100% Das funções</li><li>✓ Farm AFK (Teleports)</li><li>✓ Possui pause</li></ul></div>
+                            <!-- Master -->
+                            <div class="bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col border-2 border-pink-500 transition-all duration-300"><h3 class="text-xl font-bold text-center mb-2 text-white">MASTER - 90 DIAS</h3><p class="text-3xl font-bold text-center text-pink-400 mb-4">R$ 87,90</p><ul class="space-y-2 text-center flex-grow text-gray-300"><li>✓ Tudo dos outros</li><li class="text-yellow-400">✓ Cargo Especial!</li><li>✓ Possui pause</li></ul></div>
+                            <!-- Ultra -->
+                            <div class="bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col border-2 border-pink-500 transition-all duration-300"><h3 class="text-xl font-bold text-center mb-2 text-white">ULTRA - 180 DIAS</h3><p class="text-3xl font-bold text-center text-pink-400 mb-4">R$ 174,90</p><ul class="space-y-2 text-center flex-grow text-gray-300"><li>✓ Tudo dos outros</li><li class="text-yellow-400">✓ Cargo Especial!</li><li>✓ Possui pause</li></ul></div>
+                            <!-- Lenda -->
+                            <div class="bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col border-2 border-yellow-400 transition-all duration-300 col-span-1 sm:col-span-2 lg:col-span-3"><h3 class="text-xl font-bold text-center mb-2 text-yellow-300">LENDA - 365 DIAS</h3><p class="text-4xl font-bold text-center text-yellow-400 mb-4">R$ 315,90</p><ul class="space-y-2 text-center flex-grow text-gray-300"><li>✓ Tudo dos outros</li><li class="text-yellow-400">✓ Cargo Especial!</li><li class="text-cyan-400">✓ Menção Honrosa</li></ul></div>
+                        </div>
+                    </div>
+
+                    <!-- Cristais Gênesis -->
+                    <div class="mb-12">
+                        <div class="flex items-center mb-6">
+                            <img src="https://static.wikia.nocookie.net/gensin-impact/images/4/44/Item_Genesis_Crystal.png/revision/latest/scale-to-width-down/48" alt="Ícone de Cristal Gênesis" class="h-10 w-10 mr-4 rounded-full" onerror="this.style.display='none'">
+                            <h2 class="text-2xl font-semibold border-l-4 border-pink-400 pl-4">Cristais Gênesis</h2>
+                        </div>
+                        <div class="overflow-x-auto rounded-lg shadow-lg bg-gray-800">
+                            <table class="w-full text-left">
+                                <thead class="bg-gray-700">
+                                    <tr>
+                                        <th class="p-4 font-semibold">Quantidade</th>
+                                        <th class="p-4 font-semibold text-right">Preço Original</th>
+                                        <th class="p-4 font-semibold text-right">Preço Naty Store</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-gray-700">
+                                    <tr><td class="p-4">60 Cristais</td><td class="p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 4,90</s></td><td class="p-4 text-right font-mono text-pink-300 font-bold">R$ 4,20</td></tr>
+                                    <tr><td class="p-4">300 + 30 Cristais</td><td class="p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 25,90</s></td><td class="p-4 text-right font-mono text-pink-300 font-bold">R$ 22,25</td></tr>
+                                    <tr><td class="p-4">980 + 110 Cristais</td><td class="p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 76,90</s></td><td class="p-4 text-right font-mono text-pink-300 font-bold">R$ 66,90</td></tr>
+                                    <tr><td class="p-4">1.980 + 260 Cristais</td><td class="p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 154,90</s></td><td class="p-4 text-right font-mono text-pink-300 font-bold">R$ 130,90</td></tr>
+                                    <tr><td class="p-4">3.280 + 600 Cristais</td><td class="p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 254,90</s></td><td class="p-4 text-right font-mono text-pink-300 font-bold">R$ 209,90</td></tr>
+                                    <tr><td class="p-4">6480 + 1600 Cristais</td><td class="p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 499,90</s></td><td class="p-4 text-right font-mono text-pink-300 font-bold">R$ 409,90</td></tr>
+                                    <tr class="bg-gray-700/50"><td class="p-4 font-bold">Todos os Pacotes</td><td class="p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 1.017,40</s></td><td class="p-4 text-right font-bold font-mono text-pink-300">R$ 814,90</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- Itens e Pacotes Especiais -->
+                    <div class="mb-12">
+                        <div class="flex items-center mb-6">
+                            <img src="https://static.wikia.nocookie.net/gensin-impact/images/4/44/Item_Blessing_of_the_Welkin_Moon.png/revision/latest/scale-to-width-down/48" alt="Ícone da Bênção da Lua Nova" class="h-10 w-10 mr-4 rounded-full" onerror="this.style.display='none'">
+                            <h2 class="text-2xl font-semibold border-l-4 border-pink-400 pl-4">Itens e Pacotes Especiais</h2>
+                        </div>
+                        <div class="overflow-x-auto rounded-lg shadow-lg bg-gray-800">
+                             <table class="w-full text-left">
+                                <thead class="bg-gray-700"><tr><th class="p-4 font-semibold">Item</th><th class="p-4 font-semibold text-right">Preço Original</th><th class="p-4 font-semibold text-right">Preço Naty Store</th></tr></thead>
+                                <tbody class="divide-y divide-gray-700">
+                                    <tr><td class="p-4">Bênção da Lua Nova</td><td class="p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 25,90</s></td><td class="p-4 text-right font-mono text-pink-300 font-bold">R$ 22,25</td></tr>
+                                    <tr><td class="p-4">Passe de Batalha</td><td class="p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 49,90</s></td><td class="p-4 text-right font-mono text-pink-300 font-bold">R$ 43,90</td></tr>
+                                    <tr><td class="p-4">Passe de Batalha (Avançado)</td><td class="p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 99,99</s></td><td class="p-4 text-right font-mono text-pink-300 font-bold">R$ 85,90</td></tr>
+                                    <tr class="bg-gray-700/50"><td class="p-4">All in one (Todos os Gênesis, 3x Bênção, Passe Atualizado)</td><td class="p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 1.195,09</s></td><td class="p-4 text-right font-bold font-mono text-pink-300">R$ 996,70</td></tr>
+                                    <tr><td class="p-4">Garantia Personagem de Banner (100%)</td><td class="p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 1.831,50</s></td><td class="p-4 text-right font-mono text-pink-300 font-bold">R$ 1.476,50</td></tr>
+                                    <tr><td class="p-4">Garantia Arma 5★ (100%)</td><td class="p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 831,70</s></td><td class="p-4 text-right font-mono text-pink-300 font-bold">R$ 671,70</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- Outros Serviços e Assinaturas -->
+                    <div>
+                         <div class="flex items-center mb-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-4 text-pink-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 15l.813.904m-2.826-.904L6 15l.187.904m1.64-2.708L8 12.5l.813.904m-2.826-.904L5 12.5l.187.904m1.64-2.708L7 10l.813.904m-2.826-.904L4 10l.187.904m1.64-2.708l1.813-1.813.904.813-1.813 1.813-.904-.813zm-2.708 1.64l1.813-1.813.904.813-1.813 1.813-.904-.813zm2.708-1.64l1.813-1.813.904.813-1.813 1.813-.904-.813zM9 3.75l1.5 1.5-1.5 1.5" />
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v18m-3-3h6" />
+                            </svg>
+                            <h2 class="text-2xl font-semibold border-l-4 border-pink-400 pl-4">Outros Serviços e Assinaturas</h2>
+                        </div>
+                        <div class="flex flex-wrap gap-8 justify-center">
+                            <div class="bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col w-full sm:w-auto lg:w-[31%] flex-grow"><p class="text-sm text-center text-gray-400 mb-1">Genshin Impact</p><h3 class="text-xl font-bold text-center mb-4 text-cyan-400">Unicore</h3><ul class="space-y-3 text-center flex-grow"><li><span class="font-semibold">2 dias:</span> <span class="font-mono text-pink-300">R$ 16,90</span></li><li><span class="font-semibold">7 dias:</span> <span class="font-mono text-pink-300">R$ 38,90</span></li><li><span class="font-semibold">30 dias:</span> <span class="font-mono text-pink-300">R$ 88,90</span></li></ul></div>
+                            <div class="bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col w-full sm:w-auto lg:w-[31%] flex-grow"><p class="text-sm text-center text-gray-400 mb-1">Wuthering Waves</p><h3 class="text-xl font-bold text-center mb-4 text-blue-400">Uniwaves</h3><ul class="space-y-3 text-center flex-grow"><li><span class="font-semibold">2 dias:</span> <span class="font-mono text-pink-300">R$ 16,90</span></li><li><span class="font-semibold">7 dias:</span> <span class="font-mono text-pink-300">R$ 38,90</span></li><li><span class="font-semibold">30 dias:</span> <span class="font-mono text-pink-300">R$ 88,90</span></li></ul></div>
+                            <div class="bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col w-full sm:w-auto lg:w-[31%] flex-grow"><p class="text-sm text-center text-gray-400 mb-1">Zenless Zone Zero</p><h3 class="text-xl font-bold text-center mb-4 text-indigo-400">Unizone</h3><ul class="space-y-3 text-center flex-grow"><li><span class="font-semibold">2 dias:</span> <span class="font-mono text-pink-300">R$ 16,90</span></li><li><span class="font-semibold">7 dias:</span> <span class="font-mono text-pink-300">R$ 38,90</span></li><li><span class="font-semibold">30 dias:</span> <span class="font-mono text-pink-300">R$ 88,90</span></li></ul></div>
+                            <div class="bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col w-full sm:w-auto lg:w-[31%] flex-grow"><p class="text-sm text-center text-gray-400 mb-1">Honkai: Star Rail</p><h3 class="text-xl font-bold text-center mb-4 text-yellow-400">Unistar</h3><ul class="space-y-3 text-center flex-grow"><li><span class="font-semibold">2 dias:</span> <span class="font-mono text-pink-300">R$ 11,90</span></li><li><span class="font-semibold">7 dias:</span> <span class="font-mono text-pink-300">R$ 27,90</span></li><li><span class="font-semibold">30 dias:</span> <span class="font-mono text-pink-300">R$ 55,90</span></li></ul></div>
+                            <div class="bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col w-full sm:w-auto lg:w-[31%] flex-grow"><p class="text-sm text-center text-gray-400 mb-1">Wuthering Waves</p><h3 class="text-xl font-bold text-center mb-4 text-rose-400">KittenWaves</h3><ul class="space-y-3 text-center flex-grow"><li><span class="font-semibold">Vitalício:</span> <span class="font-mono text-pink-300">R$ 139,90</span></li></ul></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Página de Features -->
+        <div id="features" class="page-content hidden">
+            <header class="text-center mb-10">
+                <h1 class="text-3xl sm:text-4xl font-bold text-pink-400">Features dos Produtos</h1>
+                <p class="text-gray-400 mt-2">Selecione um produto para ver suas funcionalidades.</p>
+            </header>
+
+            <!-- Abas de Navegação das Features -->
+            <div class="mb-8 border-b border-gray-700">
+                <div class="flex flex-wrap -mb-px space-x-2 sm:space-x-4 justify-center">
+                    <button class="feature-tab active inline-block p-3 sm:p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-300 hover:border-gray-500 font-semibold" onclick="showFeature('unicore', this)">Unicore</button>
+                    <button class="feature-tab inline-block p-3 sm:p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-300 hover:border-gray-500 font-semibold" onclick="showFeature('uniwaves', this)">Uniwaves</button>
+                    <button class="feature-tab inline-block p-3 sm:p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-300 hover:border-gray-500 font-semibold" onclick="showFeature('unizone', this)">Unizone</button>
+                    <button class="feature-tab inline-block p-3 sm:p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-300 hover:border-gray-500 font-semibold" onclick="showFeature('unistar', this)">Unistar</button>
+                    <button class="feature-tab inline-block p-3 sm:p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-300 hover:border-gray-500 font-semibold" onclick="showFeature('kittenwaves', this)">KittenWaves</button>
+                </div>
+            </div>
+
+            <!-- Conteúdo das Features -->
+            <div class="bg-gray-800 rounded-lg p-6 shadow-xl">
+                <!-- Unicore -->
+                <div id="unicore-content" class="feature-content active">
+                    <h3 class="text-2xl font-bold text-cyan-400 mb-4">Unicore <span class="text-sm text-gray-400 font-normal">- Genshin Impact</span></h3>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-gray-300">
+                        <div><h4 class="font-semibold text-white mb-2">Interactive Map</h4><ul class="list-disc list-inside space-y-1"><li>Fast Teleport</li><li>Image Scale</li><li>Config System</li><li>Extensive Filters</li></ul></div>
+                        <div><h4 class="font-semibold text-white mb-2">Combat</h4><ul class="list-disc list-inside space-y-1"><li>Kill Aura</li><li>Rapid-Fire</li><li>AoE Damage</li><li>Infinite Ultimate</li><li>Magnetizer</li><li>Freeze Enemy</li></ul></div>
+                        <div><h4 class="font-semibold text-white mb-2">Player</h4><ul class="list-disc list-inside space-y-1"><li>Infinite Stamina</li><li>Noclip</li><li>Godmode</li><li>No Fall Damage</li><li>Auto Loot</li></ul></div>
+                        <div><h4 class="font-semibold text-white mb-2">Teleports</h4><ul class="list-disc list-inside space-y-1"><li>Mouse Teleport</li><li>Quest Teleport</li><li>Entity Teleport</li><li>Custom TP Routes</li></ul></div>
+                        <div><h4 class="font-semibold text-white mb-2">Utility</h4><ul class="list-disc list-inside space-y-1"><li>Auto Dialogs</li><li>Skip Cutscenes</li><li>FPS Unlocker</li><li>Custom Time</li><li>Auto Seelies</li></ul></div>
+                        <div><h4 class="font-semibold text-white mb-2">Profile</h4><ul class="list-disc list-inside space-y-1"><li>UID Changer</li><li>Name Changer</li><li>AR Level Changer</li><li>World Level Changer</li></ul></div>
+                    </div>
+                </div>
+                <!-- Uniwaves -->
+                <div id="uniwaves-content" class="feature-content">
+                     <h3 class="text-2xl font-bold text-blue-400 mb-4">Uniwaves <span class="text-sm text-gray-400 font-normal">- Wuthering Waves</span></h3>
+                     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-gray-300">
+                        <div><h4 class="font-semibold text-white mb-2">Visuals</h4><ul class="list-disc list-inside space-y-1"><li>Full ESP (Offscreen, Box, etc)</li><li>Radar</li><li>Extensive Filters</li><li>Config System</li></ul></div>
+                        <div><h4 class="font-semibold text-white mb-2">Combat</h4><ul class="list-disc list-inside space-y-1"><li>Rapid Fire & Kill Aura</li><li>Dumb Enemies</li><li>Magnetizer & Aimbot</li><li>No Skill Cooldown</li></ul></div>
+                        <div><h4 class="font-semibold text-white mb-2">Player</h4><ul class="list-disc list-inside space-y-1"><li>Noclip & Speed Control</li><li>Infinite Stamina</li><li>GodMode & No Fall Damage</li><li>Auto Loot</li></ul></div>
+                        <div><h4 class="font-semibold text-white mb-2">Teleports</h4><ul class="list-disc list-inside space-y-1"><li>Mouse Teleport</li><li>Entity Teleport</li><li>Custom TP Routes</li></ul></div>
+                        <div><h4 class="font-semibold text-white mb-2">Utility</h4><ul class="list-disc list-inside space-y-1"><li>FOV Changer</li><li>Free Camera & FPS Unlocker</li><li>Speedup Game</li><li>Custom Crosshair</li></ul></div>
+                        <div><h4 class="font-semibold text-white mb-2">Profile</h4><ul class="list-disc list-inside space-y-1"><li>UID Changer</li><li>Name Changer</li><li>AR Level Changer</li><li>Config Management</li></ul></div>
+                     </div>
+                </div>
+                <!-- Unizone -->
+                <div id="unizone-content" class="feature-content">
+                    <h3 class="text-2xl font-bold text-indigo-400 mb-4">Unizone <span class="text-sm text-gray-400 font-normal">- Zenless Zone Zero</span></h3>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-gray-300">
+                        <div><h4 class="font-semibold text-white mb-2">Visuals</h4><ul class="list-disc list-inside space-y-1"><li>ESP (Monster, Builder)</li><li>Radar</li><li>Config System</li></ul></div>
+                        <div><h4 class="font-semibold text-white mb-2">Combat</h4><ul class="list-disc list-inside space-y-1"><li>Rapid Fire</li><li>Kill Aura</li><li>Auto Attack</li><li>Harmless Enemies</li><li>Magnetizer</li><li>Infinite Special Attack</li></ul></div>
+                        <div><h4 class="font-semibold text-white mb-2">Player</h4><ul class="list-disc list-inside space-y-1"><li>Noclip</li><li>GodMode</li></ul></div>
+                        <div><h4 class="font-semibold text-white mb-2">Teleports</h4><ul class="list-disc list-inside space-y-1"><li>Mouse Teleport</li><li>Entity Teleport</li><li>Custom TP Routes</li></ul></div>
+                        <div><h4 class="font-semibold text-white mb-2">Utility</h4><ul class="list-disc list-inside space-y-1"><li>Camera FOV</li><li>Hide UI</li><li>UID Changer</li><li>Speedup Dialogs/Battle</li></ul></div>
+                    </div>
+                </div>
+                <!-- Unistar -->
+                <div id="unistar-content" class="feature-content">
+                    <h3 class="text-2xl font-bold text-yellow-400 mb-4">Unistar <span class="text-sm text-gray-400 font-normal">- Honkai: Star Rail</span></h3>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-gray-300">
+                        <div><h4 class="font-semibold text-white mb-2">Visuals</h4><ul class="list-disc list-inside space-y-1"><li>ESP (Chests, Anchors, etc.)</li><li>Builder ESP</li><li>Config System</li></ul></div>
+                        <div><h4 class="font-semibold text-white mb-2">Combat</h4><ul class="list-disc list-inside space-y-1"><li>Unlock Auto Battle</li><li>Speedup Battle</li><li>Magnetizer</li><li>Won't Attack</li></ul></div>
+                        <div><h4 class="font-semibold text-white mb-2">Player</h4><ul class="list-disc list-inside space-y-1"><li>Noclip</li><li>Mouse Teleport</li><li>Teleport to Chest</li><li>No Dither</li></ul></div>
+                        <div><h4 class="font-semibold text-white mb-2">Utility</h4><ul class="list-disc list-inside space-y-1"><li>Auto Dialog</li><li>Skip Cutscenes</li><li>FPS Unlocker</li><li>FOV Changer</li><li>Auto Loot</li></ul></div>
+                        <div><h4 class="font-semibold text-white mb-2">Profile</h4><ul class="list-disc list-inside space-y-1"><li>UID Changer</li><li>Config Management</li></ul></div>
+                    </div>
+                </div>
+                <!-- Kittenwaves -->
+                <div id="kittenwaves-content" class="feature-content">
+                    <h3 class="text-2xl font-bold text-rose-400 mb-4">KittenWaves <span class="text-sm text-gray-400 font-normal">- Wuthering Waves</span></h3>
+                     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-gray-300">
+                        <div><h4 class="font-semibold text-white mb-2">Player</h4><ul class="list-disc list-inside space-y-1"><li>Godmode</li><li>Multihit & No Cooldown</li><li>Infinite Stamina/Energy</li><li>Max Resonance Chain</li><li>Player Buffs</li><li>Noclip & Walk Speed</li></ul></div>
+                        <div><h4 class="font-semibold text-white mb-2">World</h4><ul class="list-disc list-inside space-y-1"><li>Speedhack</li><li>Killaura & Entity Vacuum</li><li>Dumb Enemies</li><li>Skip Dialog & Animations</li><li>Auto Loot/Absorb</li></ul></div>
+                        <div><h4 class="font-semibold text-white mb-2">Visuals</h4><ul class="list-disc list-inside space-y-1"><li>Full-featured ESP</li><li>Extensive Filters</li><li>Boxes, Tracers, Distance</li></ul></div>
+                        <div><h4 class="font-semibold text-white mb-2">Teleport</h4><ul class="list-disc list-inside space-y-1"><li>Map Teleport</li><li>Chest Teleport</li><li>Custom TP Lists</li></ul></div>
+                        <div><h4 class="font-semibold text-white mb-2">Miscellaneous</h4><ul class="list-disc list-inside space-y-1"><li>Freecam & Hide UI</li><li>UID & FOV Changer</li><li>FPS Unlocker & Display</li><li>CPU Saver</li></ul></div>
+                        <div><h4 class="font-semibold text-white mb-2">Settings</h4><ul class="list-disc list-inside space-y-1"><li>Themes</li><li>Hotkeys</li><li>Multi-language Support</li></ul></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Função para trocar entre as páginas principais (Preços / Features)
+        function showPage(pageId, element) {
+            document.querySelectorAll('.page-content').forEach(page => {
+                page.classList.remove('active');
+                page.style.display = 'none';
+            });
+            document.getElementById(pageId).classList.add('active');
+            document.getElementById(pageId).style.display = 'block';
+
+
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            element.classList.add('active');
+        }
+
+        // Função para trocar as abas de features
+        function showFeature(featureId, element) {
+            document.querySelectorAll('.feature-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            document.getElementById(featureId + '-content').classList.add('active');
+
+            document.querySelectorAll('.feature-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            element.classList.add('active');
+        }
+
+        // Define a página inicial
+        document.addEventListener('DOMContentLoaded', () => {
+            showPage('precos', document.querySelector('.nav-link'));
+            showFeature('unicore', document.querySelector('.feature-tab'));
+        });
+    </script>
+
+</body>
+</html>
