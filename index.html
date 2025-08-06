@@ -257,7 +257,7 @@
             </div>
 
             <!-- Abas de Navegação das Features -->
-            <div class="mb-8 border-b border-gray-700">
+            <div id="features-nav" class="mb-8 border-b border-gray-700">
                 <div class="flex flex-wrap -mb-px space-x-2 sm:space-x-4 justify-center">
                     <button id="unicore-tab" class="feature-tab active inline-block p-3 sm:p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-300 hover:border-gray-500 font-semibold" onclick="showFeature('unicore', this)">Unicore</button>
                     <button id="uniwaves-tab" class="feature-tab inline-block p-3 sm:p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-300 hover:border-gray-500 font-semibold" onclick="showFeature('uniwaves', this)">Uniwaves</button>
@@ -422,6 +422,14 @@
             showPage('features', featuresNavLink);
             const featureTab = document.getElementById(featureId + '-tab');
             showFeature(featureId, featureTab);
+            
+            // Rola para a seção de abas
+             setTimeout(() => {
+                const anchorElement = document.getElementById('features-nav');
+                if (anchorElement) {
+                    anchorElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }, 100);
         }
         
         // Nova função para navegar para uma âncora em outra página
