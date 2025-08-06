@@ -18,6 +18,10 @@
             color: #f472b6; /* text-pink-400 */
             border-bottom-color: #f472b6;
         }
+        #mobile-menu .nav-link.active {
+            background-color: #f472b6;
+            color: #ffffff;
+        }
         .feature-tab.active {
             background-color: #f472b6; /* bg-pink-400 */
             color: #111827; /* text-gray-900 */
@@ -50,11 +54,27 @@
                         <span class="text-xl font-bold text-white">Naty Store</span>
                     </div>
                 </div>
+                <!-- Desktop Menu -->
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
-                        <a href="#" class="nav-link active text-white px-3 py-2 rounded-md text-sm font-medium border-b-2 border-transparent" onclick="showPage('precos', this)">Preços</a>
+                        <a href="#" class="nav-link active px-3 py-2 rounded-md text-sm font-medium border-b-2 border-transparent" onclick="showPage('precos', this)">Preços</a>
                         <a href="#" class="nav-link text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium border-b-2 border-transparent" onclick="showPage('features', this)">Funções</a>
                     </div>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" onclick="toggleMobileMenu()" class="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Abrir menu principal</span>
+                        <svg id="menu-icon-closed" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+                        <svg id="menu-icon-open" class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                    </button>
+                </div>
+            </div>
+             <!-- Mobile menu, show/hide based on menu state. -->
+            <div class="md:hidden hidden" id="mobile-menu">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                    <a href="#" class="nav-link active block px-3 py-2 rounded-md text-base font-medium" onclick="showPage('precos', this); toggleMobileMenu();">Preços</a>
+                    <a href="#" class="nav-link text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium" onclick="showPage('features', this); toggleMobileMenu();">Funções</a>
                 </div>
             </div>
         </nav>
@@ -249,19 +269,30 @@
 
     <script>
         // Função para trocar entre as páginas principais (Preços / Features)
-        function showPage(pageId, element) {
+        function showPage(pageId, clickedElement) {
             document.querySelectorAll('.page-content').forEach(page => {
-                page.classList.remove('active');
                 page.style.display = 'none';
+                page.classList.remove('active');
             });
-            document.getElementById(pageId).classList.add('active');
             document.getElementById(pageId).style.display = 'block';
+            document.getElementById(pageId).classList.add('active');
 
-
+            // Atualiza todos os links de navegação (desktop e mobile)
             document.querySelectorAll('.nav-link').forEach(link => {
                 link.classList.remove('active');
+                if (link.getAttribute('onclick').includes(`'${pageId}'`)) {
+                    link.classList.add('active');
+                }
             });
-            element.classList.add('active');
+        }
+        
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const openIcon = document.getElementById('menu-icon-open');
+            const closedIcon = document.getElementById('menu-icon-closed');
+            menu.classList.toggle('hidden');
+            openIcon.classList.toggle('hidden');
+            closedIcon.classList.toggle('hidden');
         }
 
         // Função para trocar as abas de features
@@ -286,6 +317,3 @@
 
 </body>
 </html>
-
-
-
