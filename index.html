@@ -18,6 +18,10 @@
                               radial-gradient(circle at bottom left, rgba(129, 140, 248, 0.1), transparent 50%),
                               radial-gradient(circle at bottom right, rgba(244, 114, 182, 0.1), transparent 50%);
         }
+        /* Classe para desativar o scroll */
+        body.no-scroll {
+            overflow: hidden;
+        }
         .nav-link {
             transition: all 0.3s ease;
         }
@@ -76,7 +80,7 @@
         
         /* Estilos para a nova página de entrada */
         #home {
-            min-height: calc(100vh - 4rem); /* 100vh menos a altura do header */
+            height: calc(100vh - 4rem); /* 100vh menos a altura do header */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -437,14 +441,21 @@
     <script>
         // Função para trocar entre as páginas principais
         function showPage(pageId, clickedElement) {
+            // Remove a classe no-scroll do body por padrão
+            document.body.classList.remove('no-scroll');
+
             document.querySelectorAll('.page-content').forEach(page => {
                 page.classList.remove('active');
-                // Use style.display para garantir que a transição seja suave
                 page.style.display = 'none';
             });
             const targetPage = document.getElementById(pageId);
             targetPage.style.display = 'block';
             targetPage.classList.add('active');
+
+            // Adiciona a classe no-scroll se a página for a 'home'
+            if (pageId === 'home') {
+                document.body.classList.add('no-scroll');
+            }
 
             // Atualiza todos os links de navegação (desktop e mobile)
             document.querySelectorAll('.nav-link').forEach(link => {
