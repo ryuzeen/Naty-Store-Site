@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Naty Store - Preços e Funções</title>
+    <title>Naty Store - Bem-vindo!</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -13,6 +13,10 @@
         body {
             font-family: 'Inter', sans-serif;
             background-color: #111827;
+            /* Efeito de fundo gradiente */
+            background-image: radial-gradient(circle at top, rgba(236, 72, 153, 0.1), transparent 40%),
+                              radial-gradient(circle at bottom left, rgba(129, 140, 248, 0.1), transparent 50%),
+                              radial-gradient(circle at bottom right, rgba(244, 114, 182, 0.1), transparent 50%);
         }
         .nav-link {
             transition: all 0.3s ease;
@@ -54,7 +58,6 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* Efeito Rainbow para o Card Lenda */
         .lenda-hover {
             border-radius: 0.5rem; /* rounded-lg */
             border: 2px solid #ca8a04; /* Cor inicial amarela */
@@ -70,6 +73,24 @@
         .lenda-hover:hover .lenda-content {
              margin: 2px;
         }
+        
+        /* Estilos para a nova página de entrada */
+        #home {
+            min-height: calc(100vh - 4rem); /* 100vh menos a altura do header */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .entry-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .entry-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(236, 72, 153, 0.2), 0 10px 10px -5px rgba(236, 72, 153, 0.1);
+        }
     </style>
 </head>
 <body class="text-white">
@@ -81,15 +102,16 @@
                 <div class="flex items-center">
                     <div class="flex-shrink-0 flex items-center">
                          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-pink-400 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                        </svg>
+                           <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                         </svg>
                         <span class="text-xl font-bold text-white">Naty Store</span>
                     </div>
                 </div>
                 <!-- Desktop Menu -->
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
-                        <a href="#" class="nav-link active px-3 py-2 rounded-md text-sm font-medium border-b-2 border-transparent" onclick="showPage('precos', this)">Preços</a>
+                        <a href="#" class="nav-link active px-3 py-2 rounded-md text-sm font-medium border-b-2 border-transparent" onclick="showPage('home', this)">Início</a>
+                        <a href="#" class="nav-link text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium border-b-2 border-transparent" onclick="showPage('precos', this)">Preços</a>
                         <a href="#" class="nav-link text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium border-b-2 border-transparent" onclick="showPage('features', this)">Funções</a>
                         <a href="#" class="nav-link text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium border-b-2 border-transparent" onclick="showPage('comprar', this)">Como Comprar</a>
                     </div>
@@ -106,7 +128,8 @@
              <!-- Mobile menu, show/hide based on menu state. -->
             <div class="md:hidden hidden" id="mobile-menu">
                 <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                    <a href="#" class="nav-link active block px-3 py-2 rounded-md text-base font-medium" onclick="showPage('precos', this); toggleMobileMenu();">Preços</a>
+                    <a href="#" class="nav-link active block px-3 py-2 rounded-md text-base font-medium" onclick="showPage('home', this); toggleMobileMenu();">Início</a>
+                    <a href="#" class="nav-link text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium" onclick="showPage('precos', this); toggleMobileMenu();">Preços</a>
                     <a href="#" class="nav-link text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium" onclick="showPage('features', this); toggleMobileMenu();">Funções</a>
                     <a href="#" class="nav-link text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium" onclick="showPage('comprar', this); toggleMobileMenu();">Como Comprar</a>
                 </div>
@@ -115,276 +138,313 @@
     </div>
 
     <main class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-        <!-- Página de Preços -->
-        <div id="precos" class="page-content active">
-             <div class="max-w-4xl mx-auto">
-                <div>
-                    <header class="text-center mb-10">
-                        <h1 class="text-3xl sm:text-4xl font-bold text-pink-400">Tabela de Preços</h1>
-                        <p class="text-gray-400 mt-2">Aproveite nossos preços com desconto!</p>
-                    </header>
+        <!-- Página de Entrada (Home) -->
+        <div id="home" class="page-content active">
+            <div class="px-4">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4">Bem-vindo(a) à <span class="text-pink-400">Naty Store</span></h1>
+                <p class="text-lg sm:text-xl text-gray-300 mb-12 max-w-2xl mx-auto">Agradecemos a sua preferência! Explore nossos produtos e encontre o que você precisa para a sua jornada.</p>
 
-                    <!-- Seção Principal - Pertamax -->
-                    <div class="mb-16">
-                        <div class="flex items-center mb-6 justify-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mr-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                            </svg>
-                            <h2 class="text-3xl font-bold text-center text-yellow-400">Korepi Pertamax</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                    <!-- Card Preços -->
+                    <a href="#" onclick="goToPage('precos')" class="entry-card block bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 border border-gray-700">
+                        <div class="flex justify-center mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-pink-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v.01" /></svg>
                         </div>
-                        <p class="text-center text-gray-400 mb-8 -mt-4">Para Genshin Impact</p>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                            <a href="#" onclick="goToAnchor('features', 'pertamax-features')" class="block"><div class="bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col border-2 border-gray-700 hover:border-pink-500 transition-all duration-300 h-full"><h3 class="text-xl font-bold text-center mb-2 text-white">BÁSICO - 1 DIA</h3><p class="text-3xl font-bold text-center text-pink-400 mb-4">R$ 6,00</p><ul class="space-y-2 text-center flex-grow text-gray-300"><li>✓ 100% Das funções</li><li>✓ Farm AFK (Teleports)</li><li class="text-red-400">✗ Não possui pause</li></ul></div></a>
-                            <a href="#" onclick="goToAnchor('features', 'pertamax-features')" class="block"><div class="bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col border-2 border-gray-700 hover:border-pink-500 transition-all duration-300 h-full"><h3 class="text-xl font-bold text-center mb-2 text-white">MÉDIO - 7 DIAS</h3><p class="text-3xl font-bold text-center text-pink-400 mb-4">R$ 15,90</p><ul class="space-y-2 text-center flex-grow text-gray-300"><li>✓ 100% Das funções</li><li>✓ Farm AFK (Teleports)</li><li class="text-red-400">✗ Não possui pause</li></ul></div></a>
-                            <a href="#" onclick="goToAnchor('features', 'pertamax-features')" class="block"><div class="bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col border-2 border-gray-700 hover:border-pink-500 transition-all duration-300 h-full"><h3 class="text-xl font-bold text-center mb-2 text-white">PRO - 30 DIAS</h3><p class="text-3xl font-bold text-center text-pink-400 mb-4">R$ 34,90</p><ul class="space-y-2 text-center flex-grow text-gray-300"><li>✓ 100% Das funções</li><li>✓ Farm AFK (Teleports)</li><li>✓ Possui pause</li></ul></div></a>
-                            <a href="#" onclick="goToAnchor('features', 'pertamax-features')" class="block"><div class="bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col border-2 border-gray-700 hover:border-pink-500 transition-all duration-300 h-full"><h3 class="text-xl font-bold text-center mb-2 text-white">ELITE - 60 DIAS</h3><p class="text-3xl font-bold text-center text-pink-400 mb-4">R$ 60,90</p><ul class="space-y-2 text-center flex-grow text-gray-300"><li>✓ 100% Das funções</li><li>✓ Farm AFK (Teleports)</li><li>✓ Possui pause</li></ul></div></a>
-                            <a href="#" onclick="goToAnchor('features', 'pertamax-features')" class="block"><div class="bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col border-2 border-gray-700 hover:border-pink-500 transition-all duration-300 h-full"><h3 class="text-xl font-bold text-center mb-2 text-white">MASTER - 90 DIAS</h3><p class="text-3xl font-bold text-center text-pink-400 mb-4">R$ 87,90</p><ul class="space-y-2 text-center flex-grow text-gray-300"><li>✓ Tudo dos outros</li><li class="text-yellow-400">✓ Cargo Especial!</li><li>✓ Possui pause</li></ul></div></a>
-                            <a href="#" onclick="goToAnchor('features', 'pertamax-features')" class="block"><div class="bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col border-2 border-gray-700 hover:border-pink-500 transition-all duration-300 h-full"><h3 class="text-xl font-bold text-center mb-2 text-white">ULTRA - 180 DIAS</h3><p class="text-3xl font-bold text-center text-pink-400 mb-4">R$ 174,90</p><ul class="space-y-2 text-center flex-grow text-gray-300"><li>✓ Tudo dos outros</li><li class="text-yellow-400">✓ Cargo Especial!</li><li>✓ Possui pause</li></ul></div></a>
-                            <a href="#" onclick="goToAnchor('features', 'pertamax-features')" class="lenda-hover block col-span-1 sm:col-span-2 lg:col-span-3"><div class="lenda-content bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col h-full"><h3 class="text-xl font-bold text-center mb-2 text-yellow-300">LENDA - 365 DIAS</h3><p class="text-4xl font-bold text-center text-yellow-400 mb-4">R$ 315,90</p><ul class="space-y-2 text-center flex-grow text-gray-300"><li>✓ Tudo dos outros</li><li class="text-yellow-400">✓ Cargo Especial!</li><li class="text-cyan-400">✓ Menção Honrosa</li></ul></div></a>
+                        <h2 class="text-2xl font-bold text-white mb-2">Nossos Preços</h2>
+                        <p class="text-gray-400">Confira as melhores ofertas e pacotes com desconto.</p>
+                    </a>
+                    <!-- Card Funções -->
+                    <a href="#" onclick="goToPage('features')" class="entry-card block bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 border border-gray-700">
+                        <div class="flex justify-center mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-pink-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" /></svg>
                         </div>
-                    </div>
-
-                    <!-- Cristais Gênesis -->
-                    <div class="mb-12">
-                        <div class="flex items-center mb-6">
-                            <img src="https://skycoach.gg/storage/uploads/products/genshin-impact-genesis-crystals1707515203_picture_item_small.png" alt="Ícone de Cristal Gênesis" class="h-10 w-10 mr-4 rounded-full" onerror="this.style.display='none'">
-                            <h2 class="text-2xl font-semibold border-l-4 border-pink-400 pl-4">Cristais Gênesis</h2>
+                        <h2 class="text-2xl font-bold text-white mb-2">Lista de Funções</h2>
+                        <p class="text-gray-400">Descubra todas as funcionalidades dos nossos produtos.</p>
+                    </a>
+                    <!-- Card Como Comprar -->
+                    <a href="#" onclick="goToPage('comprar')" class="entry-card block bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 border border-gray-700">
+                        <div class="flex justify-center mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-pink-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
                         </div>
-                        <div class="overflow-x-auto rounded-lg shadow-lg bg-gray-800">
-                            <table class="w-full text-left">
-                                <thead class="bg-gray-700">
-                                    <tr>
-                                        <th class="p-4 font-semibold">Quantidade</th>
-                                        <th class="p-4 font-semibold text-right">Preço Original</th>
-                                        <th class="p-4 font-semibold text-right">Preço Naty Store</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="divide-y divide-gray-700">
-                                    <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4">60 Cristais</td><td class="p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 4,90</s></td><td class="p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 4,20</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
-                                    <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4">300 + 30 Cristais</td><td class="p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 25,90</s></td><td class="p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 22,25</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
-                                    <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4">980 + 110 Cristais</td><td class="p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 76,90</s></td><td class="p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 66,90</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
-                                    <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4">1.980 + 260 Cristais</td><td class="p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 154,90</s></td><td class="p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 130,90</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
-                                    <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4">3.280 + 600 Cristais</td><td class="p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 254,90</s></td><td class="p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 209,90</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
-                                    <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4">6480 + 1600 Cristais</td><td class="p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 499,90</s></td><td class="p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 409,90</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
-                                    <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4 font-bold">Todos os Pacotes</td><td class="p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 1.017,40</s></td><td class="p-4 text-right font-bold font-mono text-pink-300"><div class="flex items-center justify-end gap-4"><span>R$ 814,90</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <!-- Itens e Pacotes Especiais -->
-                    <div class="mb-12">
-                        <div class="flex items-center mb-6">
-                            <img src="https://files.softicons.com/download/folder-icons/plastic-folders-icons-by-sirubico/ico/Folder-Pink.ico" alt="Ícone da Bênção da Lua Nova" class="h-10 w-10 mr-4 rounded-full" onerror="this.style.display='none'">
-                            <h2 class="text-2xl font-semibold border-l-4 border-pink-400 pl-4">Itens e Pacotes Especiais</h2>
-                        </div>
-                        <div class="overflow-x-auto rounded-lg shadow-lg bg-gray-800">
-                             <table class="w-full text-left">
-                                <thead class="bg-gray-700"><tr><th class="p-4 font-semibold">Item</th><th class="p-4 font-semibold text-right">Preço Original</th><th class="p-4 font-semibold text-right">Preço Naty Store</th></tr></thead>
-                                <tbody class="divide-y divide-gray-700">
-                                    <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4">Bênção da Lua Nova</td><td class="p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 25,90</s></td><td class="p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 22,25</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
-                                    <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4">Passe de Batalha</td><td class="p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 49,90</s></td><td class="p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 43,90</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
-                                    <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4">Passe de Batalha (Avançado)</td><td class="p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 99,99</s></td><td class="p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 85,90</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
-                                    <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4">All in one (Todos os Gênesis, 3x Bênção, Passe Atualizado)</td><td class="p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 1.195,09</s></td><td class="p-4 text-right font-bold font-mono text-pink-300"><div class="flex items-center justify-end gap-4"><span>R$ 996,70</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
-                                    <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4">Garantia Personagem de Banner (100%)</td><td class="p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 1.831,50</s></td><td class="p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 1.476,50</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
-                                    <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4">Garantia Arma 5★ (100%)</td><td class="p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 831,70</s></td><td class="p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 671,70</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <!-- Outros Serviços e Assinaturas -->
-                    <div>
-                         <div class="flex items-center mb-6">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-4 text-pink-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                              <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 15l.813.904m-2.826-.904L6 15l.187.904m1.64-2.708L8 12.5l.813.904m-2.826-.904L5 12.5l.187.904m1.64-2.708L7 10l.813.904m-2.826-.904L4 10l.187.904m1.64-2.708l1.813-1.813.904.813-1.813 1.813-.904-.813zm-2.708 1.64l1.813-1.813.904.813-1.813 1.813-.904-.813zm2.708-1.64l1.813-1.813.904.813-1.813 1.813-.904-.813zM9 3.75l1.5 1.5-1.5 1.5" />
-                              <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v18m-3-3h6" />
-                            </svg>
-                            <h2 class="text-2xl font-semibold border-l-4 border-pink-400 pl-4">Outros Serviços e Assinaturas</h2>
-                        </div>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                            <a href="#" onclick="goToFeature('unicore')" class="block w-full"><div class="bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col h-full transform hover:scale-105 transition-transform duration-300"><p class="text-sm text-center text-gray-400 mb-1">Genshin Impact</p><h3 class="text-xl font-bold text-center mb-4 text-cyan-400">Unicore</h3><ul class="space-y-3 text-center flex-grow"><li><span class="font-semibold">2 dias:</span> <span class="font-mono text-pink-300">R$ 16,90</span></li><li><span class="font-semibold">7 dias:</span> <span class="font-mono text-pink-300">R$ 38,90</span></li><li><span class="font-semibold">30 dias:</span> <span class="font-mono text-pink-300">R$ 88,90</span></li></ul></div></a>
-                            <a href="#" onclick="goToFeature('uniwaves')" class="block w-full"><div class="bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col h-full transform hover:scale-105 transition-transform duration-300"><p class="text-sm text-center text-gray-400 mb-1">Wuthering Waves</p><h3 class="text-xl font-bold text-center mb-4 text-blue-400">Uniwaves</h3><ul class="space-y-3 text-center flex-grow"><li><span class="font-semibold">2 dias:</span> <span class="font-mono text-pink-300">R$ 16,90</span></li><li><span class="font-semibold">7 dias:</span> <span class="font-mono text-pink-300">R$ 38,90</span></li><li><span class="font-semibold">30 dias:</span> <span class="font-mono text-pink-300">R$ 88,90</span></li></ul></div></a>
-                            <a href="#" onclick="goToFeature('unizone')" class="block w-full"><div class="bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col h-full transform hover:scale-105 transition-transform duration-300"><p class="text-sm text-center text-gray-400 mb-1">Zenless Zone Zero</p><h3 class="text-xl font-bold text-center mb-4 text-indigo-400">Unizone</h3><ul class="space-y-3 text-center flex-grow"><li><span class="font-semibold">2 dias:</span> <span class="font-mono text-pink-300">R$ 16,90</span></li><li><span class="font-semibold">7 dias:</span> <span class="font-mono text-pink-300">R$ 38,90</span></li><li><span class="font-semibold">30 dias:</span> <span class="font-mono text-pink-300">R$ 88,90</span></li></ul></div></a>
-                            <div class="hidden lg:block lg:col-start-1"></div> <!-- Espaçador para empurrar os próximos itens -->
-                            <a href="#" onclick="goToFeature('unistar')" class="block w-full lg:col-start-2"><div class="bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col h-full transform hover:scale-105 transition-transform duration-300"><p class="text-sm text-center text-gray-400 mb-1">Honkai: Star Rail</p><h3 class="text-xl font-bold text-center mb-4 text-yellow-400">Unistar</h3><ul class="space-y-3 text-center flex-grow"><li><span class="font-semibold">2 dias:</span> <span class="font-mono text-pink-300">R$ 11,90</span></li><li><span class="font-semibold">7 dias:</span> <span class="font-mono text-pink-300">R$ 27,90</span></li><li><span class="font-semibold">30 dias:</span> <span class="font-mono text-pink-300">R$ 55,90</span></li></ul></div></a>
-                            <a href="#" onclick="goToFeature('kittenwaves')" class="block w-full"><div class="bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col h-full transform hover:scale-105 transition-transform duration-300"><p class="text-sm text-center text-gray-400 mb-1">Wuthering Waves</p><h3 class="text-xl font-bold text-center mb-4 text-rose-400">KittenWaves</h3><ul class="space-y-3 text-center flex-grow"><li><span class="font-semibold">Vitalício:</span> <span class="font-mono text-pink-300">R$ 139,90</span></li></ul></div></a>
-                        </div>
-                    </div>
+                        <h2 class="text-2xl font-bold text-white mb-2">Como Comprar</h2>
+                        <p class="text-gray-400">Siga nosso guia para adquirir seus produtos com segurança.</p>
+                    </a>
                 </div>
             </div>
+        </div>
+
+        <!-- Página de Preços -->
+        <div id="precos" class="page-content">
+             <div class="max-w-4xl mx-auto">
+                 <div>
+                     <header class="text-center mb-10">
+                         <h1 class="text-3xl sm:text-4xl font-bold text-pink-400">Tabela de Preços</h1>
+                         <p class="text-gray-400 mt-2">Aproveite nossos preços com desconto!</p>
+                     </header>
+
+                     <!-- Seção Principal - Pertamax -->
+                     <div class="mb-16">
+                         <div class="flex items-center mb-6 justify-center">
+                             <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mr-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                             </svg>
+                             <h2 class="text-3xl font-bold text-center text-yellow-400">Korepi Pertamax</h2>
+                         </div>
+                         <p class="text-center text-gray-400 mb-8 -mt-4">Para Genshin Impact</p>
+                         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                             <a href="#" onclick="goToAnchor('features', 'pertamax-features')" class="block"><div class="bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col border-2 border-gray-700 hover:border-pink-500 transition-all duration-300 h-full"><h3 class="text-xl font-bold text-center mb-2 text-white">BÁSICO - 1 DIA</h3><p class="text-3xl font-bold text-center text-pink-400 mb-4">R$ 6,00</p><ul class="space-y-2 text-center flex-grow text-gray-300"><li>✓ 100% Das funções</li><li>✓ Farm AFK (Teleports)</li><li class="text-red-400">✗ Não possui pause</li></ul></div></a>
+                             <a href="#" onclick="goToAnchor('features', 'pertamax-features')" class="block"><div class="bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col border-2 border-gray-700 hover:border-pink-500 transition-all duration-300 h-full"><h3 class="text-xl font-bold text-center mb-2 text-white">MÉDIO - 7 DIAS</h3><p class="text-3xl font-bold text-center text-pink-400 mb-4">R$ 15,90</p><ul class="space-y-2 text-center flex-grow text-gray-300"><li>✓ 100% Das funções</li><li>✓ Farm AFK (Teleports)</li><li class="text-red-400">✗ Não possui pause</li></ul></div></a>
+                             <a href="#" onclick="goToAnchor('features', 'pertamax-features')" class="block"><div class="bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col border-2 border-gray-700 hover:border-pink-500 transition-all duration-300 h-full"><h3 class="text-xl font-bold text-center mb-2 text-white">PRO - 30 DIAS</h3><p class="text-3xl font-bold text-center text-pink-400 mb-4">R$ 34,90</p><ul class="space-y-2 text-center flex-grow text-gray-300"><li>✓ 100% Das funções</li><li>✓ Farm AFK (Teleports)</li><li>✓ Possui pause</li></ul></div></a>
+                             <a href="#" onclick="goToAnchor('features', 'pertamax-features')" class="block"><div class="bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col border-2 border-gray-700 hover:border-pink-500 transition-all duration-300 h-full"><h3 class="text-xl font-bold text-center mb-2 text-white">ELITE - 60 DIAS</h3><p class="text-3xl font-bold text-center text-pink-400 mb-4">R$ 60,90</p><ul class="space-y-2 text-center flex-grow text-gray-300"><li>✓ 100% Das funções</li><li>✓ Farm AFK (Teleports)</li><li>✓ Possui pause</li></ul></div></a>
+                             <a href="#" onclick="goToAnchor('features', 'pertamax-features')" class="block"><div class="bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col border-2 border-gray-700 hover:border-pink-500 transition-all duration-300 h-full"><h3 class="text-xl font-bold text-center mb-2 text-white">MASTER - 90 DIAS</h3><p class="text-3xl font-bold text-center text-pink-400 mb-4">R$ 87,90</p><ul class="space-y-2 text-center flex-grow text-gray-300"><li>✓ Tudo dos outros</li><li class="text-yellow-400">✓ Cargo Especial!</li><li>✓ Possui pause</li></ul></div></a>
+                             <a href="#" onclick="goToAnchor('features', 'pertamax-features')" class="block"><div class="bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col border-2 border-gray-700 hover:border-pink-500 transition-all duration-300 h-full"><h3 class="text-xl font-bold text-center mb-2 text-white">ULTRA - 180 DIAS</h3><p class="text-3xl font-bold text-center text-pink-400 mb-4">R$ 174,90</p><ul class="space-y-2 text-center flex-grow text-gray-300"><li>✓ Tudo dos outros</li><li class="text-yellow-400">✓ Cargo Especial!</li><li>✓ Possui pause</li></ul></div></a>
+                             <a href="#" onclick="goToAnchor('features', 'pertamax-features')" class="lenda-hover block col-span-1 sm:col-span-2 lg:col-span-3"><div class="lenda-content bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col h-full"><h3 class="text-xl font-bold text-center mb-2 text-yellow-300">LENDA - 365 DIAS</h3><p class="text-4xl font-bold text-center text-yellow-400 mb-4">R$ 315,90</p><ul class="space-y-2 text-center flex-grow text-gray-300"><li>✓ Tudo dos outros</li><li class="text-yellow-400">✓ Cargo Especial!</li><li class="text-cyan-400">✓ Menção Honrosa</li></ul></div></a>
+                         </div>
+                     </div>
+
+                     <!-- Cristais Gênesis -->
+                     <div class="mb-12">
+                         <div class="flex items-center mb-6">
+                             <img src="https://skycoach.gg/storage/uploads/products/genshin-impact-genesis-crystals1707515203_picture_item_small.png" alt="Ícone de Cristal Gênesis" class="h-10 w-10 mr-4 rounded-full" onerror="this.style.display='none'">
+                             <h2 class="text-2xl font-semibold border-l-4 border-pink-400 pl-4">Cristais Gênesis</h2>
+                         </div>
+                         <div class="overflow-x-auto rounded-lg shadow-lg bg-gray-800">
+                             <table class="w-full text-left">
+                                 <thead class="bg-gray-700">
+                                     <tr>
+                                         <th class="p-4 font-semibold">Quantidade</th>
+                                         <th class="p-4 font-semibold text-right">Preço Original</th>
+                                         <th class="p-4 font-semibold text-right">Preço Naty Store</th>
+                                     </tr>
+                                 </thead>
+                                 <tbody class="divide-y divide-gray-700">
+                                     <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4">60 Cristais</td><td class="p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 4,90</s></td><td class="p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 4,20</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
+                                     <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4">300 + 30 Cristais</td><td class="p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 25,90</s></td><td class="p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 22,25</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
+                                     <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4">980 + 110 Cristais</td><td class="p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 76,90</s></td><td class="p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 66,90</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
+                                     <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4">1.980 + 260 Cristais</td><td class="p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 154,90</s></td><td class="p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 130,90</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
+                                     <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4">3.280 + 600 Cristais</td><td class="p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 254,90</s></td><td class="p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 209,90</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
+                                     <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4">6480 + 1600 Cristais</td><td class="p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 499,90</s></td><td class="p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 409,90</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
+                                     <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4 font-bold">Todos os Pacotes</td><td class="p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 1.017,40</s></td><td class="p-4 text-right font-bold font-mono text-pink-300"><div class="flex items-center justify-end gap-4"><span>R$ 814,90</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
+                                 </tbody>
+                             </table>
+                         </div>
+                     </div>
+                     <!-- Itens e Pacotes Especiais -->
+                     <div class="mb-12">
+                         <div class="flex items-center mb-6">
+                             <img src="https://files.softicons.com/download/folder-icons/plastic-folders-icons-by-sirubico/ico/Folder-Pink.ico" alt="Ícone da Bênção da Lua Nova" class="h-10 w-10 mr-4 rounded-full" onerror="this.style.display='none'">
+                             <h2 class="text-2xl font-semibold border-l-4 border-pink-400 pl-4">Itens e Pacotes Especiais</h2>
+                         </div>
+                         <div class="overflow-x-auto rounded-lg shadow-lg bg-gray-800">
+                              <table class="w-full text-left">
+                                 <thead class="bg-gray-700"><tr><th class="p-4 font-semibold">Item</th><th class="p-4 font-semibold text-right">Preço Original</th><th class="p-4 font-semibold text-right">Preço Naty Store</th></tr></thead>
+                                 <tbody class="divide-y divide-gray-700">
+                                     <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4">Bênção da Lua Nova</td><td class="p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 25,90</s></td><td class="p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 22,25</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
+                                     <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4">Passe de Batalha</td><td class="p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 49,90</s></td><td class="p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 43,90</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
+                                     <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4">Passe de Batalha (Avançado)</td><td class="p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 99,99</s></td><td class="p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 85,90</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
+                                     <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4">All in one (Todos os Gênesis, 3x Bênção, Passe Atualizado)</td><td class="p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 1.195,09</s></td><td class="p-4 text-right font-bold font-mono text-pink-300"><div class="flex items-center justify-end gap-4"><span>R$ 996,70</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
+                                     <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4">Garantia Personagem de Banner (100%)</td><td class="p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 1.831,50</s></td><td class="p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 1.476,50</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
+                                     <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4">Garantia Arma 5★ (100%)</td><td class="p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 831,70</s></td><td class="p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 671,70</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
+                                 </tbody>
+                             </table>
+                         </div>
+                     </div>
+                     <!-- Outros Serviços e Assinaturas -->
+                     <div>
+                          <div class="flex items-center mb-6">
+                             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-4 text-pink-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                               <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 15l.813.904m-2.826-.904L6 15l.187.904m1.64-2.708L8 12.5l.813.904m-2.826-.904L5 12.5l.187.904m1.64-2.708L7 10l.813.904m-2.826-.904L4 10l.187.904m1.64-2.708l1.813-1.813.904.813-1.813 1.813-.904-.813zm-2.708 1.64l1.813-1.813.904.813-1.813 1.813-.904-.813zm2.708-1.64l1.813-1.813.904.813-1.813 1.813-.904-.813zM9 3.75l1.5 1.5-1.5 1.5" />
+                               <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v18m-3-3h6" />
+                             </svg>
+                             <h2 class="text-2xl font-semibold border-l-4 border-pink-400 pl-4">Outros Serviços e Assinaturas</h2>
+                         </div>
+                         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                             <a href="#" onclick="goToFeature('unicore')" class="block w-full"><div class="bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col h-full transform hover:scale-105 transition-transform duration-300"><p class="text-sm text-center text-gray-400 mb-1">Genshin Impact</p><h3 class="text-xl font-bold text-center mb-4 text-cyan-400">Unicore</h3><ul class="space-y-3 text-center flex-grow"><li><span class="font-semibold">2 dias:</span> <span class="font-mono text-pink-300">R$ 16,90</span></li><li><span class="font-semibold">7 dias:</span> <span class="font-mono text-pink-300">R$ 38,90</span></li><li><span class="font-semibold">30 dias:</span> <span class="font-mono text-pink-300">R$ 88,90</span></li></ul></div></a>
+                             <a href="#" onclick="goToFeature('uniwaves')" class="block w-full"><div class="bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col h-full transform hover:scale-105 transition-transform duration-300"><p class="text-sm text-center text-gray-400 mb-1">Wuthering Waves</p><h3 class="text-xl font-bold text-center mb-4 text-blue-400">Uniwaves</h3><ul class="space-y-3 text-center flex-grow"><li><span class="font-semibold">2 dias:</span> <span class="font-mono text-pink-300">R$ 16,90</span></li><li><span class="font-semibold">7 dias:</span> <span class="font-mono text-pink-300">R$ 38,90</span></li><li><span class="font-semibold">30 dias:</span> <span class="font-mono text-pink-300">R$ 88,90</span></li></ul></div></a>
+                             <a href="#" onclick="goToFeature('unizone')" class="block w-full"><div class="bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col h-full transform hover:scale-105 transition-transform duration-300"><p class="text-sm text-center text-gray-400 mb-1">Zenless Zone Zero</p><h3 class="text-xl font-bold text-center mb-4 text-indigo-400">Unizone</h3><ul class="space-y-3 text-center flex-grow"><li><span class="font-semibold">2 dias:</span> <span class="font-mono text-pink-300">R$ 16,90</span></li><li><span class="font-semibold">7 dias:</span> <span class="font-mono text-pink-300">R$ 38,90</span></li><li><span class="font-semibold">30 dias:</span> <span class="font-mono text-pink-300">R$ 88,90</span></li></ul></div></a>
+                             <div class="hidden lg:block lg:col-start-1"></div> <!-- Espaçador para empurrar os próximos itens -->
+                             <a href="#" onclick="goToFeature('unistar')" class="block w-full lg:col-start-2"><div class="bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col h-full transform hover:scale-105 transition-transform duration-300"><p class="text-sm text-center text-gray-400 mb-1">Honkai: Star Rail</p><h3 class="text-xl font-bold text-center mb-4 text-yellow-400">Unistar</h3><ul class="space-y-3 text-center flex-grow"><li><span class="font-semibold">2 dias:</span> <span class="font-mono text-pink-300">R$ 11,90</span></li><li><span class="font-semibold">7 dias:</span> <span class="font-mono text-pink-300">R$ 27,90</span></li><li><span class="font-semibold">30 dias:</span> <span class="font-mono text-pink-300">R$ 55,90</span></li></ul></div></a>
+                             <a href="#" onclick="goToFeature('kittenwaves')" class="block w-full"><div class="bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col h-full transform hover:scale-105 transition-transform duration-300"><p class="text-sm text-center text-gray-400 mb-1">Wuthering Waves</p><h3 class="text-xl font-bold text-center mb-4 text-rose-400">KittenWaves</h3><ul class="space-y-3 text-center flex-grow"><li><span class="font-semibold">Vitalício:</span> <span class="font-mono text-pink-300">R$ 139,90</span></li></ul></div></a>
+                         </div>
+                     </div>
+                 </div>
+             </div>
         </div>
 
         <!-- Página de Features -->
-        <div id="features" class="page-content hidden">
-            <header class="text-center mb-10">
-                <h1 class="text-3xl sm:text-4xl font-bold text-pink-400">Funções dos Produtos</h1>
-                <p class="text-gray-400 mt-2">Selecione um produto para ver suas funcionalidades.</p>
-            </header>
+        <div id="features" class="page-content">
+             <header class="text-center mb-10">
+                 <h1 class="text-3xl sm:text-4xl font-bold text-pink-400">Funções dos Produtos</h1>
+                 <p class="text-gray-400 mt-2">Selecione um produto para ver suas funcionalidades.</p>
+             </header>
 
-            <!-- Seção de Destaque - Korepi Pertamax -->
-            <div id="pertamax-features" class="mb-12">
-                <div class="rounded-lg shadow-xl animated-gradient-border">
-                    <div class="bg-gray-800 rounded-md p-6">
-                        <h3 class="text-3xl font-bold text-yellow-400 mb-4 text-center">Korepi Pertamax <span class="text-lg text-gray-400 font-normal">- Genshin Impact</span></h3>
+             <!-- Seção de Destaque - Korepi Pertamax -->
+             <div id="pertamax-features" class="mb-12">
+                 <div class="rounded-lg shadow-xl animated-gradient-border">
+                     <div class="bg-gray-800 rounded-md p-6">
+                         <h3 class="text-3xl font-bold text-yellow-400 mb-4 text-center">Korepi Pertamax <span class="text-lg text-gray-400 font-normal">- Genshin Impact</span></h3>
                         
-                        <div class="text-center my-6">
-                            <p class="text-gray-300">Funções com preview detalhado (vídeo) você pode encontrar clicando aqui: 
-                                <a href="https://korepi.com/pt/features/" target="_blank" rel="noopener noreferrer" class="text-pink-400 hover:underline font-semibold">
-                                    Demonstração 🎥
-                                </a>
-                            </p>
-                        </div>
+                         <div class="text-center my-6">
+                             <p class="text-gray-300">Funções com preview detalhado (vídeo) você pode encontrar clicando aqui: 
+                                 <a href="https://korepi.com/pt/features/" target="_blank" rel="noopener noreferrer" class="text-pink-400 hover:underline font-semibold">
+                                     Demonstração 🎥
+                                 </a>
+                             </p>
+                         </div>
 
-                        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-8 text-gray-300">
-                            <div><h4 class="font-semibold text-white text-lg mb-2 border-b border-gray-700 pb-1">Player</h4><ul class="list-disc list-inside space-y-1"><li>Efeitos de Ataque</li><li>Auto Correr</li><li>Salto De Coelho</li><li>Efeitos de Resfriamento</li><li>Movimento Extra</li><li>Controle de Queda</li><li>Modo Deus</li><li>Estamina Infinita</li><li>Sem Colisão</li><li>Velocidade do Jogador</li><li>Utilidade Remota</li><li>Stats Modifier (WIP)</li></ul></div>
-                            <div><h4 class="font-semibold text-white text-lg mb-2 border-b border-gray-700 pb-1">Teleport</h4><ul class="list-disc list-inside space-y-1"><li>Teletransporte de Oculus</li><li>Teletransporte de Baús</li><li>Teletransporte Personalizado</li><li>Teletransporte de Mapa</li><li>Teletransporte de Missão</li></ul></div>
-                            <div><h4 class="font-semibold text-white text-lg mb-2 border-b border-gray-700 pb-1">Visuals</h4><ul class="list-disc list-inside space-y-1"><li>Trocador de Animação</li><li>Zoom de Camera</li><li>Modificador de Constelações</li><li>Perfil Personalizado</li><li>Clima Personalizado</li><li>Trocador de Emoções</li><li>Visuais Extras</li><li>Desbloquear FPS</li><li>Tempo Falso</li><li>Modificador de Planador</li><li>Camera Livre</li><li>Esconder Interface</li><li>Zoom do Mapa</li><li>Trocador de Monstros</li><li>Modificador de Skin</li><li>Modificador de Textura</li></ul></div>
-                            <div><h4 class="font-semibold text-white text-lg mb-2 border-b border-gray-700 pb-1">World</h4><ul class="list-disc list-inside space-y-1"><li>Auto Ativar Teletransporte</li><li>Auto Desafio</li><li>Auto Cozinhar</li><li>Auto Destruir Objetos</li><li>Auto Pescar</li><li>Auto Coletar</li><li>Auto Seelie</li><li>Auto Conversar</li><li>Auto Madeira</li><li>Aura Elemental</li><li>Velocidade de Jogo</li><li>Aura Mortal</li><li>Domínio Automático (WIP)</li><li>Puzzle Automático</li><li>Sucção de Mobs</li><li>Sucção de Coleta</li></ul></div>
-                        </div>
+                         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-8 text-gray-300">
+                             <div><h4 class="font-semibold text-white text-lg mb-2 border-b border-gray-700 pb-1">Player</h4><ul class="list-disc list-inside space-y-1"><li>Efeitos de Ataque</li><li>Auto Correr</li><li>Salto De Coelho</li><li>Efeitos de Resfriamento</li><li>Movimento Extra</li><li>Controle de Queda</li><li>Modo Deus</li><li>Estamina Infinita</li><li>Sem Colisão</li><li>Velocidade do Jogador</li><li>Utilidade Remota</li><li>Stats Modifier (WIP)</li></ul></div>
+                             <div><h4 class="font-semibold text-white text-lg mb-2 border-b border-gray-700 pb-1">Teleport</h4><ul class="list-disc list-inside space-y-1"><li>Teletransporte de Oculus</li><li>Teletransporte de Baús</li><li>Teletransporte Personalizado</li><li>Teletransporte de Mapa</li><li>Teletransporte de Missão</li></ul></div>
+                             <div><h4 class="font-semibold text-white text-lg mb-2 border-b border-gray-700 pb-1">Visuals</h4><ul class="list-disc list-inside space-y-1"><li>Trocador de Animação</li><li>Zoom de Camera</li><li>Modificador de Constelações</li><li>Perfil Personalizado</li><li>Clima Personalizado</li><li>Trocador de Emoções</li><li>Visuais Extras</li><li>Desbloquear FPS</li><li>Tempo Falso</li><li>Modificador de Planador</li><li>Camera Livre</li><li>Esconder Interface</li><li>Zoom do Mapa</li><li>Trocador de Monstros</li><li>Modificador de Skin</li><li>Modificador de Textura</li></ul></div>
+                             <div><h4 class="font-semibold text-white text-lg mb-2 border-b border-gray-700 pb-1">World</h4><ul class="list-disc list-inside space-y-1"><li>Auto Ativar Teletransporte</li><li>Auto Desafio</li><li>Auto Cozinhar</li><li>Auto Destruir Objetos</li><li>Auto Pescar</li><li>Auto Coletar</li><li>Auto Seelie</li><li>Auto Conversar</li><li>Auto Madeira</li><li>Aura Elemental</li><li>Velocidade de Jogo</li><li>Aura Mortal</li><li>Domínio Automático (WIP)</li><li>Puzzle Automático</li><li>Sucção de Mobs</li><li>Sucção de Coleta</li></ul></div>
+                         </div>
                         
-                        <div class="border-t border-gray-700 my-6"></div>
+                         <div class="border-t border-gray-700 my-6"></div>
 
-                        <div class="text-center">
-                             <h4 class="font-semibold text-white text-xl mb-4">Benefícios Exclusivos Pertamax</h4>
-                             <ul class="space-y-2 text-yellow-300 inline-block text-left">
-                                 <li>✓ Launcher interativo para facilitar a instalação</li>
-                                 <li>✓ Atualizações antecipadas para usuários Pertamax</li>
-                                 <li>✓ Farm AFK com Temporizador</li>
-                                 <li>✓ Cargos especiais no servidor do Discord</li>
-                                 <li>✓ Não precisa resetar a chave (enc.json) diariamente</li>
-                             </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Abas de Navegação das Features -->
-            <div id="features-nav" class="mb-8 border-b border-gray-700">
-                <div class="flex flex-wrap -mb-px space-x-2 sm:space-x-4 justify-center">
-                    <button id="unicore-tab" class="feature-tab active inline-block p-3 sm:p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-300 hover:border-gray-500 font-semibold" onclick="showFeature('unicore', this)">Unicore</button>
-                    <button id="uniwaves-tab" class="feature-tab inline-block p-3 sm:p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-300 hover:border-gray-500 font-semibold" onclick="showFeature('uniwaves', this)">Uniwaves</button>
-                    <button id="unizone-tab" class="feature-tab inline-block p-3 sm:p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-300 hover:border-gray-500 font-semibold" onclick="showFeature('unizone', this)">Unizone</button>
-                    <button id="unistar-tab" class="feature-tab inline-block p-3 sm:p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-300 hover:border-gray-500 font-semibold" onclick="showFeature('unistar', this)">Unistar</button>
-                    <button id="kittenwaves-tab" class="feature-tab inline-block p-3 sm:p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-300 hover:border-gray-500 font-semibold" onclick="showFeature('kittenwaves', this)">KittenWaves</button>
-                </div>
-            </div>
-
-            <!-- Conteúdo das Features -->
-            <div class="bg-gray-800 rounded-lg p-6 shadow-xl">
-                <!-- Unicore -->
-                <div id="unicore-content" class="feature-content active">
-                    <h3 class="text-2xl font-bold text-cyan-400 mb-4">Unicore <span class="text-sm text-gray-400 font-normal">- Genshin Impact</span></h3>
-                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-gray-300">
-                        <div><h4 class="font-semibold text-white mb-2">Interactive Map</h4><ul class="list-disc list-inside space-y-1"><li>Fast Teleport</li><li>Image Scale</li><li>Config System</li><li>Extensive Filters</li></ul></div>
-                        <div><h4 class="font-semibold text-white mb-2">Combat</h4><ul class="list-disc list-inside space-y-1"><li>Kill Aura</li><li>Rapid-Fire</li><li>AoE Damage</li><li>Infinite Ultimate</li><li>Magnetizer</li><li>Freeze Enemy</li></ul></div>
-                        <div><h4 class="font-semibold text-white mb-2">Player</h4><ul class="list-disc list-inside space-y-1"><li>Infinite Stamina</li><li>Noclip</li><li>Godmode</li><li>No Fall Damage</li><li>Auto Loot</li></ul></div>
-                        <div><h4 class="font-semibold text-white mb-2">Teleports</h4><ul class="list-disc list-inside space-y-1"><li>Mouse Teleport</li><li>Quest Teleport</li><li>Entity Teleport</li><li>Custom TP Routes</li></ul></div>
-                        <div><h4 class="font-semibold text-white mb-2">Utility</h4><ul class="list-disc list-inside space-y-1"><li>Auto Dialogs</li><li>Skip Cutscenes</li><li>FPS Unlocker</li><li>Custom Time</li><li>Auto Seelies</li></ul></div>
-                        <div><h4 class="font-semibold text-white mb-2">Profile</h4><ul class="list-disc list-inside space-y-1"><li>UID Changer</li><li>Name Changer</li><li>AR Level Changer</li><li>World Level Changer</li></ul></div>
-                    </div>
-                </div>
-                <!-- Uniwaves -->
-                <div id="uniwaves-content" class="feature-content">
-                     <h3 class="text-2xl font-bold text-blue-400 mb-4">Uniwaves <span class="text-sm text-gray-400 font-normal">- Wuthering Waves</span></h3>
-                     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-gray-300">
-                        <div><h4 class="font-semibold text-white mb-2">Visuals</h4><ul class="list-disc list-inside space-y-1"><li>Full ESP (Offscreen, Box, etc)</li><li>Radar</li><li>Extensive Filters</li><li>Config System</li></ul></div>
-                        <div><h4 class="font-semibold text-white mb-2">Combat</h4><ul class="list-disc list-inside space-y-1"><li>Rapid Fire & Kill Aura</li><li>Dumb Enemies</li><li>Magnetizer & Aimbot</li><li>No Skill Cooldown</li></ul></div>
-                        <div><h4 class="font-semibold text-white mb-2">Player</h4><ul class="list-disc list-inside space-y-1"><li>Noclip & Speed Control</li><li>Infinite Stamina</li><li>GodMode & No Fall Damage</li><li>Auto Loot</li></ul></div>
-                        <div><h4 class="font-semibold text-white mb-2">Teleports</h4><ul class="list-disc list-inside space-y-1"><li>Mouse Teleport</li><li>Entity Teleport</li><li>Custom TP Routes</li></ul></div>
-                        <div><h4 class="font-semibold text-white mb-2">Utility</h4><ul class="list-disc list-inside space-y-1"><li>FOV Changer</li><li>Free Camera & FPS Unlocker</li><li>Speedup Game</li><li>Custom Crosshair</li></ul></div>
-                        <div><h4 class="font-semibold text-white mb-2">Profile</h4><ul class="list-disc list-inside space-y-1"><li>UID Changer</li><li>Name Changer</li><li>AR Level Changer</li><li>Config Management</li></ul></div>
+                         <div class="text-center">
+                              <h4 class="font-semibold text-white text-xl mb-4">Benefícios Exclusivos Pertamax</h4>
+                              <ul class="space-y-2 text-yellow-300 inline-block text-left">
+                                   <li>✓ Launcher interativo para facilitar a instalação</li>
+                                   <li>✓ Atualizações antecipadas para usuários Pertamax</li>
+                                   <li>✓ Farm AFK com Temporizador</li>
+                                   <li>✓ Cargos especiais no servidor do Discord</li>
+                                   <li>✓ Não precisa resetar a chave (enc.json) diariamente</li>
+                              </ul>
+                         </div>
                      </div>
-                </div>
-                <!-- Unizone -->
-                <div id="unizone-content" class="feature-content">
-                    <h3 class="text-2xl font-bold text-indigo-400 mb-4">Unizone <span class="text-sm text-gray-400 font-normal">- Zenless Zone Zero</span></h3>
-                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-gray-300">
-                        <div><h4 class="font-semibold text-white mb-2">Visuals</h4><ul class="list-disc list-inside space-y-1"><li>ESP (Monster, Builder)</li><li>Radar</li><li>Config System</li></ul></div>
-                        <div><h4 class="font-semibold text-white mb-2">Combat</h4><ul class="list-disc list-inside space-y-1"><li>Rapid Fire</li><li>Kill Aura</li><li>Auto Attack</li><li>Harmless Enemies</li><li>Magnetizer</li><li>Infinite Special Attack</li></ul></div>
-                        <div><h4 class="font-semibold text-white mb-2">Player</h4><ul class="list-disc list-inside space-y-1"><li>Noclip</li><li>GodMode</li></ul></div>
-                        <div><h4 class="font-semibold text-white mb-2">Teleports</h4><ul class="list-disc list-inside space-y-1"><li>Mouse Teleport</li><li>Entity Teleport</li><li>Custom TP Routes</li></ul></div>
-                        <div><h4 class="font-semibold text-white mb-2">Utility</h4><ul class="list-disc list-inside space-y-1"><li>Camera FOV</li><li>Hide UI</li><li>UID Changer</li><li>Speedup Dialogs/Battle</li></ul></div>
-                    </div>
-                </div>
-                <!-- Unistar -->
-                <div id="unistar-content" class="feature-content">
-                    <h3 class="text-2xl font-bold text-yellow-400 mb-4">Unistar <span class="text-sm text-gray-400 font-normal">- Honkai: Star Rail</span></h3>
-                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-gray-300">
-                        <div><h4 class="font-semibold text-white mb-2">Visuals</h4><ul class="list-disc list-inside space-y-1"><li>ESP (Chests, Anchors, etc.)</li><li>Builder ESP</li><li>Config System</li></ul></div>
-                        <div><h4 class="font-semibold text-white mb-2">Combat</h4><ul class="list-disc list-inside space-y-1"><li>Unlock Auto Battle</li><li>Speedup Battle</li><li>Magnetizer</li><li>Won't Attack</li></ul></div>
-                        <div><h4 class="font-semibold text-white mb-2">Player</h4><ul class="list-disc list-inside space-y-1"><li>Noclip</li><li>Mouse Teleport</li><li>Teleport to Chest</li><li>No Dither</li></ul></div>
-                        <div><h4 class="font-semibold text-white mb-2">Utility</h4><ul class="list-disc list-inside space-y-1"><li>Auto Dialog</li><li>Skip Cutscenes</li><li>FPS Unlocker</li><li>FOV Changer</li><li>Auto Loot</li></ul></div>
-                        <div><h4 class="font-semibold text-white mb-2">Profile</h4><ul class="list-disc list-inside space-y-1"><li>UID Changer</li><li>Config Management</li></ul></div>
-                    </div>
-                </div>
-                <!-- Kittenwaves -->
-                <div id="kittenwaves-content" class="feature-content">
-                    <h3 class="text-2xl font-bold text-rose-400 mb-4">KittenWaves <span class="text-sm text-gray-400 font-normal">- Wuthering Waves</span></h3>
+                 </div>
+             </div>
+
+             <!-- Abas de Navegação das Features -->
+             <div id="features-nav" class="mb-8 border-b border-gray-700">
+                 <div class="flex flex-wrap -mb-px space-x-2 sm:space-x-4 justify-center">
+                     <button id="unicore-tab" class="feature-tab active inline-block p-3 sm:p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-300 hover:border-gray-500 font-semibold" onclick="showFeature('unicore', this)">Unicore</button>
+                     <button id="uniwaves-tab" class="feature-tab inline-block p-3 sm:p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-300 hover:border-gray-500 font-semibold" onclick="showFeature('uniwaves', this)">Uniwaves</button>
+                     <button id="unizone-tab" class="feature-tab inline-block p-3 sm:p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-300 hover:border-gray-500 font-semibold" onclick="showFeature('unizone', this)">Unizone</button>
+                     <button id="unistar-tab" class="feature-tab inline-block p-3 sm:p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-300 hover:border-gray-500 font-semibold" onclick="showFeature('unistar', this)">Unistar</button>
+                     <button id="kittenwaves-tab" class="feature-tab inline-block p-3 sm:p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-300 hover:border-gray-500 font-semibold" onclick="showFeature('kittenwaves', this)">KittenWaves</button>
+                 </div>
+             </div>
+
+             <!-- Conteúdo das Features -->
+             <div class="bg-gray-800 rounded-lg p-6 shadow-xl">
+                 <!-- Unicore -->
+                 <div id="unicore-content" class="feature-content active">
+                     <h3 class="text-2xl font-bold text-cyan-400 mb-4">Unicore <span class="text-sm text-gray-400 font-normal">- Genshin Impact</span></h3>
                      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-gray-300">
-                        <div><h4 class="font-semibold text-white mb-2">Player</h4><ul class="list-disc list-inside space-y-1"><li>Godmode</li><li>Multihit & No Cooldown</li><li>Infinite Stamina/Energy</li><li>Max Resonance Chain</li><li>Player Buffs</li><li>Noclip & Walk Speed</li></ul></div>
-                        <div><h4 class="font-semibold text-white mb-2">World</h4><ul class="list-disc list-inside space-y-1"><li>Speedhack</li><li>Killaura & Entity Vacuum</li><li>Dumb Enemies</li><li>Skip Dialog & Animations</li><li>Auto Loot/Absorb</li></ul></div>
-                        <div><h4 class="font-semibold text-white mb-2">Visuals</h4><ul class="list-disc list-inside space-y-1"><li>Full-featured ESP</li><li>Extensive Filters</li><li>Boxes, Tracers, Distance</li></ul></div>
-                        <div><h4 class="font-semibold text-white mb-2">Teleport</h4><ul class="list-disc list-inside space-y-1"><li>Map Teleport</li><li>Chest Teleport</li><li>Custom TP Lists</li></ul></div>
-                        <div><h4 class="font-semibold text-white mb-2">Miscellaneous</h4><ul class="list-disc list-inside space-y-1"><li>Freecam & Hide UI</li><li>UID & FOV Changer</li><li>FPS Unlocker & Display</li><li>CPU Saver</li></ul></div>
-                        <div><h4 class="font-semibold text-white mb-2">Settings</h4><ul class="list-disc list-inside space-y-1"><li>Themes</li><li>Hotkeys</li><li>Multi-language Support</li></ul></div>
-                    </div>
-                </div>
-            </div>
+                         <div><h4 class="font-semibold text-white mb-2">Interactive Map</h4><ul class="list-disc list-inside space-y-1"><li>Fast Teleport</li><li>Image Scale</li><li>Config System</li><li>Extensive Filters</li></ul></div>
+                         <div><h4 class="font-semibold text-white mb-2">Combat</h4><ul class="list-disc list-inside space-y-1"><li>Kill Aura</li><li>Rapid-Fire</li><li>AoE Damage</li><li>Infinite Ultimate</li><li>Magnetizer</li><li>Freeze Enemy</li></ul></div>
+                         <div><h4 class="font-semibold text-white mb-2">Player</h4><ul class="list-disc list-inside space-y-1"><li>Infinite Stamina</li><li>Noclip</li><li>Godmode</li><li>No Fall Damage</li><li>Auto Loot</li></ul></div>
+                         <div><h4 class="font-semibold text-white mb-2">Teleports</h4><ul class="list-disc list-inside space-y-1"><li>Mouse Teleport</li><li>Quest Teleport</li><li>Entity Teleport</li><li>Custom TP Routes</li></ul></div>
+                         <div><h4 class="font-semibold text-white mb-2">Utility</h4><ul class="list-disc list-inside space-y-1"><li>Auto Dialogs</li><li>Skip Cutscenes</li><li>FPS Unlocker</li><li>Custom Time</li><li>Auto Seelies</li></ul></div>
+                         <div><h4 class="font-semibold text-white mb-2">Profile</h4><ul class="list-disc list-inside space-y-1"><li>UID Changer</li><li>Name Changer</li><li>AR Level Changer</li><li>World Level Changer</li></ul></div>
+                     </div>
+                 </div>
+                 <!-- Uniwaves -->
+                 <div id="uniwaves-content" class="feature-content">
+                      <h3 class="text-2xl font-bold text-blue-400 mb-4">Uniwaves <span class="text-sm text-gray-400 font-normal">- Wuthering Waves</span></h3>
+                      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-gray-300">
+                         <div><h4 class="font-semibold text-white mb-2">Visuals</h4><ul class="list-disc list-inside space-y-1"><li>Full ESP (Offscreen, Box, etc)</li><li>Radar</li><li>Extensive Filters</li><li>Config System</li></ul></div>
+                         <div><h4 class="font-semibold text-white mb-2">Combat</h4><ul class="list-disc list-inside space-y-1"><li>Rapid Fire & Kill Aura</li><li>Dumb Enemies</li><li>Magnetizer & Aimbot</li><li>No Skill Cooldown</li></ul></div>
+                         <div><h4 class="font-semibold text-white mb-2">Player</h4><ul class="list-disc list-inside space-y-1"><li>Noclip & Speed Control</li><li>Infinite Stamina</li><li>GodMode & No Fall Damage</li><li>Auto Loot</li></ul></div>
+                         <div><h4 class="font-semibold text-white mb-2">Teleports</h4><ul class="list-disc list-inside space-y-1"><li>Mouse Teleport</li><li>Entity Teleport</li><li>Custom TP Routes</li></ul></div>
+                         <div><h4 class="font-semibold text-white mb-2">Utility</h4><ul class="list-disc list-inside space-y-1"><li>FOV Changer</li><li>Free Camera & FPS Unlocker</li><li>Speedup Game</li><li>Custom Crosshair</li></ul></div>
+                         <div><h4 class="font-semibold text-white mb-2">Profile</h4><ul class="list-disc list-inside space-y-1"><li>UID Changer</li><li>Name Changer</li><li>AR Level Changer</li><li>Config Management</li></ul></div>
+                      </div>
+                 </div>
+                 <!-- Unizone -->
+                 <div id="unizone-content" class="feature-content">
+                     <h3 class="text-2xl font-bold text-indigo-400 mb-4">Unizone <span class="text-sm text-gray-400 font-normal">- Zenless Zone Zero</span></h3>
+                     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-gray-300">
+                         <div><h4 class="font-semibold text-white mb-2">Visuals</h4><ul class="list-disc list-inside space-y-1"><li>ESP (Monster, Builder)</li><li>Radar</li><li>Config System</li></ul></div>
+                         <div><h4 class="font-semibold text-white mb-2">Combat</h4><ul class="list-disc list-inside space-y-1"><li>Rapid Fire</li><li>Kill Aura</li><li>Auto Attack</li><li>Harmless Enemies</li><li>Magnetizer</li><li>Infinite Special Attack</li></ul></div>
+                         <div><h4 class="font-semibold text-white mb-2">Player</h4><ul class="list-disc list-inside space-y-1"><li>Noclip</li><li>GodMode</li></ul></div>
+                         <div><h4 class="font-semibold text-white mb-2">Teleports</h4><ul class="list-disc list-inside space-y-1"><li>Mouse Teleport</li><li>Entity Teleport</li><li>Custom TP Routes</li></ul></div>
+                         <div><h4 class="font-semibold text-white mb-2">Utility</h4><ul class="list-disc list-inside space-y-1"><li>Camera FOV</li><li>Hide UI</li><li>UID Changer</li><li>Speedup Dialogs/Battle</li></ul></div>
+                     </div>
+                 </div>
+                 <!-- Unistar -->
+                 <div id="unistar-content" class="feature-content">
+                     <h3 class="text-2xl font-bold text-yellow-400 mb-4">Unistar <span class="text-sm text-gray-400 font-normal">- Honkai: Star Rail</span></h3>
+                     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-gray-300">
+                         <div><h4 class="font-semibold text-white mb-2">Visuals</h4><ul class="list-disc list-inside space-y-1"><li>ESP (Chests, Anchors, etc.)</li><li>Builder ESP</li><li>Config System</li></ul></div>
+                         <div><h4 class="font-semibold text-white mb-2">Combat</h4><ul class="list-disc list-inside space-y-1"><li>Unlock Auto Battle</li><li>Speedup Battle</li><li>Magnetizer</li><li>Won't Attack</li></ul></div>
+                         <div><h4 class="font-semibold text-white mb-2">Player</h4><ul class="list-disc list-inside space-y-1"><li>Noclip</li><li>Mouse Teleport</li><li>Teleport to Chest</li><li>No Dither</li></ul></div>
+                         <div><h4 class="font-semibold text-white mb-2">Utility</h4><ul class="list-disc list-inside space-y-1"><li>Auto Dialog</li><li>Skip Cutscenes</li><li>FPS Unlocker</li><li>FOV Changer</li><li>Auto Loot</li></ul></div>
+                         <div><h4 class="font-semibold text-white mb-2">Profile</h4><ul class="list-disc list-inside space-y-1"><li>UID Changer</li><li>Config Management</li></ul></div>
+                     </div>
+                 </div>
+                 <!-- Kittenwaves -->
+                 <div id="kittenwaves-content" class="feature-content">
+                     <h3 class="text-2xl font-bold text-rose-400 mb-4">KittenWaves <span class="text-sm text-gray-400 font-normal">- Wuthering Waves</span></h3>
+                      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-gray-300">
+                         <div><h4 class="font-semibold text-white mb-2">Player</h4><ul class="list-disc list-inside space-y-1"><li>Godmode</li><li>Multihit & No Cooldown</li><li>Infinite Stamina/Energy</li><li>Max Resonance Chain</li><li>Player Buffs</li><li>Noclip & Walk Speed</li></ul></div>
+                         <div><h4 class="font-semibold text-white mb-2">World</h4><ul class="list-disc list-inside space-y-1"><li>Speedhack</li><li>Killaura & Entity Vacuum</li><li>Dumb Enemies</li><li>Skip Dialog & Animations</li><li>Auto Loot/Absorb</li></ul></div>
+                         <div><h4 class="font-semibold text-white mb-2">Visuals</h4><ul class="list-disc list-inside space-y-1"><li>Full-featured ESP</li><li>Extensive Filters</li><li>Boxes, Tracers, Distance</li></ul></div>
+                         <div><h4 class="font-semibold text-white mb-2">Teleport</h4><ul class="list-disc list-inside space-y-1"><li>Map Teleport</li><li>Chest Teleport</li><li>Custom TP Lists</li></ul></div>
+                         <div><h4 class="font-semibold text-white mb-2">Miscellaneous</h4><ul class="list-disc list-inside space-y-1"><li>Freecam & Hide UI</li><li>UID & FOV Changer</li><li>FPS Unlocker & Display</li><li>CPU Saver</li></ul></div>
+                         <div><h4 class="font-semibold text-white mb-2">Settings</h4><ul class="list-disc list-inside space-y-1"><li>Themes</li><li>Hotkeys</li><li>Multi-language Support</li></ul></div>
+                      </div>
+                 </div>
+             </div>
         </div>
         
         <!-- Página Como Comprar -->
-        <div id="comprar" class="page-content hidden">
-            <div class="max-w-2xl mx-auto px-4">
-                <header class="text-center mb-10">
-                    <h1 class="text-3xl sm:text-4xl font-bold text-pink-400">Como Comprar</h1>
-                    <p class="text-gray-400 mt-2">Siga os passos abaixo para adquirir nossos produtos com segurança.</p>
-                </header>
+        <div id="comprar" class="page-content">
+             <div class="max-w-2xl mx-auto px-4">
+                 <header class="text-center mb-10">
+                     <h1 class="text-3xl sm:text-4xl font-bold text-pink-400">Como Comprar</h1>
+                     <p class="text-gray-400 mt-2">Siga os passos abaixo para adquirir nossos produtos com segurança.</p>
+                 </header>
 
-                <div class="bg-gray-800 rounded-lg shadow-xl p-8 flex flex-col items-center">
-                    <!-- Profile Icon -->
-                    <div class="w-32 h-32 mb-6">
-                        <img src="https://risibank.fr/cache/medias/0/2/227/22729/full.png" alt="Foto de Perfil" class="w-full h-full rounded-full object-cover border-4 border-gray-700" onerror="this.onerror=null; this.src='https://placehold.co/128x128/374151/E5E7EB?text=Perfil';">
-                    </div>
+                 <div class="bg-gray-800 rounded-lg shadow-xl p-8 flex flex-col items-center">
+                     <!-- Profile Icon -->
+                     <div class="w-32 h-32 mb-6">
+                         <img src="https://risibank.fr/cache/medias/0/2/227/22729/full.png" alt="Foto de Perfil" class="w-full h-full rounded-full object-cover border-4 border-gray-700" onerror="this.onerror=null; this.src='https://placehold.co/128x128/374151/E5E7EB?text=Perfil';">
+                     </div>
 
-                    <h2 class="text-2xl font-bold text-white mb-2">Contato Oficial</h2>
-                    <p class="text-lg text-gray-300 mb-4">Envie uma DM no Discord para comprar:</p>
-                    <div class="bg-gray-900 text-pink-300 text-xl font-mono py-3 px-6 rounded-lg mb-8">
-                        ryuzeen._
-                    </div>
+                     <h2 class="text-2xl font-bold text-white mb-2">Contato Oficial</h2>
+                     <p class="text-lg text-gray-300 mb-4">Envie uma DM no Discord para comprar:</p>
+                     <div class="bg-gray-900 text-pink-300 text-xl font-mono py-3 px-6 rounded-lg mb-8">
+                         ryuzeen._
+                     </div>
 
-                    <div class="w-full border-t border-gray-700 my-4"></div>
+                     <div class="w-full border-t border-gray-700 my-4"></div>
                     
-                    <div class="text-center w-full">
-                        <h3 class="text-xl font-semibold text-white mb-3">Não consegue me mandar?</h3>
-                        <p class="text-gray-400 mb-4">Entre no nosso servidor do Discord e me procure por lá!</p>
-                        <a href="https://discord.gg/cottonbuds" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300">
-                            <img src="https://pngimg.com/d/discord_PNG3.png" alt="Ícone do Discord" class="w-6 h-auto mr-3">
-                            Entrar no Servidor
-                        </a>
-                    </div>
+                     <div class="text-center w-full">
+                         <h3 class="text-xl font-semibold text-white mb-3">Não consegue me mandar?</h3>
+                         <p class="text-gray-400 mb-4">Entre no nosso servidor do Discord e me procure por lá!</p>
+                         <a href="https://discord.gg/cottonbuds" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300">
+                             <img src="https://pngimg.com/d/discord_PNG3.png" alt="Ícone do Discord" class="w-6 h-auto mr-3">
+                             Entrar no Servidor
+                         </a>
+                     </div>
 
-                    <div class="w-full border-t border-gray-700 my-6"></div>
+                     <div class="w-full border-t border-gray-700 my-6"></div>
 
-                    <h3 class="text-xl font-semibold text-yellow-400 mb-4">🚨 Dicas de Segurança (Anti-Scam) 🚨</h3>
-                    <ul class="list-disc list-outside space-y-4 text-gray-300 text-left w-full max-w-md ml-4">
-                        <li><span class="font-semibold text-white">Confirmação é chave:</span> Certifique-se de que o Discord é <strong class="text-pink-400">ryuzeen._</strong>. Não aceite contato de nicks parecidos.</li>
-                        <li><span class="font-semibold text-white">Vendedor único:</span> Eu sou a única pessoa que realiza as vendas. Ninguém está autorizado a vender em meu nome.</li>
-                        <li><span class="font-semibold text-white">Nunca compartilhe dados:</span> Apenas o login é necessário para recargas, eu não peço senha de Email e essas coisas.</li>
-                        <li><span class="font-semibold text-white">Canal oficial:</span> Toda a negociação e pagamento são feitos exclusivamente através do contato direto no Discord.</li>
-                    </ul>
-                </div>
-            </div>
+                     <h3 class="text-xl font-semibold text-yellow-400 mb-4">🚨 Dicas de Segurança (Anti-Scam) 🚨</h3>
+                     <ul class="list-disc list-outside space-y-4 text-gray-300 text-left w-full max-w-md ml-4">
+                         <li><span class="font-semibold text-white">Confirmação é chave:</span> Certifique-se de que o Discord é <strong class="text-pink-400">ryuzeen._</strong>. Não aceite contato de nicks parecidos.</li>
+                         <li><span class="font-semibold text-white">Vendedor único:</span> Eu sou a única pessoa que realiza as vendas. Ninguém está autorizado a vender em meu nome.</li>
+                         <li><span class="font-semibold text-white">Nunca compartilhe dados:</span> Apenas o login é necessário para recargas, eu não peço senha de Email e essas coisas.</li>
+                         <li><span class="font-semibold text-white">Canal oficial:</span> Toda a negociação e pagamento são feitos exclusivamente através do contato direto no Discord.</li>
+                     </ul>
+                 </div>
+             </div>
         </div>
     </main>
 
     <script>
-        // Função para trocar entre as páginas principais (Preços / Features)
+        // Função para trocar entre as páginas principais
         function showPage(pageId, clickedElement) {
             document.querySelectorAll('.page-content').forEach(page => {
-                page.style.display = 'none';
                 page.classList.remove('active');
+                // Use style.display para garantir que a transição seja suave
+                page.style.display = 'none';
             });
-            document.getElementById(pageId).style.display = 'block';
-            document.getElementById(pageId).classList.add('active');
+            const targetPage = document.getElementById(pageId);
+            targetPage.style.display = 'block';
+            targetPage.classList.add('active');
 
             // Atualiza todos os links de navegação (desktop e mobile)
             document.querySelectorAll('.nav-link').forEach(link => {
@@ -417,7 +477,7 @@
             element.classList.add('active');
         }
         
-        // Nova função para navegar diretamente para uma feature
+        // Função para navegar para uma feature específica
         function goToFeature(featureId) {
             const featuresNavLink = document.querySelector(".nav-link[onclick*='features']");
             showPage('features', featuresNavLink);
@@ -426,14 +486,14 @@
             
             // Rola para a seção de abas
              setTimeout(() => {
-                const anchorElement = document.getElementById('features-nav');
-                if (anchorElement) {
-                    anchorElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            }, 100);
+                 const anchorElement = document.getElementById('features-nav');
+                 if (anchorElement) {
+                     anchorElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                 }
+             }, 100);
         }
         
-        // Nova função para navegar para uma âncora em outra página
+        // Função para navegar para uma âncora em outra página
         function goToAnchor(pageId, anchorId) {
             const targetPageLink = document.querySelector(`.nav-link[onclick*='${pageId}']`);
             showPage(pageId, targetPageLink);
@@ -447,18 +507,25 @@
             }, 100);
         }
 
+        // Função para navegar para uma página e rolar para o topo
         function goToPage(pageId) {
             const targetPageLink = document.querySelector(`.nav-link[onclick*="'${pageId}'"]`);
             showPage(pageId, targetPageLink);
              setTimeout(() => {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            }, 100);
+                 window.scrollTo({ top: 0, behavior: 'smooth' });
+             }, 100);
         }
 
-        // Define a página inicial
+        // Define a página inicial ao carregar o DOM
         document.addEventListener('DOMContentLoaded', () => {
-            showPage('precos', document.querySelector('.nav-link'));
-            showFeature('unicore', document.querySelector('.feature-tab'));
+            const homeLink = document.querySelector('.nav-link[onclick*="home"]');
+            showPage('home', homeLink);
+            
+            // Pré-seleciona a primeira aba de feature para quando a página for carregada
+            const unicoreTab = document.getElementById('unicore-tab');
+            if(unicoreTab) {
+                showFeature('unicore', unicoreTab);
+            }
         });
     </script>
 
