@@ -103,6 +103,20 @@
             animation: gradient-animation 5s ease infinite;
         }
 
+        /* Estilos para o FAQ */
+        details > summary {
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+        details summary .icon {
+            transition: transform 0.3s ease-in-out;
+        }
+        details[open] summary .icon {
+            transform: rotate(45deg);
+        }
+
     </style>
 </head>
 <body class="text-white">
@@ -136,6 +150,7 @@
                         <a href="#" class="nav-link text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium" onclick="showPage('precos', this)">Preços</a>
                         <a href="#" class="nav-link text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium" onclick="showPage('features', this)">Funções</a>
                         <a href="#" class="nav-link text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium" onclick="showPage('comprar', this)">Como Comprar</a>
+                        <a href="#" class="nav-link text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium" onclick="showPage('faq', this)">FAQ</a>
                     </div>
                 </div>
                 <!-- Mobile menu button -->
@@ -154,6 +169,7 @@
                     <a href="#" class="nav-link text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium" onclick="showPage('precos', this); toggleMobileMenu();">Preços</a>
                     <a href="#" class="nav-link text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium" onclick="showPage('features', this); toggleMobileMenu();">Funções</a>
                     <a href="#" class="nav-link text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium" onclick="showPage('comprar', this); toggleMobileMenu();">Como Comprar</a>
+                    <a href="#" class="nav-link text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium" onclick="showPage('faq', this); toggleMobileMenu();">FAQ</a>
                 </div>
             </div>
         </nav>
@@ -473,6 +489,80 @@
                  </div>
              </div>
         </div>
+
+        <!-- Página de FAQ -->
+        <div id="faq" class="page-content">
+            <div class="max-w-4xl mx-auto">
+                <header class="text-center mb-10">
+                    <h1 class="text-3xl sm:text-4xl font-bold text-pink-400">Perguntas Frequentes (FAQ)</h1>
+                    <p class="text-gray-400 mt-2">Tire suas dúvidas mais comuns sobre nossos produtos e serviços.</p>
+                </header>
+
+                <div class="space-y-4">
+                    <!-- Pergunta 1 -->
+                    <details class="bg-gray-800/50 p-6 rounded-lg">
+                        <summary class="font-semibold text-lg cursor-pointer flex justify-between items-center">
+                            Como recebo o produto após a compra?
+                            <span class="icon text-pink-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" /></svg>
+                            </span>
+                        </summary>
+                        <p class="mt-4 text-gray-300">Após a confirmação do pagamento, eu enviarei sua chave de acesso e um tutorial completo de instalação diretamente para você via Discord.</p>
+                    </details>
+                    <!-- Pergunta 2 -->
+                    <details class="bg-gray-800/50 p-6 rounded-lg">
+                        <summary class="font-semibold text-lg cursor-pointer flex justify-between items-center">
+                            Quais métodos de pagamento são aceitos?
+                            <span class="icon text-pink-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" /></svg>
+                            </span>
+                        </summary>
+                        <p class="mt-4 text-gray-300">Aceitamos Pix, Criptomoedas (via Binance) e PayPal. Para pagamentos com PayPal, as taxas da plataforma ficam por conta do comprador.</p>
+                    </details>
+                    <!-- Pergunta 3 -->
+                    <details class="bg-gray-800/50 p-6 rounded-lg">
+                        <summary class="font-semibold text-lg cursor-pointer flex justify-between items-center">
+                            Por quanto tempo minha chave é válida?
+                            <span class="icon text-pink-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" /></svg>
+                            </span>
+                        </summary>
+                        <p class="mt-4 text-gray-300">A validade da sua chave corresponde ao plano que você adquiriu (diário, semanal, mensal, etc.), conforme descrito na nossa tabela de preços.</p>
+                    </details>
+                    <!-- Pergunta 4 -->
+                    <details class="bg-gray-800/50 p-6 rounded-lg">
+                        <summary class="font-semibold text-lg cursor-pointer flex justify-between items-center">
+                            Posso usar a chave em mais de um computador?
+                            <span class="icon text-pink-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" /></svg>
+                            </span>
+                        </summary>
+                        <p class="mt-4 text-gray-300">Não. Cada chave é válida para apenas **UM** dispositivo. Essa medida foi implementada para evitar fraudes e garantir a segurança de todos os clientes. A tentativa de uso em um segundo dispositivo resultará no bloqueio da chave, e a responsabilidade será inteiramente do usuário.</p>
+                    </details>
+                    <!-- Pergunta 5 -->
+                    <details class="bg-gray-800/50 p-6 rounded-lg">
+                        <summary class="font-semibold text-lg cursor-pointer flex justify-between items-center">
+                            Como obtenho suporte se precisar de ajuda?
+                            <span class="icon text-pink-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" /></svg>
+                            </span>
+                        </summary>
+                        <p class="mt-4 text-gray-300">Para suporte relacionado ao **Korepi**, por favor, utilize o canal **#ChatBR** no nosso servidor do Discord. Para os demais produtos, você pode me contatar diretamente via DM no Discord (<span class="font-mono text-pink-400">ryuzeen._</span>).</p>
+                    </details>
+                    <!-- Pergunta 6 -->
+                    <details class="bg-gray-800/50 p-6 rounded-lg">
+                        <summary class="font-semibold text-lg cursor-pointer flex justify-between items-center">
+                            Qual é a política de reembolso e segurança?
+                            <span class="icon text-pink-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" /></svg>
+                            </span>
+                        </summary>
+                        <p class="mt-4 text-gray-300">Oferecemos reembolso apenas em casos de mau funcionamento comprovado do produto. É importante ressaltar que não nos responsabilizamos por eventuais banimentos. O uso de nossos produtos é por sua conta e risco.</p>
+                    </details>
+                </div>
+            </div>
+        </div>
+
     </main>
 
     <script>
