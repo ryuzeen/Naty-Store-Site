@@ -63,22 +63,6 @@
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
-
-        .lenda-hover {
-            border-radius: 0.5rem; /* rounded-lg */
-            border: 2px solid #ca8a04; /* Cor inicial amarela */
-            transition: all 0.4s ease;
-            padding: 0;
-        }
-        .lenda-hover:hover {
-            border-color: transparent;
-            background: linear-gradient(60deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
-            animation: gradient-animation 4s ease infinite;
-            transform: scale(1.02);
-        }
-        .lenda-hover:hover .lenda-content {
-             margin: 2px;
-        }
         
         /* Estilos para a página de entrada */
         #home {
@@ -238,7 +222,19 @@
                              <a href="#" onclick="goToAnchor('features', 'pertamax-features')" class="block"><div class="bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col border-2 border-gray-700 hover:border-pink-500 transition-all duration-300 h-full"><h3 class="text-xl font-bold text-center mb-2 text-white">ELITE - 60 DIAS</h3><p class="text-3xl font-bold text-center text-pink-400 mb-4">R$ 60,90</p><ul class="space-y-2 text-center flex-grow text-gray-300"><li>✓ 100% Das funções</li><li>✓ Farm AFK (Teleports)</li><li>✓ Possui pause</li></ul></div></a>
                              <a href="#" onclick="goToAnchor('features', 'pertamax-features')" class="block"><div class="bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col border-2 border-gray-700 hover:border-pink-500 transition-all duration-300 h-full"><h3 class="text-xl font-bold text-center mb-2 text-white">MASTER - 90 DIAS</h3><p class="text-3xl font-bold text-center text-pink-400 mb-4">R$ 87,90</p><ul class="space-y-2 text-center flex-grow text-gray-300"><li>✓ Tudo dos outros</li><li class="text-yellow-400">✓ Cargo Especial!</li><li>✓ Possui pause</li></ul></div></a>
                              <a href="#" onclick="goToAnchor('features', 'pertamax-features')" class="block"><div class="bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col border-2 border-gray-700 hover:border-pink-500 transition-all duration-300 h-full"><h3 class="text-xl font-bold text-center mb-2 text-white">ULTRA - 180 DIAS</h3><p class="text-3xl font-bold text-center text-pink-400 mb-4">R$ 174,90</p><ul class="space-y-2 text-center flex-grow text-gray-300"><li>✓ Tudo dos outros</li><li class="text-yellow-400">✓ Cargo Especial!</li><li>✓ Possui pause</li></ul></div></a>
-                             <a href="#" onclick="goToAnchor('features', 'pertamax-features')" class="lenda-hover block col-span-1 sm:col-span-2 lg:col-span-3"><div class="lenda-content bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col h-full"><h3 class="text-xl font-bold text-center mb-2 text-yellow-300">LENDA - 365 DIAS</h3><p class="text-4xl font-bold text-center text-yellow-400 mb-4">R$ 315,90</p><ul class="space-y-2 text-center flex-grow text-gray-300"><li>✓ Tudo dos outros</li><li class="text-yellow-400">✓ Cargo Especial!</li><li class="text-cyan-400">✓ Menção Honrosa</li></ul></div></a>
+                             <div class="animated-gradient-border rounded-lg block col-span-1 sm:col-span-2 lg:col-span-3 transform hover:scale-[1.02] transition-transform duration-300">
+                                <a href="#" onclick="goToAnchor('features', 'pertamax-features')" class="block">
+                                    <div class="bg-gray-800 rounded-md shadow-lg p-6 flex flex-col h-full">
+                                        <h3 class="text-xl font-bold text-center mb-2 text-yellow-300">LENDA - 365 DIAS</h3>
+                                        <p class="text-4xl font-bold text-center text-yellow-400 mb-4">R$ 315,90</p>
+                                        <ul class="space-y-2 text-center flex-grow text-gray-300">
+                                            <li>✓ Tudo dos outros</li>
+                                            <li class="text-yellow-400">✓ Cargo Especial!</li>
+                                            <li class="text-cyan-400">✓ Menção Honrosa</li>
+                                        </ul>
+                                    </div>
+                                </a>
+                            </div>
                          </div>
                      </div>
 
