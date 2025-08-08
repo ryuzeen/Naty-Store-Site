@@ -103,44 +103,6 @@
             animation: gradient-animation 5s ease infinite;
         }
 
-        /* Estilos para tabelas responsivas */
-        @media (max-width: 639px) {
-            .responsive-table thead {
-                display: none;
-            }
-            .responsive-table, .responsive-table tbody, .responsive-table tr, .responsive-table td {
-                display: block;
-                width: 100%;
-            }
-            .responsive-table tr {
-                margin-bottom: 1.5rem;
-                border-bottom: 2px solid #374151; /* gray-700 */
-                padding-bottom: 1rem;
-            }
-            .responsive-table tr:last-child {
-                margin-bottom: 0;
-                border-bottom: none;
-                padding-bottom: 0;
-            }
-            .responsive-table td {
-                text-align: right;
-                padding-left: 50%;
-                position: relative;
-                padding-top: 0.5rem;
-                padding-bottom: 0.5rem;
-            }
-            .responsive-table td::before {
-                content: attr(data-label);
-                position: absolute;
-                left: 0;
-                width: 45%;
-                padding-right: 1rem;
-                font-weight: 600;
-                text-align: left;
-                color: #9CA3AF; /* gray-400 */
-            }
-        }
-
     </style>
 </head>
 <body class="text-white">
@@ -283,7 +245,7 @@
                              <h2 class="text-2xl font-semibold border-l-4 border-pink-400 pl-4">Cristais Gênesis</h2>
                          </div>
                          <div class="overflow-x-auto rounded-lg shadow-lg bg-gray-800">
-                             <table class="w-full text-left responsive-table">
+                             <table class="w-full text-left">
                                  <thead class="bg-gray-700">
                                      <tr>
                                          <th class="p-4 font-semibold">Quantidade</th>
@@ -291,14 +253,14 @@
                                          <th class="p-4 font-semibold text-right">Preço Naty Store</th>
                                      </tr>
                                  </thead>
-                                 <tbody class="divide-y divide-gray-700 sm:divide-y-0">
-                                     <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td data-label="Quantidade" class="p-4 sm:p-4">60 Cristais</td><td data-label="Preço Original" class="p-4 sm:p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 4,90</s></td><td data-label="Preço Naty Store" class="p-4 sm:p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 4,20</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
-                                     <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td data-label="Quantidade" class="p-4 sm:p-4">300 + 30 Cristais</td><td data-label="Preço Original" class="p-4 sm:p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 25,90</s></td><td data-label="Preço Naty Store" class="p-4 sm:p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 22,25</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
-                                     <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td data-label="Quantidade" class="p-4 sm:p-4">980 + 110 Cristais</td><td data-label="Preço Original" class="p-4 sm:p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 76,90</s></td><td data-label="Preço Naty Store" class="p-4 sm:p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 66,90</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
-                                     <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td data-label="Quantidade" class="p-4 sm:p-4">1.980 + 260 Cristais</td><td data-label="Preço Original" class="p-4 sm:p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 154,90</s></td><td data-label="Preço Naty Store" class="p-4 sm:p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 130,90</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
-                                     <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td data-label="Quantidade" class="p-4 sm:p-4">3.280 + 600 Cristais</td><td data-label="Preço Original" class="p-4 sm:p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 254,90</s></td><td data-label="Preço Naty Store" class="p-4 sm:p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 209,90</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
-                                     <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td data-label="Quantidade" class="p-4 sm:p-4">6480 + 1600 Cristais</td><td data-label="Preço Original" class="p-4 sm:p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 499,90</s></td><td data-label="Preço Naty Store" class="p-4 sm:p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 409,90</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
-                                     <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td data-label="Quantidade" class="p-4 sm:p-4 font-bold">Todos os Pacotes</td><td data-label="Preço Original" class="p-4 sm:p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 1.017,40</s></td><td data-label="Preço Naty Store" class="p-4 sm:p-4 text-right font-bold font-mono text-pink-300"><div class="flex items-center justify-end gap-4"><span>R$ 814,90</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
+                                 <tbody class="divide-y divide-gray-700">
+                                     <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4">60 Cristais</td><td class="p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 4,90</s></td><td class="p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 4,20</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
+                                     <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4">300 + 30 Cristais</td><td class="p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 25,90</s></td><td class="p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 22,25</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
+                                     <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4">980 + 110 Cristais</td><td class="p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 76,90</s></td><td class="p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 66,90</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
+                                     <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4">1.980 + 260 Cristais</td><td class="p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 154,90</s></td><td class="p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 130,90</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
+                                     <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4">3.280 + 600 Cristais</td><td class="p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 254,90</s></td><td class="p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 209,90</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
+                                     <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4">6480 + 1600 Cristais</td><td class="p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 499,90</s></td><td class="p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 409,90</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
+                                     <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4 font-bold">Todos os Pacotes</td><td class="p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 1.017,40</s></td><td class="p-4 text-right font-bold font-mono text-pink-300"><div class="flex items-center justify-end gap-4"><span>R$ 814,90</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
                                  </tbody>
                              </table>
                          </div>
@@ -310,15 +272,15 @@
                              <h2 class="text-2xl font-semibold border-l-4 border-pink-400 pl-4">Itens e Pacotes Especiais</h2>
                          </div>
                          <div class="overflow-x-auto rounded-lg shadow-lg bg-gray-800">
-                              <table class="w-full text-left responsive-table">
+                              <table class="w-full text-left">
                                  <thead class="bg-gray-700"><tr><th class="p-4 font-semibold">Item</th><th class="p-4 font-semibold text-right">Preço Original</th><th class="p-4 font-semibold text-right">Preço Naty Store</th></tr></thead>
-                                 <tbody class="divide-y divide-gray-700 sm:divide-y-0">
-                                     <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td data-label="Item" class="p-4 sm:p-4">Bênção da Lua Nova</td><td data-label="Preço Original" class="p-4 sm:p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 25,90</s></td><td data-label="Preço Naty Store" class="p-4 sm:p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 22,25</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
-                                     <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td data-label="Item" class="p-4 sm:p-4">Passe de Batalha</td><td data-label="Preço Original" class="p-4 sm:p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 49,90</s></td><td data-label="Preço Naty Store" class="p-4 sm:p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 43,90</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
-                                     <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td data-label="Item" class="p-4 sm:p-4">Passe de Batalha (Avançado)</td><td data-label="Preço Original" class="p-4 sm:p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 99,99</s></td><td data-label="Preço Naty Store" class="p-4 sm:p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 85,90</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
-                                     <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td data-label="Item" class="p-4 sm:p-4">Garantia Arma 5★ (100%)</td><td data-label="Preço Original" class="p-4 sm:p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 831,70</s></td><td data-label="Preço Naty Store" class="p-4 sm:p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 671,70</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
-                                     <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td data-label="Item" class="p-4 sm:p-4">All in one (Todos os Gênesis, 3x Bênção, Passe Atualizado)</td><td data-label="Preço Original" class="p-4 sm:p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 1.195,09</s></td><td data-label="Preço Naty Store" class="p-4 sm:p-4 text-right font-bold font-mono text-pink-300"><div class="flex items-center justify-end gap-4"><span>R$ 996,70</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
-                                     <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td data-label="Item" class="p-4 sm:p-4">Garantia Personagem de Banner (100%)</td><td data-label="Preço Original" class="p-4 sm:p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 1.831,50</s></td><td data-label="Preço Naty Store" class="p-4 sm:p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 1.476,50</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
+                                 <tbody class="divide-y divide-gray-700">
+                                     <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4">Bênção da Lua Nova</td><td class="p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 25,90</s></td><td class="p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 22,25</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
+                                     <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4">Passe de Batalha</td><td class="p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 49,90</s></td><td class="p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 43,90</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
+                                     <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4">Passe de Batalha (Avançado)</td><td class="p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 99,99</s></td><td class="p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 85,90</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
+                                     <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4">Garantia Arma 5★ (100%)</td><td class="p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 831,70</s></td><td class="p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 671,70</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
+                                     <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4">All in one (Todos os Gênesis, 3x Bênção, Passe Atualizado)</td><td class="p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 1.195,09</s></td><td class="p-4 text-right font-bold font-mono text-pink-300"><div class="flex items-center justify-end gap-4"><span>R$ 996,70</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
+                                     <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4">Garantia Personagem de Banner (100%)</td><td class="p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 1.831,50</s></td><td class="p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 1.476,50</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
                                  </tbody>
                              </table>
                          </div>
