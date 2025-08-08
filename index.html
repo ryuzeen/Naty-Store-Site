@@ -74,14 +74,18 @@
              margin: 2px;
         }
         
-        /* Estilos para a nova página de entrada */
+        /* Estilos para a página de entrada */
         #home {
-            min-height: calc(100vh - 4rem); /* 100vh menos a altura do header */
+            text-align: center;
+        }
+
+        /* Classe para centralizar o conteúdo da Home no container <main> */
+        .main-home-active {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            text-align: center;
+            min-height: calc(100vh - 4rem); /* Subtrai a altura do header */
         }
 
         .entry-card {
@@ -95,7 +99,6 @@
 </head>
 <body class="text-white">
 
-    <!-- Cabeçalho e Navegação -->
     <div class="bg-gray-800/50 backdrop-blur-sm sticky top-0 z-50 shadow-lg">
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
@@ -107,7 +110,6 @@
                         <span class="text-xl font-bold text-white">Naty Store</span>
                     </div>
                 </div>
-                <!-- Desktop Menu -->
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
                         <a href="#" class="nav-link active px-3 py-2 rounded-md text-sm font-medium border-b-2 border-transparent" onclick="showPage('home', this)">Início</a>
@@ -116,7 +118,6 @@
                         <a href="#" class="nav-link text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium border-b-2 border-transparent" onclick="showPage('comprar', this)">Como Comprar</a>
                     </div>
                 </div>
-                <!-- Mobile menu button -->
                 <div class="-mr-2 flex md:hidden">
                     <button type="button" onclick="toggleMobileMenu()" class="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
                         <span class="sr-only">Abrir menu principal</span>
@@ -125,8 +126,7 @@
                     </button>
                 </div>
             </div>
-             <!-- Mobile menu, show/hide based on menu state. -->
-            <div class="md:hidden hidden" id="mobile-menu">
+             <div class="md:hidden hidden" id="mobile-menu">
                 <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                     <a href="#" class="nav-link active block px-3 py-2 rounded-md text-base font-medium" onclick="showPage('home', this); toggleMobileMenu();">Início</a>
                     <a href="#" class="nav-link text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium" onclick="showPage('precos', this); toggleMobileMenu();">Preços</a>
@@ -138,14 +138,12 @@
     </div>
 
     <main class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-        <!-- Página de Entrada (Home) -->
         <div id="home" class="page-content active">
             <div class="px-4">
                 <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4">Bem-vindo(a) à <span class="text-pink-400">Naty Store</span></h1>
                 <p class="text-lg sm:text-xl text-gray-300 mb-12 max-w-2xl mx-auto">Agradecemos a sua preferência! Explore nossos produtos e encontre o que você precisa para a sua jornada.</p>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-                    <!-- Card Preços -->
                     <a href="#" onclick="goToPage('precos')" class="entry-card block bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 border border-gray-700">
                         <div class="flex justify-center mb-4">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-pink-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v.01" /></svg>
@@ -153,7 +151,6 @@
                         <h2 class="text-2xl font-bold text-white mb-2">Nossos Preços</h2>
                         <p class="text-gray-400">Confira as melhores ofertas e pacotes com desconto.</p>
                     </a>
-                    <!-- Card Funções -->
                     <a href="#" onclick="goToPage('features')" class="entry-card block bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 border border-gray-700">
                         <div class="flex justify-center mb-4">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-pink-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" /></svg>
@@ -161,7 +158,6 @@
                         <h2 class="text-2xl font-bold text-white mb-2">Lista de Funções</h2>
                         <p class="text-gray-400">Descubra todas as funcionalidades dos nossos produtos.</p>
                     </a>
-                    <!-- Card Como Comprar -->
                     <a href="#" onclick="goToPage('comprar')" class="entry-card block bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 border border-gray-700">
                         <div class="flex justify-center mb-4">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-pink-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
@@ -173,7 +169,6 @@
             </div>
         </div>
 
-        <!-- Página de Preços -->
         <div id="precos" class="page-content py-6">
              <div class="max-w-4xl mx-auto">
                  <div>
@@ -182,7 +177,6 @@
                          <p class="text-gray-400 mt-2">Aproveite nossos preços com desconto!</p>
                      </header>
 
-                     <!-- Seção Principal - Pertamax -->
                      <div class="mb-16">
                          <div class="flex items-center mb-6 justify-center">
                              <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mr-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
@@ -202,7 +196,6 @@
                          </div>
                      </div>
 
-                     <!-- Cristais Gênesis -->
                      <div class="mb-12">
                          <div class="flex items-center mb-6">
                              <img src="https://skycoach.gg/storage/uploads/products/genshin-impact-genesis-crystals1707515203_picture_item_small.png" alt="Ícone de Cristal Gênesis" class="h-10 w-10 mr-4 rounded-full" onerror="this.style.display='none'">
@@ -229,7 +222,6 @@
                              </table>
                          </div>
                      </div>
-                     <!-- Itens e Pacotes Especiais -->
                      <div class="mb-12">
                          <div class="flex items-center mb-6">
                              <img src="https://files.softicons.com/download/folder-icons/plastic-folders-icons-by-sirubico/ico/Folder-Pink.ico" alt="Ícone da Bênção da Lua Nova" class="h-10 w-10 mr-4 rounded-full" onerror="this.style.display='none'">
@@ -249,7 +241,6 @@
                              </table>
                          </div>
                      </div>
-                     <!-- Outros Serviços e Assinaturas -->
                      <div>
                           <div class="flex items-center mb-6">
                              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-4 text-pink-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
@@ -262,8 +253,7 @@
                              <a href="#" onclick="goToFeature('unicore')" class="block w-full"><div class="bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col h-full transform hover:scale-105 transition-transform duration-300"><p class="text-sm text-center text-gray-400 mb-1">Genshin Impact</p><h3 class="text-xl font-bold text-center mb-4 text-cyan-400">Unicore</h3><ul class="space-y-3 text-center flex-grow"><li><span class="font-semibold">2 dias:</span> <span class="font-mono text-pink-300">R$ 16,90</span></li><li><span class="font-semibold">7 dias:</span> <span class="font-mono text-pink-300">R$ 38,90</span></li><li><span class="font-semibold">30 dias:</span> <span class="font-mono text-pink-300">R$ 88,90</span></li></ul></div></a>
                              <a href="#" onclick="goToFeature('uniwaves')" class="block w-full"><div class="bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col h-full transform hover:scale-105 transition-transform duration-300"><p class="text-sm text-center text-gray-400 mb-1">Wuthering Waves</p><h3 class="text-xl font-bold text-center mb-4 text-blue-400">Uniwaves</h3><ul class="space-y-3 text-center flex-grow"><li><span class="font-semibold">2 dias:</span> <span class="font-mono text-pink-300">R$ 16,90</span></li><li><span class="font-semibold">7 dias:</span> <span class="font-mono text-pink-300">R$ 38,90</span></li><li><span class="font-semibold">30 dias:</span> <span class="font-mono text-pink-300">R$ 88,90</span></li></ul></div></a>
                              <a href="#" onclick="goToFeature('unizone')" class="block w-full"><div class="bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col h-full transform hover:scale-105 transition-transform duration-300"><p class="text-sm text-center text-gray-400 mb-1">Zenless Zone Zero</p><h3 class="text-xl font-bold text-center mb-4 text-indigo-400">Unizone</h3><ul class="space-y-3 text-center flex-grow"><li><span class="font-semibold">2 dias:</span> <span class="font-mono text-pink-300">R$ 16,90</span></li><li><span class="font-semibold">7 dias:</span> <span class="font-mono text-pink-300">R$ 38,90</span></li><li><span class="font-semibold">30 dias:</span> <span class="font-mono text-pink-300">R$ 88,90</span></li></ul></div></a>
-                             <div class="hidden lg:block lg:col-start-1"></div> <!-- Espaçador para empurrar os próximos itens -->
-                             <a href="#" onclick="goToFeature('unistar')" class="block w-full lg:col-start-2"><div class="bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col h-full transform hover:scale-105 transition-transform duration-300"><p class="text-sm text-center text-gray-400 mb-1">Honkai: Star Rail</p><h3 class="text-xl font-bold text-center mb-4 text-yellow-400">Unistar</h3><ul class="space-y-3 text-center flex-grow"><li><span class="font-semibold">2 dias:</span> <span class="font-mono text-pink-300">R$ 11,90</span></li><li><span class="font-semibold">7 dias:</span> <span class="font-mono text-pink-300">R$ 27,90</span></li><li><span class="font-semibold">30 dias:</span> <span class="font-mono text-pink-300">R$ 55,90</span></li></ul></div></a>
+                             <div class="hidden lg:block lg:col-start-1"></div> <a href="#" onclick="goToFeature('unistar')" class="block w-full lg:col-start-2"><div class="bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col h-full transform hover:scale-105 transition-transform duration-300"><p class="text-sm text-center text-gray-400 mb-1">Honkai: Star Rail</p><h3 class="text-xl font-bold text-center mb-4 text-yellow-400">Unistar</h3><ul class="space-y-3 text-center flex-grow"><li><span class="font-semibold">2 dias:</span> <span class="font-mono text-pink-300">R$ 11,90</span></li><li><span class="font-semibold">7 dias:</span> <span class="font-mono text-pink-300">R$ 27,90</span></li><li><span class="font-semibold">30 dias:</span> <span class="font-mono text-pink-300">R$ 55,90</span></li></ul></div></a>
                              <a href="#" onclick="goToFeature('kittenwaves')" class="block w-full"><div class="bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col h-full transform hover:scale-105 transition-transform duration-300"><p class="text-sm text-center text-gray-400 mb-1">Wuthering Waves</p><h3 class="text-xl font-bold text-center mb-4 text-rose-400">KittenWaves</h3><ul class="space-y-3 text-center flex-grow"><li><span class="font-semibold">Vitalício:</span> <span class="font-mono text-pink-300">R$ 139,90</span></li></ul></div></a>
                          </div>
                      </div>
@@ -271,14 +261,12 @@
              </div>
         </div>
 
-        <!-- Página de Features -->
         <div id="features" class="page-content py-6">
              <header class="text-center mb-10">
                  <h1 class="text-3xl sm:text-4xl font-bold text-pink-400">Funções dos Produtos</h1>
                  <p class="text-gray-400 mt-2">Selecione um produto para ver suas funcionalidades.</p>
              </header>
 
-             <!-- Seção de Destaque - Korepi Pertamax -->
              <div id="pertamax-features" class="mb-12">
                  <div class="rounded-lg shadow-xl animated-gradient-border">
                      <div class="bg-gray-800 rounded-md p-6">
@@ -315,7 +303,6 @@
                  </div>
              </div>
 
-             <!-- Abas de Navegação das Features -->
              <div id="features-nav" class="mb-8 border-b border-gray-700">
                  <div class="flex flex-wrap -mb-px space-x-2 sm:space-x-4 justify-center">
                      <button id="unicore-tab" class="feature-tab active inline-block p-3 sm:p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-300 hover:border-gray-500 font-semibold" onclick="showFeature('unicore', this)">Unicore</button>
@@ -326,9 +313,7 @@
                  </div>
              </div>
 
-             <!-- Conteúdo das Features -->
              <div class="bg-gray-800 rounded-lg p-6 shadow-xl">
-                 <!-- Unicore -->
                  <div id="unicore-content" class="feature-content active">
                      <h3 class="text-2xl font-bold text-cyan-400 mb-4">Unicore <span class="text-sm text-gray-400 font-normal">- Genshin Impact</span></h3>
                      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-gray-300">
@@ -340,7 +325,6 @@
                          <div><h4 class="font-semibold text-white mb-2">Profile</h4><ul class="list-disc list-inside space-y-1"><li>UID Changer</li><li>Name Changer</li><li>AR Level Changer</li><li>World Level Changer</li></ul></div>
                      </div>
                  </div>
-                 <!-- Uniwaves -->
                  <div id="uniwaves-content" class="feature-content">
                       <h3 class="text-2xl font-bold text-blue-400 mb-4">Uniwaves <span class="text-sm text-gray-400 font-normal">- Wuthering Waves</span></h3>
                       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-gray-300">
@@ -352,7 +336,6 @@
                          <div><h4 class="font-semibold text-white mb-2">Profile</h4><ul class="list-disc list-inside space-y-1"><li>UID Changer</li><li>Name Changer</li><li>AR Level Changer</li><li>Config Management</li></ul></div>
                       </div>
                  </div>
-                 <!-- Unizone -->
                  <div id="unizone-content" class="feature-content">
                      <h3 class="text-2xl font-bold text-indigo-400 mb-4">Unizone <span class="text-sm text-gray-400 font-normal">- Zenless Zone Zero</span></h3>
                      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-gray-300">
@@ -363,7 +346,6 @@
                          <div><h4 class="font-semibold text-white mb-2">Utility</h4><ul class="list-disc list-inside space-y-1"><li>Camera FOV</li><li>Hide UI</li><li>UID Changer</li><li>Speedup Dialogs/Battle</li></ul></div>
                      </div>
                  </div>
-                 <!-- Unistar -->
                  <div id="unistar-content" class="feature-content">
                      <h3 class="text-2xl font-bold text-yellow-400 mb-4">Unistar <span class="text-sm text-gray-400 font-normal">- Honkai: Star Rail</span></h3>
                      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-gray-300">
@@ -374,7 +356,6 @@
                          <div><h4 class="font-semibold text-white mb-2">Profile</h4><ul class="list-disc list-inside space-y-1"><li>UID Changer</li><li>Config Management</li></ul></div>
                      </div>
                  </div>
-                 <!-- Kittenwaves -->
                  <div id="kittenwaves-content" class="feature-content">
                      <h3 class="text-2xl font-bold text-rose-400 mb-4">KittenWaves <span class="text-sm text-gray-400 font-normal">- Wuthering Waves</span></h3>
                       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-gray-300">
@@ -389,7 +370,6 @@
              </div>
         </div>
         
-        <!-- Página Como Comprar -->
         <div id="comprar" class="page-content py-6">
              <div class="max-w-2xl mx-auto px-4">
                  <header class="text-center mb-10">
@@ -398,7 +378,6 @@
                  </header>
 
                  <div class="bg-gray-800 rounded-lg shadow-xl p-8 flex flex-col items-center">
-                     <!-- Profile Icon -->
                      <div class="w-32 h-32 mb-6">
                          <img src="https://risibank.fr/cache/medias/0/2/227/22729/full.png" alt="Foto de Perfil" class="w-full h-full rounded-full object-cover border-4 border-gray-700" onerror="this.onerror=null; this.src='https://placehold.co/128x128/374151/E5E7EB?text=Perfil';">
                      </div>
@@ -437,6 +416,15 @@
     <script>
         // Função para trocar entre as páginas principais
         function showPage(pageId, clickedElement) {
+            const mainElement = document.querySelector('main');
+
+            // Adiciona ou remove a classe de centralização do <main>
+            if (pageId === 'home') {
+                mainElement.classList.add('main-home-active');
+            } else {
+                mainElement.classList.remove('main-home-active');
+            }
+
             // Esconde todas as páginas e mostra a página alvo
             document.querySelectorAll('.page-content').forEach(page => {
                 page.classList.remove('active');
