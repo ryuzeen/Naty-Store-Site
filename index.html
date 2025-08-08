@@ -17,6 +17,7 @@
             background-image: radial-gradient(circle at top, rgba(236, 72, 153, 0.1), transparent 40%),
                               radial-gradient(circle at bottom left, rgba(129, 140, 248, 0.1), transparent 50%),
                               radial-gradient(circle at bottom right, rgba(244, 114, 182, 0.1), transparent 50%);
+            min-height: 100vh;
         }
         .nav-link {
             transition: all 0.3s ease;
@@ -498,9 +499,13 @@
                     <p class="text-gray-400 mt-2">Tire suas dúvidas mais comuns sobre nossos produtos e serviços.</p>
                 </header>
 
-                <div class="space-y-4">
+                <div class="mb-8">
+                    <input type="text" id="faq-search" onkeyup="filterFAQ()" placeholder="Pesquisar por palavra-chave..." class="w-full bg-gray-800 border border-gray-700 text-white rounded-lg p-3 focus:ring-2 focus:ring-pink-400 focus:border-pink-400 outline-none">
+                </div>
+
+                <div class="space-y-4" id="faq-container">
                     <!-- Pergunta 1 -->
-                    <details class="bg-gray-800/50 p-6 rounded-lg">
+                    <details class="bg-gray-800/50 p-6 rounded-lg faq-item">
                         <summary class="font-semibold text-lg cursor-pointer flex justify-between items-center">
                             Como recebo o produto após a compra?
                             <span class="icon text-pink-400">
@@ -510,7 +515,7 @@
                         <p class="mt-4 text-gray-300">Após a confirmação do pagamento, eu enviarei sua chave de acesso e um tutorial completo de instalação diretamente para você via Discord.</p>
                     </details>
                     <!-- Pergunta 2 -->
-                    <details class="bg-gray-800/50 p-6 rounded-lg">
+                    <details class="bg-gray-800/50 p-6 rounded-lg faq-item">
                         <summary class="font-semibold text-lg cursor-pointer flex justify-between items-center">
                             Quais métodos de pagamento são aceitos?
                             <span class="icon text-pink-400">
@@ -520,7 +525,7 @@
                         <p class="mt-4 text-gray-300">Aceitamos Pix, Criptomoedas (via Binance) e PayPal. Para pagamentos com PayPal, as taxas da plataforma ficam por conta do comprador.</p>
                     </details>
                     <!-- Pergunta 3 -->
-                    <details class="bg-gray-800/50 p-6 rounded-lg">
+                    <details class="bg-gray-800/50 p-6 rounded-lg faq-item">
                         <summary class="font-semibold text-lg cursor-pointer flex justify-between items-center">
                             Por quanto tempo minha chave é válida?
                             <span class="icon text-pink-400">
@@ -530,7 +535,7 @@
                         <p class="mt-4 text-gray-300">A validade da sua chave corresponde ao plano que você adquiriu (diário, semanal, mensal, etc.), conforme descrito na nossa tabela de preços.</p>
                     </details>
                     <!-- Pergunta 4 -->
-                    <details class="bg-gray-800/50 p-6 rounded-lg">
+                    <details class="bg-gray-800/50 p-6 rounded-lg faq-item">
                         <summary class="font-semibold text-lg cursor-pointer flex justify-between items-center">
                             Posso usar a chave em mais de um computador?
                             <span class="icon text-pink-400">
@@ -540,7 +545,7 @@
                         <p class="mt-4 text-gray-300">Não. Cada chave é válida para apenas **UM** dispositivo. Essa medida foi implementada para evitar fraudes e garantir a segurança de todos os clientes. A tentativa de uso em um segundo dispositivo resultará no bloqueio da chave, e a responsabilidade será inteiramente do usuário.</p>
                     </details>
                     <!-- Pergunta 5 -->
-                    <details class="bg-gray-800/50 p-6 rounded-lg">
+                    <details class="bg-gray-800/50 p-6 rounded-lg faq-item">
                         <summary class="font-semibold text-lg cursor-pointer flex justify-between items-center">
                             Como obtenho suporte se precisar de ajuda?
                             <span class="icon text-pink-400">
@@ -548,16 +553,6 @@
                             </span>
                         </summary>
                         <p class="mt-4 text-gray-300">Para suporte relacionado ao **Korepi**, por favor, utilize o canal **#ChatBR** no nosso servidor do Discord. Para os demais produtos, você pode me contatar diretamente via DM no Discord (<span class="font-mono text-pink-400">ryuzeen._</span>).</p>
-                    </details>
-                    <!-- Pergunta 6 -->
-                    <details class="bg-gray-800/50 p-6 rounded-lg">
-                        <summary class="font-semibold text-lg cursor-pointer flex justify-between items-center">
-                            Qual é a política de reembolso e segurança?
-                            <span class="icon text-pink-400">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" /></svg>
-                            </span>
-                        </summary>
-                        <p class="mt-4 text-gray-300">Oferecemos reembolso apenas em casos de mau funcionamento comprovado do produto. É importante ressaltar que não nos responsabilizamos por eventuais banimentos. O uso de nossos produtos é por sua conta e risco.</p>
                     </details>
                 </div>
             </div>
@@ -699,6 +694,27 @@
             setTimeout(() => {
                 tooltip.innerText = 'Copiar';
             }, 2000); // 2 segundos
+        }
+
+        // Função para filtrar o FAQ
+        function filterFAQ() {
+            const input = document.getElementById('faq-search');
+            const filter = input.value.toUpperCase();
+            const faqContainer = document.getElementById('faq-container');
+            const items = faqContainer.getElementsByClassName('faq-item');
+
+            for (let i = 0; i < items.length; i++) {
+                const summary = items[i].getElementsByTagName('summary')[0];
+                const p = items[i].getElementsByTagName('p')[0];
+                const text = summary.textContent || summary.innerText;
+                const pText = p.textContent || p.innerText;
+
+                if (text.toUpperCase().indexOf(filter) > -1 || pText.toUpperCase().indexOf(filter) > -1) {
+                    items[i].style.display = "";
+                } else {
+                    items[i].style.display = "none";
+                }
+            }
         }
 
         // Define a página inicial ao carregar o DOM
