@@ -441,9 +441,15 @@
     <script>
         // Função para trocar entre as páginas principais
         function showPage(pageId, clickedElement) {
-            // Remove a classe no-scroll do body por padrão
-            document.body.classList.remove('no-scroll');
+            // Controla a classe 'no-scroll' no body.
+            // Adiciona se a página for 'home', remove para todas as outras.
+            if (pageId === 'home') {
+                document.body.classList.add('no-scroll');
+            } else {
+                document.body.classList.remove('no-scroll');
+            }
 
+            // Esconde todas as páginas e mostra a página alvo
             document.querySelectorAll('.page-content').forEach(page => {
                 page.classList.remove('active');
                 page.style.display = 'none';
@@ -451,11 +457,6 @@
             const targetPage = document.getElementById(pageId);
             targetPage.style.display = 'block';
             targetPage.classList.add('active');
-
-            // Adiciona a classe no-scroll se a página for a 'home'
-            if (pageId === 'home') {
-                document.body.classList.add('no-scroll');
-            }
 
             // Atualiza todos os links de navegação (desktop e mobile)
             document.querySelectorAll('.nav-link').forEach(link => {
