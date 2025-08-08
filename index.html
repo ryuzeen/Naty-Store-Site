@@ -18,10 +18,6 @@
                               radial-gradient(circle at bottom left, rgba(129, 140, 248, 0.1), transparent 50%),
                               radial-gradient(circle at bottom right, rgba(244, 114, 182, 0.1), transparent 50%);
         }
-        /* Classe para desativar o scroll */
-        body.no-scroll {
-            overflow: hidden;
-        }
         .nav-link {
             transition: all 0.3s ease;
         }
@@ -80,7 +76,7 @@
         
         /* Estilos para a nova página de entrada */
         #home {
-            height: calc(100vh - 4rem); /* 100vh menos a altura do header */
+            min-height: calc(100vh - 4rem); /* 100vh menos a altura do header */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -141,7 +137,7 @@
         </nav>
     </div>
 
-    <main class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+    <main class="max-w-7xl mx-auto sm:px-6 lg:px-8">
         <!-- Página de Entrada (Home) -->
         <div id="home" class="page-content active">
             <div class="px-4">
@@ -178,7 +174,7 @@
         </div>
 
         <!-- Página de Preços -->
-        <div id="precos" class="page-content">
+        <div id="precos" class="page-content py-6">
              <div class="max-w-4xl mx-auto">
                  <div>
                      <header class="text-center mb-10">
@@ -276,7 +272,7 @@
         </div>
 
         <!-- Página de Features -->
-        <div id="features" class="page-content">
+        <div id="features" class="page-content py-6">
              <header class="text-center mb-10">
                  <h1 class="text-3xl sm:text-4xl font-bold text-pink-400">Funções dos Produtos</h1>
                  <p class="text-gray-400 mt-2">Selecione um produto para ver suas funcionalidades.</p>
@@ -394,7 +390,7 @@
         </div>
         
         <!-- Página Como Comprar -->
-        <div id="comprar" class="page-content">
+        <div id="comprar" class="page-content py-6">
              <div class="max-w-2xl mx-auto px-4">
                  <header class="text-center mb-10">
                      <h1 class="text-3xl sm:text-4xl font-bold text-pink-400">Como Comprar</h1>
@@ -441,14 +437,6 @@
     <script>
         // Função para trocar entre as páginas principais
         function showPage(pageId, clickedElement) {
-            // Controla a classe 'no-scroll' no body.
-            // Adiciona se a página for 'home', remove para todas as outras.
-            if (pageId === 'home') {
-                document.body.classList.add('no-scroll');
-            } else {
-                document.body.classList.remove('no-scroll');
-            }
-
             // Esconde todas as páginas e mostra a página alvo
             document.querySelectorAll('.page-content').forEach(page => {
                 page.classList.remove('active');
