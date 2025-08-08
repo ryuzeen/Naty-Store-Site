@@ -22,8 +22,8 @@
             transition: all 0.3s ease;
         }
         .nav-link.active {
-            color: #f472b6; /* text-pink-400 */
-            border-bottom-color: #f472b6;
+            background-color: #f472b6; /* bg-pink-400 */
+            color: #ffffff;
         }
         #mobile-menu .nav-link.active {
             background-color: #f472b6;
@@ -122,20 +122,20 @@
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <div class="flex items-center">
-                    <div class="flex-shrink-0 flex items-center">
+                    <a href="#" onclick="showPage('home')" class="flex-shrink-0 flex items-center cursor-pointer">
                          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-pink-400 mr-2" viewBox="0 0 20 20" fill="currentColor">
                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                          </svg>
                         <span class="text-xl font-bold text-white">Naty Store</span>
-                    </div>
+                    </a>
                 </div>
                 <!-- Desktop Menu -->
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
-                        <a href="#" class="nav-link active px-3 py-2 rounded-md text-sm font-medium border-b-2 border-transparent" onclick="showPage('home', this)">Início</a>
-                        <a href="#" class="nav-link text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium border-b-2 border-transparent" onclick="showPage('precos', this)">Preços</a>
-                        <a href="#" class="nav-link text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium border-b-2 border-transparent" onclick="showPage('features', this)">Funções</a>
-                        <a href="#" class="nav-link text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium border-b-2 border-transparent" onclick="showPage('comprar', this)">Como Comprar</a>
+                        <a href="#" class="nav-link active px-3 py-2 rounded-md text-sm font-medium" onclick="showPage('home', this)">Início</a>
+                        <a href="#" class="nav-link text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium" onclick="showPage('precos', this)">Preços</a>
+                        <a href="#" class="nav-link text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium" onclick="showPage('features', this)">Funções</a>
+                        <a href="#" class="nav-link text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium" onclick="showPage('comprar', this)">Como Comprar</a>
                     </div>
                 </div>
                 <!-- Mobile menu button -->
@@ -515,12 +515,12 @@
 
 
             // Atualiza os links de navegação
-            document.querySelectorAll('.nav-link').forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('onclick').includes(`'${pageId}'`)) {
-                    link.classList.add('active');
-                }
-            });
+            if (clickedElement) {
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.classList.remove('active');
+                });
+                clickedElement.classList.add('active');
+            }
         }
         
         function toggleMobileMenu() {
@@ -549,16 +549,17 @@
         function goToFeature(featureId) {
             const featuresNavLink = document.querySelector(".nav-link[onclick*='features']");
             showPage('features', featuresNavLink);
-            const featureTab = document.getElementById(featureId + '-tab');
-            showFeature(featureId, featureTab);
             
-            // Rola para a seção de abas
-             setTimeout(() => {
-                 const anchorElement = document.getElementById('features-nav');
-                 if (anchorElement) {
-                     anchorElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                 }
-             }, 100);
+            setTimeout(() => {
+                const featureTab = document.getElementById(featureId + '-tab');
+                if (featureTab) {
+                    showFeature(featureId, featureTab);
+                    const anchorElement = document.getElementById('features-nav');
+                    if (anchorElement) {
+                        anchorElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            }, 410); // Espera a transição da página
         }
         
         // Função para navegar para uma âncora em outra página
@@ -572,7 +573,7 @@
                 if (anchorElement) {
                     anchorElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
-            }, 100);
+            }, 410); // Espera a transição da página
         }
 
         // Função para navegar para uma página e rolar para o topo
@@ -581,7 +582,7 @@
             showPage(pageId, targetPageLink);
              setTimeout(() => {
                  window.scrollTo({ top: 0, behavior: 'smooth' });
-             }, 100);
+             }, 410); // Espera a transição da página
         }
 
         // Função para copiar texto para a área de transferência
@@ -614,6 +615,16 @@
         document.addEventListener('DOMContentLoaded', () => {
             const loadingScreen = document.getElementById('loading-screen');
 
+            // Inicia a lógica principal da página
+            const homeLink = document.querySelector('.nav-link[onclick*="home"]');
+            showPage('home', homeLink);
+
+            // Pré-seleciona a primeira aba de feature para quando a página for carregada
+            const unicoreTab = document.getElementById('unicore-tab');
+            if(unicoreTab) {
+                showFeature('unicore', unicoreTab);
+            }
+
             // Simula um tempo de carregamento
             setTimeout(() => {
                 // Adiciona a classe para iniciar o fade-out
@@ -622,16 +633,6 @@
                 // Após a transição, esconde o elemento completamente
                 setTimeout(() => {
                     loadingScreen.style.display = 'none';
-
-                    // Inicia a lógica principal da página
-                    const homeLink = document.querySelector('.nav-link[onclick*="home"]');
-                    showPage('home', homeLink);
-
-                    // Pré-seleciona a primeira aba de feature para quando a página for carregada
-                    const unicoreTab = document.getElementById('unicore-tab');
-                    if(unicoreTab) {
-                        showFeature('unicore', unicoreTab);
-                    }
                 }, 500); // Deve corresponder à duração da transição (duration-500)
             }, 2000); // Tempo que a tela de carregamento fica visível (2 segundos)
         });
