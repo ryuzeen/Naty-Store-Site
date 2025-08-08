@@ -33,12 +33,18 @@
             background-color: #f472b6; /* bg-pink-400 */
             color: #111827; /* text-gray-900 */
         }
+        
+        /* Estilos para a transição de página */
         .page-content {
             display: none;
+            opacity: 0;
+            transition: opacity 0.4s ease-in-out;
         }
         .page-content.active {
             display: block;
+            opacity: 1;
         }
+
         .feature-content {
             display: none;
         }
@@ -86,7 +92,8 @@
             align-items: center;
             justify-content: center;
             min-height: calc(100vh - 4rem); /* Subtrai a altura do header */
-            padding-bottom: 0; /* Remove padding extra na home */
+            padding-top: 0;
+            padding-bottom: 0;
         }
 
         .entry-card {
@@ -152,9 +159,9 @@
         </nav>
     </div>
 
-    <main class="max-w-7xl mx-auto sm:px-6 lg:px-8 py-6">
+    <main class="max-w-7xl mx-auto sm:px-6 lg:px-8">
         <!-- Página de Entrada (Home) -->
-        <div id="home" class="page-content active">
+        <div id="home" class="page-content">
             <div class="px-4">
                 <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4">Bem-vindo(a) à <span class="text-pink-400">Naty Store</span></h1>
                 <p class="text-lg sm:text-xl text-gray-300 mb-12 max-w-2xl mx-auto">Agradecemos a sua preferência! Explore nossos produtos e encontre o que você precisa para a sua jornada.</p>
@@ -189,7 +196,7 @@
         </div>
 
         <!-- Página de Preços -->
-        <div id="precos" class="page-content">
+        <div id="precos" class="page-content py-6">
              <div class="max-w-4xl mx-auto">
                  <div>
                      <header class="text-center mb-10">
@@ -453,6 +460,12 @@
         // Função para trocar entre as páginas principais
         function showPage(pageId, clickedElement) {
             const mainElement = document.querySelector('main');
+            const currentPage = document.querySelector('.page-content.active');
+            const targetPage = document.getElementById(pageId);
+
+            if (currentPage && currentPage.id === pageId) {
+                return; // Não faz nada se a mesma página for clicada
+            }
 
             // Adiciona ou remove a classe de centralização do <main>
             if (pageId === 'home') {
@@ -460,17 +473,29 @@
             } else {
                 mainElement.classList.remove('main-home-active');
             }
+            
+            // Lógica de transição
+            if (currentPage) {
+                currentPage.classList.remove('active'); // Inicia o fade-out
+                setTimeout(() => {
+                    currentPage.style.display = 'none';
+                    
+                    targetPage.style.display = 'block';
+                    setTimeout(() => {
+                        targetPage.classList.add('active'); // Inicia o fade-in
+                    }, 10);
 
-            // Esconde todas as páginas e mostra a página alvo
-            document.querySelectorAll('.page-content').forEach(page => {
-                page.classList.remove('active');
-                page.style.display = 'none';
-            });
-            const targetPage = document.getElementById(pageId);
-            targetPage.style.display = 'block';
-            targetPage.classList.add('active');
+                }, 400); // Duração do fade-out (deve corresponder ao CSS)
+            } else {
+                // Caso inicial, sem página atual (primeiro carregamento)
+                targetPage.style.display = 'block';
+                setTimeout(() => {
+                    targetPage.classList.add('active');
+                }, 10);
+            }
 
-            // Atualiza todos os links de navegação (desktop e mobile)
+
+            // Atualiza os links de navegação
             document.querySelectorAll('.nav-link').forEach(link => {
                 link.classList.remove('active');
                 if (link.getAttribute('onclick').includes(`'${pageId}'`)) {
