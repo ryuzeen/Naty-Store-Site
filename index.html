@@ -186,55 +186,44 @@
         <div id="home" class="page-content">
             <div class="px-4">
                 <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4">Bem-vindo(a) à <span class="text-pink-400">Naty Store</span></h1>
-                <p class="text-lg sm:text-xl text-gray-300 mb-12 max-w-3xl mx-auto">Sua fonte confiável para os melhores aprimoramentos de jogos. Explore nossos produtos e eleve sua experiência de jogo a um novo patamar.</p>
+                <p class="text-lg sm:text-xl text-gray-300 mb-12 max-w-2xl mx-auto">Agradecemos a sua preferência! Explore nossos produtos e encontre o que você precisa para a sua jornada.</p>
 
-                <!-- Seção de Produtos em Destaque -->
-                <h2 class="text-3xl font-bold text-white mb-8">Produtos em Destaque</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                    
-                    <!-- Card Destaque: Unicore -->
-                    <div class="entry-card bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 border border-gray-700 flex flex-col items-center text-center">
-                        <div class="w-24 h-24 rounded-full flex items-center justify-center mb-4 border-4 border-cyan-400">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" /></svg>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+                    <!-- Card Preços -->
+                    <a href="#" onclick="goToPage('precos')" class="entry-card block bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 border border-gray-700">
+                        <div class="flex justify-center mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-pink-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
+                            </svg>
                         </div>
-                        <h3 class="text-2xl font-bold text-cyan-400 mb-2">Unicore</h3>
-                        <p class="text-gray-400 mb-4 flex-grow">A solução completa para <span class="font-semibold text-white">Genshin Impact</span>, com mapa interativo, combate aprimorado e muito mais.</p>
-                        <a href="#" onclick="goToFeature('unicore')" class="mt-auto bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-2 px-6 rounded-lg transition-colors duration-300">Ver Funções</a>
-                    </div>
-
-                    <!-- Card Destaque: Cristais Gênesis -->
-                    <div class="entry-card bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 border border-gray-700 flex flex-col items-center text-center">
-                        <div class="w-24 h-24 rounded-full flex items-center justify-center mb-4 border-4 border-pink-400 p-2 bg-gray-700/50">
-                           <img src="https://skycoach.gg/storage/uploads/products/genshin-impact-genesis-crystals1707515203_picture_item_small.png" alt="Ícone de Cristal Gênesis" class="h-full w-full rounded-full object-contain" onerror="this.style.display='none'">
+                        <h2 class="text-2xl font-bold text-white mb-2">Nossos Preços</h2>
+                        <p class="text-gray-400">Confira as melhores ofertas e pacotes com desconto.</p>
+                    </a>
+                    <!-- Card Funções -->
+                    <a href="#" onclick="goToPage('features')" class="entry-card block bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 border border-gray-700">
+                        <div class="flex justify-center mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-pink-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" /></svg>
                         </div>
-                        <h3 class="text-2xl font-bold text-pink-400 mb-2">Cristais Gênesis</h3>
-                        <p class="text-gray-400 mb-4 flex-grow">Recarregue seus Cristais Gênesis com desconto e segurança. Vários pacotes disponíveis para <span class="font-semibold text-white">Genshin Impact</span>.</p>
-                        <a href="#" onclick="goToPage('precos')" class="mt-auto bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-6 rounded-lg transition-colors duration-300">Ver Preços</a>
-                    </div>
-
-                    <!-- Card Destaque: Uniwaves -->
-                    <div class="entry-card bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 border border-gray-700 flex flex-col items-center text-center">
-                        <div class="w-24 h-24 rounded-full flex items-center justify-center mb-4 border-4 border-blue-400">
-                           <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                        <h2 class="text-2xl font-bold text-white mb-2">Lista de Funções</h2>
+                        <p class="text-gray-400">Descubra todas as funcionalidades dos nossos produtos.</p>
+                    </a>
+                    <!-- Card Como Comprar -->
+                    <a href="#" onclick="goToPage('comprar')" class="entry-card block bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 border border-gray-700">
+                        <div class="flex justify-center mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-pink-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
                         </div>
-                        <h3 class="text-2xl font-bold text-blue-400 mb-2">Uniwaves</h3>
-                        <p class="text-gray-400 mb-4 flex-grow">Domine <span class="font-semibold text-white">Wuthering Waves</span> com ESP completo, combate avançado e teletransporte preciso.</p>
-                        <a href="#" onclick="goToFeature('uniwaves')" class="mt-auto bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-6 rounded-lg transition-colors duration-300">Ver Funções</a>
-                    </div>
-
-                    <!-- Card Destaque: KittenWaves -->
-                    <div class="entry-card bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 border border-gray-700 flex flex-col items-center text-center">
-                        <div class="w-24 h-24 rounded-full flex items-center justify-center mb-4 border-4 border-rose-400">
-                           <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-rose-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+                        <h2 class="text-2xl font-bold text-white mb-2">Como Comprar</h2>
+                        <p class="text-gray-400">Siga nosso guia para adquirir seus produtos com segurança.</p>
+                    </a>
+                    <!-- Card FAQ -->
+                    <a href="#" onclick="goToPage('faq')" class="entry-card block bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 border border-gray-700">
+                        <div class="flex justify-center mb-4">
+                             <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-pink-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                 <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                             </svg>
                         </div>
-                        <h3 class="text-2xl font-bold text-rose-400 mb-2">KittenWaves</h3>
-                        <p class="text-gray-400 mb-4 flex-grow">A experiência vitalícia para <span class="font-semibold text-white">Wuthering Waves</span> com Godmode, Speedhack e muito mais.</p>
-                        <a href="#" onclick="goToFeature('kittenwaves')" class="mt-auto bg-rose-500 hover:bg-rose-600 text-white font-bold py-2 px-6 rounded-lg transition-colors duration-300">Ver Funções</a>
-                    </div>
-                </div>
-                <div class="mt-16 text-center">
-                    <a href="#" onclick="goToPage('precos')" class="bg-pink-500 hover:bg-pink-600 text-white font-bold py-4 px-8 rounded-lg transition-colors duration-300 text-lg">
-                        Ver Todos os Preços e Produtos
+                        <h2 class="text-2xl font-bold text-white mb-2">FAQ</h2>
+                        <p class="text-gray-400">Tire suas dúvidas mais comuns sobre nossos produtos.</p>
                     </a>
                 </div>
             </div>
@@ -267,7 +256,7 @@
                                     <ul class="space-y-3 text-center flex-grow text-gray-300">
                                         <li><span class="font-semibold">2 dias:</span> <span class="font-mono text-pink-300">R$ 16,90</span></li>
                                         <li><span class="font-semibold">7 dias:</span> <span class="font-mono text-pink-300">R$ 38,90</span></li>
-                                        <li><span class="font-semibold">30 dias:</span> <span class="font-mono text-pink-300">R$ 88,90</span></li>
+                                        <li><span class="font-semibold">30 dias:</span> <span class="font-mono text-pink-300">R$ 84,90</span></li>
                                     </ul>
                                 </a>
                             </div>
@@ -280,7 +269,7 @@
                                     <ul class="space-y-3 text-center flex-grow text-gray-300">
                                         <li><span class="font-semibold">2 dias:</span> <span class="font-mono text-pink-300">R$ 16,90</span></li>
                                         <li><span class="font-semibold">7 dias:</span> <span class="font-mono text-pink-300">R$ 38,90</span></li>
-                                        <li><span class="font-semibold">30 dias:</span> <span class="font-mono text-pink-300">R$ 88,90</span></li>
+                                        <li><span class="font-semibold">30 dias:</span> <span class="font-mono text-pink-300">R$ 84,90</span></li>
                                     </ul>
                                 </a>
                             </div>
@@ -293,7 +282,7 @@
                                     <ul class="space-y-3 text-center flex-grow text-gray-300">
                                         <li><span class="font-semibold">2 dias:</span> <span class="font-mono text-pink-300">R$ 16,90</span></li>
                                         <li><span class="font-semibold">7 dias:</span> <span class="font-mono text-pink-300">R$ 38,90</span></li>
-                                        <li><span class="font-semibold">30 dias:</span> <span class="font-mono text-pink-300">R$ 88,90</span></li>
+                                        <li><span class="font-semibold">30 dias:</span> <span class="font-mono text-pink-300">R$ 84,90</span></li>
                                     </ul>
                                 </a>
                             </div>
@@ -311,8 +300,18 @@
                                 </a>
                             </div>
 
-                            <!-- Spacer for the middle column on the second row -->
-                            <div class="hidden lg:block"></div>
+                            <!-- Slash -->
+                             <div class="animated-gradient-border rounded-lg">
+                                <a href="#" onclick="goToFeature('slash')" class="block w-full bg-gray-800 rounded-md shadow-lg p-6 flex flex-col h-full">
+                                    <p class="text-sm text-center text-gray-400 mb-1">Wuwa & Solo Leveling</p>
+                                    <h3 class="text-xl font-bold text-center mb-4 text-green-400">Slash</h3>
+                                    <ul class="space-y-3 text-center flex-grow text-gray-300">
+                                        <li><span class="font-semibold">3 dias:</span> <span class="font-mono text-pink-300">R$ 21,90</span></li>
+                                        <li><span class="font-semibold">7 dias:</span> <span class="font-mono text-pink-300">R$ 32,90</span></li>
+                                        <li><span class="font-semibold">30 dias:</span> <span class="font-mono text-pink-300">R$ 53,90</span></li>
+                                    </ul>
+                                </a>
+                            </div>
 
                             <!-- KittenWaves -->
                             <div class="animated-gradient-border rounded-lg">
@@ -392,6 +391,7 @@
                      <button id="uniwaves-tab" class="feature-tab inline-block p-3 sm:p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-300 hover:border-gray-500 font-semibold" onclick="showFeature('uniwaves', this)">Uniwaves</button>
                      <button id="unizone-tab" class="feature-tab inline-block p-3 sm:p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-300 hover:border-gray-500 font-semibold" onclick="showFeature('unizone', this)">Unizone</button>
                      <button id="unistar-tab" class="feature-tab inline-block p-3 sm:p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-300 hover:border-gray-500 font-semibold" onclick="showFeature('unistar', this)">Unistar</button>
+                     <button id="slash-tab" class="feature-tab inline-block p-3 sm:p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-300 hover:border-gray-500 font-semibold" onclick="showFeature('slash', this)">Slash</button>
                      <button id="kittenwaves-tab" class="feature-tab inline-block p-3 sm:p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-300 hover:border-gray-500 font-semibold" onclick="showFeature('kittenwaves', this)">KittenWaves</button>
                  </div>
              </div>
@@ -443,6 +443,13 @@
                          <div><h4 class="font-semibold text-white mb-2">Utility</h4><ul class="list-disc list-inside space-y-1"><li>Auto Dialog</li><li>Skip Cutscenes</li><li>FPS Unlocker</li><li>FOV Changer</li><li>Auto Loot</li></ul></div>
                          <div><h4 class="font-semibold text-white mb-2">Profile</h4><ul class="list-disc list-inside space-y-1"><li>UID Changer</li><li>Config Management</li></ul></div>
                      </div>
+                 </div>
+                 <!-- Slash -->
+                 <div id="slash-content" class="feature-content">
+                    <h3 class="text-2xl font-bold text-green-400 mb-4">Slash <span class="text-sm text-gray-400 font-normal">- Wuthering Waves & Solo Leveling</span></h3>
+                    <div class="text-gray-300">
+                        <p>As funções detalhadas para o Slash serão adicionadas em breve. Fique de olho!</p>
+                    </div>
                  </div>
                  <!-- Kittenwaves -->
                  <div id="kittenwaves-content" class="feature-content">
