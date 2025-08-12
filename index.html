@@ -12,7 +12,7 @@
         }
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #111827;
+            background-color: #111827; /* bg-gray-900 */
             /* Efeito de fundo gradiente */
             background-image: radial-gradient(circle at top, rgba(236, 72, 153, 0.1), transparent 40%),
                               radial-gradient(circle at bottom left, rgba(129, 140, 248, 0.1), transparent 50%),
@@ -57,6 +57,11 @@
             background: linear-gradient(60deg, #f795d2, #f472b6, #be185d, #4a044e, #be185d, #f472b6, #f795d2);
             background-size: 300% 300%;
             animation: gradient-animation 5s ease infinite;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .animated-gradient-border:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(236, 72, 153, 0.2), 0 10px 10px -5px rgba(236, 72, 153, 0.1);
         }
 
         @keyframes gradient-animation {
@@ -133,13 +138,13 @@
     </div>
 
     <!-- Cabeçalho e Navegação -->
-    <div class="bg-gray-800/50 backdrop-blur-sm sticky top-0 z-50 shadow-lg">
+    <header class="bg-gray-800/50 backdrop-blur-sm sticky top-0 z-50 shadow-lg">
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <div class="flex items-center">
                     <a href="#" onclick="showPage('home', this)" class="flex-shrink-0 flex items-center cursor-pointer">
                          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-pink-400 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                           <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                          </svg>
                         <span class="text-xl font-bold text-white">Naty Store</span>
                     </a>
@@ -174,51 +179,62 @@
                 </div>
             </div>
         </nav>
-    </div>
+    </header>
 
     <main class="max-w-7xl mx-auto sm:px-6 lg:px-8 py-6">
         <!-- Página de Entrada (Home) -->
         <div id="home" class="page-content">
             <div class="px-4">
                 <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4">Bem-vindo(a) à <span class="text-pink-400">Naty Store</span></h1>
-                <p class="text-lg sm:text-xl text-gray-300 mb-12 max-w-2xl mx-auto">Agradecemos a sua preferência! Explore nossos produtos e encontre o que você precisa para a sua jornada.</p>
+                <p class="text-lg sm:text-xl text-gray-300 mb-12 max-w-3xl mx-auto">Sua fonte confiável para os melhores aprimoramentos de jogos. Explore nossos produtos e eleve sua experiência de jogo a um novo patamar.</p>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-                    <!-- Card Preços -->
-                    <a href="#" onclick="goToPage('precos')" class="entry-card block bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 border border-gray-700">
-                        <div class="flex justify-center mb-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-pink-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
-                            </svg>
+                <!-- Seção de Produtos em Destaque -->
+                <h2 class="text-3xl font-bold text-white mb-8">Produtos em Destaque</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                    
+                    <!-- Card Destaque: Unicore -->
+                    <div class="entry-card bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 border border-gray-700 flex flex-col items-center text-center">
+                        <div class="w-24 h-24 rounded-full flex items-center justify-center mb-4 border-4 border-cyan-400">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" /></svg>
                         </div>
-                        <h2 class="text-2xl font-bold text-white mb-2">Nossos Preços</h2>
-                        <p class="text-gray-400">Confira as melhores ofertas e pacotes com desconto.</p>
-                    </a>
-                    <!-- Card Funções -->
-                    <a href="#" onclick="goToPage('features')" class="entry-card block bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 border border-gray-700">
-                        <div class="flex justify-center mb-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-pink-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" /></svg>
+                        <h3 class="text-2xl font-bold text-cyan-400 mb-2">Unicore</h3>
+                        <p class="text-gray-400 mb-4 flex-grow">A solução completa para <span class="font-semibold text-white">Genshin Impact</span>, com mapa interativo, combate aprimorado e muito mais.</p>
+                        <a href="#" onclick="goToFeature('unicore')" class="mt-auto bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-2 px-6 rounded-lg transition-colors duration-300">Ver Funções</a>
+                    </div>
+
+                    <!-- Card Destaque: Cristais Gênesis -->
+                    <div class="entry-card bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 border border-gray-700 flex flex-col items-center text-center">
+                        <div class="w-24 h-24 rounded-full flex items-center justify-center mb-4 border-4 border-pink-400 p-2 bg-gray-700/50">
+                           <img src="https://skycoach.gg/storage/uploads/products/genshin-impact-genesis-crystals1707515203_picture_item_small.png" alt="Ícone de Cristal Gênesis" class="h-full w-full rounded-full object-contain" onerror="this.style.display='none'">
                         </div>
-                        <h2 class="text-2xl font-bold text-white mb-2">Lista de Funções</h2>
-                        <p class="text-gray-400">Descubra todas as funcionalidades dos nossos produtos.</p>
-                    </a>
-                    <!-- Card Como Comprar -->
-                    <a href="#" onclick="goToPage('comprar')" class="entry-card block bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 border border-gray-700">
-                        <div class="flex justify-center mb-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-pink-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+                        <h3 class="text-2xl font-bold text-pink-400 mb-2">Cristais Gênesis</h3>
+                        <p class="text-gray-400 mb-4 flex-grow">Recarregue seus Cristais Gênesis com desconto e segurança. Vários pacotes disponíveis para <span class="font-semibold text-white">Genshin Impact</span>.</p>
+                        <a href="#" onclick="goToPage('precos')" class="mt-auto bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-6 rounded-lg transition-colors duration-300">Ver Preços</a>
+                    </div>
+
+                    <!-- Card Destaque: Uniwaves -->
+                    <div class="entry-card bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 border border-gray-700 flex flex-col items-center text-center">
+                        <div class="w-24 h-24 rounded-full flex items-center justify-center mb-4 border-4 border-blue-400">
+                           <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
                         </div>
-                        <h2 class="text-2xl font-bold text-white mb-2">Como Comprar</h2>
-                        <p class="text-gray-400">Siga nosso guia para adquirir seus produtos com segurança.</p>
-                    </a>
-                    <!-- Card FAQ -->
-                    <a href="#" onclick="goToPage('faq')" class="entry-card block bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 border border-gray-700">
-                        <div class="flex justify-center mb-4">
-                             <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-pink-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
+                        <h3 class="text-2xl font-bold text-blue-400 mb-2">Uniwaves</h3>
+                        <p class="text-gray-400 mb-4 flex-grow">Domine <span class="font-semibold text-white">Wuthering Waves</span> com ESP completo, combate avançado e teletransporte preciso.</p>
+                        <a href="#" onclick="goToFeature('uniwaves')" class="mt-auto bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-6 rounded-lg transition-colors duration-300">Ver Funções</a>
+                    </div>
+
+                    <!-- Card Destaque: KittenWaves -->
+                    <div class="entry-card bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 border border-gray-700 flex flex-col items-center text-center">
+                        <div class="w-24 h-24 rounded-full flex items-center justify-center mb-4 border-4 border-rose-400">
+                           <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-rose-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
                         </div>
-                        <h2 class="text-2xl font-bold text-white mb-2">FAQ</h2>
-                        <p class="text-gray-400">Tire suas dúvidas mais comuns sobre nossos produtos.</p>
+                        <h3 class="text-2xl font-bold text-rose-400 mb-2">KittenWaves</h3>
+                        <p class="text-gray-400 mb-4 flex-grow">A experiência vitalícia para <span class="font-semibold text-white">Wuthering Waves</span> com Godmode, Speedhack e muito mais.</p>
+                        <a href="#" onclick="goToFeature('kittenwaves')" class="mt-auto bg-rose-500 hover:bg-rose-600 text-white font-bold py-2 px-6 rounded-lg transition-colors duration-300">Ver Funções</a>
+                    </div>
+                </div>
+                <div class="mt-16 text-center">
+                    <a href="#" onclick="goToPage('precos')" class="bg-pink-500 hover:bg-pink-600 text-white font-bold py-4 px-8 rounded-lg transition-colors duration-300 text-lg">
+                        Ver Todos os Preços e Produtos
                     </a>
                 </div>
             </div>
@@ -226,40 +242,86 @@
 
         <!-- Página de Preços -->
         <div id="precos" class="page-content">
-             <div class="max-w-4xl mx-auto">
+             <div class="max-w-6xl mx-auto">
                  <div>
-                     <header class="text-center mb-10">
-                         <h1 class="text-3xl sm:text-4xl font-bold text-pink-400">Tabela de Preços</h1>
-                         <p class="text-gray-400 mt-2">Aproveite nossos preços com desconto!</p>
+                     <header class="text-center mb-12">
+                         <h1 class="text-3xl sm:text-4xl font-bold text-pink-400">Nossos Produtos e Preços</h1>
+                         <p class="text-gray-400 mt-2">Escolha o plano ideal para você e comece a jogar em outro nível!</p>
                      </header>
 
-                     <!-- Seção Principal - Pertamax -->
+                     <!-- Nova Seção de Serviços e Assinaturas -->
                      <div class="mb-16">
-                         <div class="flex items-center mb-6 justify-center">
-                             <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mr-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
-                                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                         <div class="flex items-center mb-8 justify-center">
+                             <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mr-4 text-pink-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                 <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 15l.813.904m-2.826-.904L6 15l.187.904m1.64-2.708L8 12.5l.813.904m-2.826-.904L5 12.5l.187.904m1.64-2.708L7 10l.813.904m-2.826-.904L4 10l.187.904m1.64-2.708l1.813-1.813.904.813-1.813 1.813-.904-.813zm-2.708 1.64l1.813-1.813.904.813-1.813 1.813-.904-.813zm2.708-1.64l1.813-1.813.904.813-1.813 1.813-.904-.813zM9 3.75l1.5 1.5-1.5 1.5" />
+                                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v18m-3-3h6" />
                              </svg>
-                             <h2 class="text-3xl font-bold text-center text-yellow-400">Korepi Pertamax</h2>
+                             <h2 class="text-3xl font-bold text-center text-white">Serviços e Assinaturas</h2>
                          </div>
-                         <p class="text-center text-gray-400 mb-8 -mt-4">Para Genshin Impact</p>
                          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                             <a href="#" onclick="goToAnchor('features', 'pertamax-features')" class="block"><div class="bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col border-2 border-gray-700 hover:border-pink-500 transition-all duration-300 h-full"><h3 class="text-xl font-bold text-center mb-2 text-white">BÁSICO - 1 DIA</h3><p class="text-3xl font-bold text-center text-pink-400 mb-4">R$ 6,00</p><ul class="space-y-2 text-center flex-grow text-gray-300"><li>✓ 100% Das funções</li><li>✓ Farm AFK (Teleports)</li><li class="text-red-400">✗ Não possui pause</li></ul></div></a>
-                             <a href="#" onclick="goToAnchor('features', 'pertamax-features')" class="block"><div class="bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col border-2 border-gray-700 hover:border-pink-500 transition-all duration-300 h-full"><h3 class="text-xl font-bold text-center mb-2 text-white">MÉDIO - 7 DIAS</h3><p class="text-3xl font-bold text-center text-pink-400 mb-4">R$ 15,90</p><ul class="space-y-2 text-center flex-grow text-gray-300"><li>✓ 100% Das funções</li><li>✓ Farm AFK (Teleports)</li><li class="text-red-400">✗ Não possui pause</li></ul></div></a>
-                             <a href="#" onclick="goToAnchor('features', 'pertamax-features')" class="block"><div class="bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col border-2 border-gray-700 hover:border-pink-500 transition-all duration-300 h-full"><h3 class="text-xl font-bold text-center mb-2 text-white">PRO - 30 DIAS</h3><p class="text-3xl font-bold text-center text-pink-400 mb-4">R$ 34,90</p><ul class="space-y-2 text-center flex-grow text-gray-300"><li>✓ 100% Das funções</li><li>✓ Farm AFK (Teleports)</li><li>✓ Possui pause</li></ul></div></a>
-                             <a href="#" onclick="goToAnchor('features', 'pertamax-features')" class="block"><div class="bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col border-2 border-gray-700 hover:border-pink-500 transition-all duration-300 h-full"><h3 class="text-xl font-bold text-center mb-2 text-white">ELITE - 60 DIAS</h3><p class="text-3xl font-bold text-center text-pink-400 mb-4">R$ 60,90</p><ul class="space-y-2 text-center flex-grow text-gray-300"><li>✓ 100% Das funções</li><li>✓ Farm AFK (Teleports)</li><li>✓ Possui pause</li></ul></div></a>
-                             <a href="#" onclick="goToAnchor('features', 'pertamax-features')" class="block"><div class="bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col border-2 border-gray-700 hover:border-pink-500 transition-all duration-300 h-full"><h3 class="text-xl font-bold text-center mb-2 text-white">MASTER - 90 DIAS</h3><p class="text-3xl font-bold text-center text-pink-400 mb-4">R$ 87,90</p><ul class="space-y-2 text-center flex-grow text-gray-300"><li>✓ Tudo dos outros</li><li class="text-yellow-400">✓ Cargo Especial!</li><li>✓ Possui pause</li></ul></div></a>
-                             <a href="#" onclick="goToAnchor('features', 'pertamax-features')" class="block"><div class="bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col border-2 border-gray-700 hover:border-pink-500 transition-all duration-300 h-full"><h3 class="text-xl font-bold text-center mb-2 text-white">ULTRA - 180 DIAS</h3><p class="text-3xl font-bold text-center text-pink-400 mb-4">R$ 174,90</p><ul class="space-y-2 text-center flex-grow text-gray-300"><li>✓ Tudo dos outros</li><li class="text-yellow-400">✓ Cargo Especial!</li><li>✓ Possui pause</li></ul></div></a>
-                             <div class="animated-gradient-border rounded-lg block col-span-1 sm:col-span-2 lg:col-span-3 transform hover:scale-[1.02] transition-transform duration-300">
-                                <a href="#" onclick="goToAnchor('features', 'pertamax-features')" class="block">
-                                    <div class="bg-gray-800 rounded-md shadow-lg p-6 flex flex-col h-full">
-                                        <h3 class="text-xl font-bold text-center mb-2 text-yellow-300">LENDA - 365 DIAS</h3>
-                                        <p class="text-4xl font-bold text-center text-yellow-400 mb-4">R$ 315,90</p>
-                                        <ul class="space-y-2 text-center flex-grow text-gray-300">
-                                            <li>✓ Tudo dos outros</li>
-                                            <li class="text-yellow-400">✓ Cargo Especial!</li>
-                                            <li class="text-cyan-400">✓ Menção Honrosa</li>
-                                        </ul>
-                                    </div>
+                             <!-- Unicore -->
+                            <div class="animated-gradient-border rounded-lg">
+                                <a href="#" onclick="goToFeature('unicore')" class="block w-full bg-gray-800 rounded-md shadow-lg p-6 flex flex-col h-full">
+                                    <p class="text-sm text-center text-gray-400 mb-1">Genshin Impact</p>
+                                    <h3 class="text-xl font-bold text-center mb-4 text-cyan-400">Unicore</h3>
+                                    <ul class="space-y-3 text-center flex-grow text-gray-300">
+                                        <li><span class="font-semibold">2 dias:</span> <span class="font-mono text-pink-300">R$ 16,90</span></li>
+                                        <li><span class="font-semibold">7 dias:</span> <span class="font-mono text-pink-300">R$ 38,90</span></li>
+                                        <li><span class="font-semibold">30 dias:</span> <span class="font-mono text-pink-300">R$ 88,90</span></li>
+                                    </ul>
+                                </a>
+                            </div>
+
+                            <!-- Uniwaves -->
+                            <div class="animated-gradient-border rounded-lg">
+                                <a href="#" onclick="goToFeature('uniwaves')" class="block w-full bg-gray-800 rounded-md shadow-lg p-6 flex flex-col h-full">
+                                    <p class="text-sm text-center text-gray-400 mb-1">Wuthering Waves</p>
+                                    <h3 class="text-xl font-bold text-center mb-4 text-blue-400">Uniwaves</h3>
+                                    <ul class="space-y-3 text-center flex-grow text-gray-300">
+                                        <li><span class="font-semibold">2 dias:</span> <span class="font-mono text-pink-300">R$ 16,90</span></li>
+                                        <li><span class="font-semibold">7 dias:</span> <span class="font-mono text-pink-300">R$ 38,90</span></li>
+                                        <li><span class="font-semibold">30 dias:</span> <span class="font-mono text-pink-300">R$ 88,90</span></li>
+                                    </ul>
+                                </a>
+                            </div>
+
+                            <!-- Unizone -->
+                            <div class="animated-gradient-border rounded-lg">
+                                <a href="#" onclick="goToFeature('unizone')" class="block w-full bg-gray-800 rounded-md shadow-lg p-6 flex flex-col h-full">
+                                    <p class="text-sm text-center text-gray-400 mb-1">Zenless Zone Zero</p>
+                                    <h3 class="text-xl font-bold text-center mb-4 text-indigo-400">Unizone</h3>
+                                    <ul class="space-y-3 text-center flex-grow text-gray-300">
+                                        <li><span class="font-semibold">2 dias:</span> <span class="font-mono text-pink-300">R$ 16,90</span></li>
+                                        <li><span class="font-semibold">7 dias:</span> <span class="font-mono text-pink-300">R$ 38,90</span></li>
+                                        <li><span class="font-semibold">30 dias:</span> <span class="font-mono text-pink-300">R$ 88,90</span></li>
+                                    </ul>
+                                </a>
+                            </div>
+
+                            <!-- Unistar -->
+                            <div class="animated-gradient-border rounded-lg">
+                                <a href="#" onclick="goToFeature('unistar')" class="block w-full bg-gray-800 rounded-md shadow-lg p-6 flex flex-col h-full">
+                                    <p class="text-sm text-center text-gray-400 mb-1">Honkai: Star Rail</p>
+                                    <h3 class="text-xl font-bold text-center mb-4 text-yellow-400">Unistar</h3>
+                                    <ul class="space-y-3 text-center flex-grow text-gray-300">
+                                        <li><span class="font-semibold">2 dias:</span> <span class="font-mono text-pink-300">R$ 11,90</span></li>
+                                        <li><span class="font-semibold">7 dias:</span> <span class="font-mono text-pink-300">R$ 27,90</span></li>
+                                        <li><span class="font-semibold">30 dias:</span> <span class="font-mono text-pink-300">R$ 55,90</span></li>
+                                    </ul>
+                                </a>
+                            </div>
+
+                            <!-- Spacer for the middle column on the second row -->
+                            <div class="hidden lg:block"></div>
+
+                            <!-- KittenWaves -->
+                            <div class="animated-gradient-border rounded-lg">
+                                <a href="#" onclick="goToFeature('kittenwaves')" class="block w-full bg-gray-800 rounded-md shadow-lg p-6 flex flex-col h-full">
+                                    <p class="text-sm text-center text-gray-400 mb-1">Wuthering Waves</p>
+                                    <h3 class="text-xl font-bold text-center mb-4 text-rose-400">KittenWaves</h3>
+                                    <ul class="space-y-3 text-center flex-grow text-gray-300">
+                                        <li><span class="font-semibold text-yellow-300">Vitalício:</span> <span class="font-mono text-pink-300 text-2xl">R$ 139,90</span></li>
+                                    </ul>
                                 </a>
                             </div>
                          </div>
@@ -269,7 +331,7 @@
                      <div class="mb-12">
                          <div class="flex items-center mb-6">
                              <img src="https://skycoach.gg/storage/uploads/products/genshin-impact-genesis-crystals1707515203_picture_item_small.png" alt="Ícone de Cristal Gênesis" class="h-10 w-10 mr-4 rounded-full" onerror="this.style.display='none'">
-                             <h2 class="text-2xl font-semibold border-l-4 border-pink-400 pl-4">Cristais Gênesis</h2>
+                             <h2 class="text-2xl font-semibold border-l-4 border-pink-400 pl-4">Cristais Gênesis (Genshin Impact)</h2>
                          </div>
                          <div class="overflow-x-auto rounded-lg shadow-lg bg-gray-800">
                              <table class="w-full text-left">
@@ -296,7 +358,7 @@
                      <div class="mb-12">
                          <div class="flex items-center mb-6">
                              <img src="https://files.softicons.com/download/folder-icons/plastic-folders-icons-by-sirubico/ico/Folder-Pink.ico" alt="Ícone da Bênção da Lua Nova" class="h-10 w-10 mr-4 rounded-full" onerror="this.style.display='none'">
-                             <h2 class="text-2xl font-semibold border-l-4 border-pink-400 pl-4">Itens e Pacotes Especiais</h2>
+                             <h2 class="text-2xl font-semibold border-l-4 border-pink-400 pl-4">Itens e Pacotes Especiais (Genshin Impact)</h2>
                          </div>
                          <div class="overflow-x-auto rounded-lg shadow-lg bg-gray-800">
                               <table class="w-full text-left">
@@ -312,24 +374,6 @@
                              </table>
                          </div>
                      </div>
-                     <!-- Outros Serviços e Assinaturas -->
-                     <div>
-                          <div class="flex items-center mb-6">
-                             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-4 text-pink-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                               <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 15l.813.904m-2.826-.904L6 15l.187.904m1.64-2.708L8 12.5l.813.904m-2.826-.904L5 12.5l.187.904m1.64-2.708L7 10l.813.904m-2.826-.904L4 10l.187.904m1.64-2.708l1.813-1.813.904.813-1.813 1.813-.904-.813zm-2.708 1.64l1.813-1.813.904.813-1.813 1.813-.904-.813zm2.708-1.64l1.813-1.813.904.813-1.813 1.813-.904-.813zM9 3.75l1.5 1.5-1.5 1.5" />
-                               <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v18m-3-3h6" />
-                             </svg>
-                             <h2 class="text-2xl font-semibold border-l-4 border-pink-400 pl-4">Outros Serviços e Assinaturas</h2>
-                         </div>
-                         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                             <a href="#" onclick="goToFeature('unicore')" class="block w-full"><div class="bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col h-full transform hover:scale-105 transition-transform duration-300"><p class="text-sm text-center text-gray-400 mb-1">Genshin Impact</p><h3 class="text-xl font-bold text-center mb-4 text-cyan-400">Unicore</h3><ul class="space-y-3 text-center flex-grow"><li><span class="font-semibold">2 dias:</span> <span class="font-mono text-pink-300">R$ 16,90</span></li><li><span class="font-semibold">7 dias:</span> <span class="font-mono text-pink-300">R$ 38,90</span></li><li><span class="font-semibold">30 dias:</span> <span class="font-mono text-pink-300">R$ 88,90</span></li></ul></div></a>
-                             <a href="#" onclick="goToFeature('uniwaves')" class="block w-full"><div class="bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col h-full transform hover:scale-105 transition-transform duration-300"><p class="text-sm text-center text-gray-400 mb-1">Wuthering Waves</p><h3 class="text-xl font-bold text-center mb-4 text-blue-400">Uniwaves</h3><ul class="space-y-3 text-center flex-grow"><li><span class="font-semibold">2 dias:</span> <span class="font-mono text-pink-300">R$ 16,90</span></li><li><span class="font-semibold">7 dias:</span> <span class="font-mono text-pink-300">R$ 38,90</span></li><li><span class="font-semibold">30 dias:</span> <span class="font-mono text-pink-300">R$ 88,90</span></li></ul></div></a>
-                             <a href="#" onclick="goToFeature('unizone')" class="block w-full"><div class="bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col h-full transform hover:scale-105 transition-transform duration-300"><p class="text-sm text-center text-gray-400 mb-1">Zenless Zone Zero</p><h3 class="text-xl font-bold text-center mb-4 text-indigo-400">Unizone</h3><ul class="space-y-3 text-center flex-grow"><li><span class="font-semibold">2 dias:</span> <span class="font-mono text-pink-300">R$ 16,90</span></li><li><span class="font-semibold">7 dias:</span> <span class="font-mono text-pink-300">R$ 38,90</span></li><li><span class="font-semibold">30 dias:</span> <span class="font-mono text-pink-300">R$ 88,90</span></li></ul></div></a>
-                             <div class="hidden lg:block lg:col-start-1"></div> <!-- Espaçador para empurrar os próximos itens -->
-                             <a href="#" onclick="goToFeature('unistar')" class="block w-full lg:col-start-2"><div class="bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col h-full transform hover:scale-105 transition-transform duration-300"><p class="text-sm text-center text-gray-400 mb-1">Honkai: Star Rail</p><h3 class="text-xl font-bold text-center mb-4 text-yellow-400">Unistar</h3><ul class="space-y-3 text-center flex-grow"><li><span class="font-semibold">2 dias:</span> <span class="font-mono text-pink-300">R$ 11,90</span></li><li><span class="font-semibold">7 dias:</span> <span class="font-mono text-pink-300">R$ 27,90</span></li><li><span class="font-semibold">30 dias:</span> <span class="font-mono text-pink-300">R$ 55,90</span></li></ul></div></a>
-                             <a href="#" onclick="goToFeature('kittenwaves')" class="block w-full"><div class="bg-gray-800 rounded-lg shadow-lg p-6 flex flex-col h-full transform hover:scale-105 transition-transform duration-300"><p class="text-sm text-center text-gray-400 mb-1">Wuthering Waves</p><h3 class="text-xl font-bold text-center mb-4 text-rose-400">KittenWaves</h3><ul class="space-y-3 text-center flex-grow"><li><span class="font-semibold">Vitalício:</span> <span class="font-mono text-pink-300">R$ 139,90</span></li></ul></div></a>
-                         </div>
-                     </div>
                  </div>
              </div>
         </div>
@@ -338,45 +382,8 @@
         <div id="features" class="page-content">
              <header class="text-center mb-10">
                  <h1 class="text-3xl sm:text-4xl font-bold text-pink-400">Funções dos Produtos</h1>
-                 <p class="text-gray-400 mt-2">Selecione um produto para ver suas funcionalidades.</p>
+                 <p class="text-gray-400 mt-2">Selecione um produto para ver suas funcionalidades detalhadas.</p>
              </header>
-
-             <!-- Seção de Destaque - Korepi Pertamax -->
-             <div id="pertamax-features" class="mb-12">
-                 <div class="rounded-lg shadow-xl animated-gradient-border">
-                     <div class="bg-gray-800 rounded-md p-6">
-                         <h3 class="text-3xl font-bold text-yellow-400 mb-4 text-center">Korepi Pertamax <span class="text-lg text-gray-400 font-normal">- Genshin Impact</span></h3>
-                        
-                         <div class="text-center my-6">
-                             <p class="text-gray-300">Funções com preview detalhado (vídeo) você pode encontrar clicando aqui: 
-                                 <a href="https://korepi.com/pt/features/" target="_blank" rel="noopener noreferrer" class="text-pink-400 hover:underline font-semibold">
-                                     Demonstração 🎥
-                                 </a>
-                             </p>
-                         </div>
-
-                         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-8 text-gray-300">
-                             <div><h4 class="font-semibold text-white text-lg mb-2 border-b border-gray-700 pb-1">Player</h4><ul class="list-disc list-inside space-y-1"><li>Efeitos de Ataque</li><li>Auto Correr</li><li>Salto De Coelho</li><li>Efeitos de Resfriamento</li><li>Movimento Extra</li><li>Controle de Queda</li><li>Modo Deus</li><li>Estamina Infinita</li><li>Sem Colisão</li><li>Velocidade do Jogador</li><li>Utilidade Remota</li><li>Stats Modifier (WIP)</li></ul></div>
-                             <div><h4 class="font-semibold text-white text-lg mb-2 border-b border-gray-700 pb-1">Teleport</h4><ul class="list-disc list-inside space-y-1"><li>Teletransporte de Oculus</li><li>Teletransporte de Baús</li><li>Teletransporte Personalizado</li><li>Teletransporte de Mapa</li><li>Teletransporte de Missão</li></ul></div>
-                             <div><h4 class="font-semibold text-white text-lg mb-2 border-b border-gray-700 pb-1">Visuals</h4><ul class="list-disc list-inside space-y-1"><li>Trocador de Animação</li><li>Zoom de Camera</li><li>Modificador de Constelações</li><li>Perfil Personalizado</li><li>Clima Personalizado</li><li>Trocador de Emoções</li><li>Visuais Extras</li><li>Desbloquear FPS</li><li>Tempo Falso</li><li>Modificador de Planador</li><li>Camera Livre</li><li>Esconder Interface</li><li>Zoom do Mapa</li><li>Trocador de Monstros</li><li>Modificador de Skin</li><li>Modificador de Textura</li></ul></div>
-                             <div><h4 class="font-semibold text-white text-lg mb-2 border-b border-gray-700 pb-1">World</h4><ul class="list-disc list-inside space-y-1"><li>Auto Ativar Teletransporte</li><li>Auto Desafio</li><li>Auto Cozinhar</li><li>Auto Destruir Objetos</li><li>Auto Pescar</li><li>Auto Coletar</li><li>Auto Seelie</li><li>Auto Conversar</li><li>Auto Madeira</li><li>Aura Elemental</li><li>Velocidade de Jogo</li><li>Aura Mortal</li><li>Domínio Automático (WIP)</li><li>Puzzle Automático</li><li>Sucção de Mobs</li><li>Sucção de Coleta</li></ul></div>
-                         </div>
-                        
-                         <div class="border-t border-gray-700 my-6"></div>
-
-                         <div class="text-center">
-                              <h4 class="font-semibold text-white text-xl mb-4">Benefícios Exclusivos Pertamax</h4>
-                              <ul class="space-y-2 text-yellow-300 inline-block text-left">
-                                   <li>✓ Launcher interativo para facilitar a instalação</li>
-                                   <li>✓ Atualizações antecipadas para usuários Pertamax</li>
-                                   <li>✓ Farm AFK com Temporizador</li>
-                                   <li>✓ Cargos especiais no servidor do Discord</li>
-                                   <li>✓ Não precisa resetar a chave (enc.json) diariamente</li>
-                              </ul>
-                         </div>
-                     </div>
-                 </div>
-             </div>
 
              <!-- Abas de Navegação das Features -->
              <div id="features-nav" class="mb-8 border-b border-gray-700">
@@ -407,12 +414,12 @@
                  <div id="uniwaves-content" class="feature-content">
                       <h3 class="text-2xl font-bold text-blue-400 mb-4">Uniwaves <span class="text-sm text-gray-400 font-normal">- Wuthering Waves</span></h3>
                       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-gray-300">
-                         <div><h4 class="font-semibold text-white mb-2">Visuals</h4><ul class="list-disc list-inside space-y-1"><li>Full ESP (Offscreen, Box, etc)</li><li>Radar</li><li>Extensive Filters</li><li>Config System</li></ul></div>
-                         <div><h4 class="font-semibold text-white mb-2">Combat</h4><ul class="list-disc list-inside space-y-1"><li>Rapid Fire & Kill Aura</li><li>Dumb Enemies</li><li>Magnetizer & Aimbot</li><li>No Skill Cooldown</li></ul></div>
-                         <div><h4 class="font-semibold text-white mb-2">Player</h4><ul class="list-disc list-inside space-y-1"><li>Noclip & Speed Control</li><li>Infinite Stamina</li><li>GodMode & No Fall Damage</li><li>Auto Loot</li></ul></div>
-                         <div><h4 class="font-semibold text-white mb-2">Teleports</h4><ul class="list-disc list-inside space-y-1"><li>Mouse Teleport</li><li>Entity Teleport</li><li>Custom TP Routes</li></ul></div>
-                         <div><h4 class="font-semibold text-white mb-2">Utility</h4><ul class="list-disc list-inside space-y-1"><li>FOV Changer</li><li>Free Camera & FPS Unlocker</li><li>Speedup Game</li><li>Custom Crosshair</li></ul></div>
-                         <div><h4 class="font-semibold text-white mb-2">Profile</h4><ul class="list-disc list-inside space-y-1"><li>UID Changer</li><li>Name Changer</li><li>AR Level Changer</li><li>Config Management</li></ul></div>
+                          <div><h4 class="font-semibold text-white mb-2">Visuals</h4><ul class="list-disc list-inside space-y-1"><li>Full ESP (Offscreen, Box, etc)</li><li>Radar</li><li>Extensive Filters</li><li>Config System</li></ul></div>
+                          <div><h4 class="font-semibold text-white mb-2">Combat</h4><ul class="list-disc list-inside space-y-1"><li>Rapid Fire & Kill Aura</li><li>Dumb Enemies</li><li>Magnetizer & Aimbot</li><li>No Skill Cooldown</li></ul></div>
+                          <div><h4 class="font-semibold text-white mb-2">Player</h4><ul class="list-disc list-inside space-y-1"><li>Noclip & Speed Control</li><li>Infinite Stamina</li><li>GodMode & No Fall Damage</li><li>Auto Loot</li></ul></div>
+                          <div><h4 class="font-semibold text-white mb-2">Teleports</h4><ul class="list-disc list-inside space-y-1"><li>Mouse Teleport</li><li>Entity Teleport</li><li>Custom TP Routes</li></ul></div>
+                          <div><h4 class="font-semibold text-white mb-2">Utility</h4><ul class="list-disc list-inside space-y-1"><li>FOV Changer</li><li>Free Camera & FPS Unlocker</li><li>Speedup Game</li><li>Custom Crosshair</li></ul></div>
+                          <div><h4 class="font-semibold text-white mb-2">Profile</h4><ul class="list-disc list-inside space-y-1"><li>UID Changer</li><li>Name Changer</li><li>AR Level Changer</li><li>Config Management</li></ul></div>
                       </div>
                  </div>
                  <!-- Unizone -->
@@ -441,12 +448,12 @@
                  <div id="kittenwaves-content" class="feature-content">
                      <h3 class="text-2xl font-bold text-rose-400 mb-4">KittenWaves <span class="text-sm text-gray-400 font-normal">- Wuthering Waves</span></h3>
                       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-gray-300">
-                         <div><h4 class="font-semibold text-white mb-2">Player</h4><ul class="list-disc list-inside space-y-1"><li>Godmode</li><li>Multihit & No Cooldown</li><li>Infinite Stamina/Energy</li><li>Max Resonance Chain</li><li>Player Buffs</li><li>Noclip & Walk Speed</li></ul></div>
-                         <div><h4 class="font-semibold text-white mb-2">World</h4><ul class="list-disc list-inside space-y-1"><li>Speedhack</li><li>Killaura & Entity Vacuum</li><li>Dumb Enemies</li><li>Skip Dialog & Animations</li><li>Auto Loot/Absorb</li></ul></div>
-                         <div><h4 class="font-semibold text-white mb-2">Visuals</h4><ul class="list-disc list-inside space-y-1"><li>Full-featured ESP</li><li>Extensive Filters</li><li>Boxes, Tracers, Distance</li></ul></div>
-                         <div><h4 class="font-semibold text-white mb-2">Teleport</h4><ul class="list-disc list-inside space-y-1"><li>Map Teleport</li><li>Chest Teleport</li><li>Custom TP Lists</li></ul></div>
-                         <div><h4 class="font-semibold text-white mb-2">Miscellaneous</h4><ul class="list-disc list-inside space-y-1"><li>Freecam & Hide UI</li><li>UID & FOV Changer</li><li>FPS Unlocker & Display</li><li>CPU Saver</li></ul></div>
-                         <div><h4 class="font-semibold text-white mb-2">Settings</h4><ul class="list-disc list-inside space-y-1"><li>Themes</li><li>Hotkeys</li><li>Multi-language Support</li></ul></div>
+                          <div><h4 class="font-semibold text-white mb-2">Player</h4><ul class="list-disc list-inside space-y-1"><li>Godmode</li><li>Multihit & No Cooldown</li><li>Infinite Stamina/Energy</li><li>Max Resonance Chain</li><li>Player Buffs</li><li>Noclip & Walk Speed</li></ul></div>
+                          <div><h4 class="font-semibold text-white mb-2">World</h4><ul class="list-disc list-inside space-y-1"><li>Speedhack</li><li>Killaura & Entity Vacuum</li><li>Dumb Enemies</li><li>Skip Dialog & Animations</li><li>Auto Loot/Absorb</li></ul></div>
+                          <div><h4 class="font-semibold text-white mb-2">Visuals</h4><ul class="list-disc list-inside space-y-1"><li>Full-featured ESP</li><li>Extensive Filters</li><li>Boxes, Tracers, Distance</li></ul></div>
+                          <div><h4 class="font-semibold text-white mb-2">Teleport</h4><ul class="list-disc list-inside space-y-1"><li>Map Teleport</li><li>Chest Teleport</li><li>Custom TP Lists</li></ul></div>
+                          <div><h4 class="font-semibold text-white mb-2">Miscellaneous</h4><ul class="list-disc list-inside space-y-1"><li>Freecam & Hide UI</li><li>UID & FOV Changer</li><li>FPS Unlocker & Display</li><li>CPU Saver</li></ul></div>
+                          <div><h4 class="font-semibold text-white mb-2">Settings</h4><ul class="list-disc list-inside space-y-1"><li>Themes</li><li>Hotkeys</li><li>Multi-language Support</li></ul></div>
                       </div>
                  </div>
              </div>
@@ -471,14 +478,14 @@
                      
                      <!-- Elemento para Copiar -->
                      <div id="copy-container" onclick="copyToClipboard(this)" class="relative bg-gray-900 text-xl font-mono py-3 px-6 rounded-lg mb-8 cursor-pointer group">
-                        <span id="copy-text" class="text-pink-300 pink-gradient-text-hover">ryuzeen._</span>
-                        <div id="tooltip" class="absolute -top-10 left-1/2 -translate-x-1/2 bg-gray-700 text-white text-sm rounded-md py-1 px-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
-                            Copiar
-                        </div>
-                    </div>
+                         <span id="copy-text" class="text-pink-300 pink-gradient-text-hover">ryuzeen._</span>
+                         <div id="tooltip" class="absolute -top-10 left-1/2 -translate-x-1/2 bg-gray-700 text-white text-sm rounded-md py-1 px-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+                             Copiar
+                         </div>
+                     </div>
 
                      <div class="w-full border-t border-gray-700 my-4"></div>
-                    
+                     
                      <div class="text-center w-full">
                          <h3 class="text-xl font-semibold text-white mb-3">Não consegue me mandar?</h3>
                          <p class="text-gray-400 mb-4">Entre no nosso servidor do Discord e me procure por lá!</p>
@@ -522,7 +529,7 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" /></svg>
                             </span>
                         </summary>
-                        <p class="mt-4 text-gray-300">Após a confirmação do pagamento, eu enviarei sua chave de acesso e um tutorial completo de instalação diretamente para você via Discord.</p>
+                        <p class="mt-4 text-gray-300">Após a confirmação do pagamento, enviaremos sua chave de acesso e um tutorial completo de instalação diretamente para você via Discord.</p>
                     </details>
                     <!-- Pergunta 2 -->
                     <details class="bg-gray-800/50 p-6 rounded-lg faq-item">
@@ -542,7 +549,7 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" /></svg>
                             </span>
                         </summary>
-                        <p class="mt-4 text-gray-300">A validade da sua chave corresponde ao plano que você adquiriu (diário, semanal, mensal, etc.), conforme descrito na nossa tabela de preços.</p>
+                        <p class="mt-4 text-gray-300">A validade da sua chave corresponde ao plano que você adquiriu (diário, semanal, mensal, vitalício, etc.), conforme descrito na nossa tabela de preços.</p>
                     </details>
                     <!-- Pergunta 4 -->
                     <details class="bg-gray-800/50 p-6 rounded-lg faq-item">
@@ -554,7 +561,7 @@
                         </summary>
                         <p class="mt-4 text-gray-300">Não. Cada chave é válida para apenas **UM** dispositivo. Essa medida foi implementada para evitar fraudes e garantir a segurança de todos os clientes. A tentativa de uso em um segundo dispositivo resultará no bloqueio da chave, e a responsabilidade será inteiramente do usuário.</p>
                     </details>
-                    <!-- Pergunta 5 -->
+                    <!-- Pergunta 5 (Atualizada) -->
                     <details class="bg-gray-800/50 p-6 rounded-lg faq-item">
                         <summary class="font-semibold text-lg cursor-pointer flex justify-between items-center">
                             Como obtenho suporte se precisar de ajuda?
@@ -562,7 +569,7 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" /></svg>
                             </span>
                         </summary>
-                        <p class="mt-4 text-gray-300">Para suporte relacionado ao **Korepi**, por favor, utilize o canal **#ChatBR** no nosso servidor do Discord. Para os demais produtos, você pode me contatar diretamente via DM no Discord (<span class="font-mono text-pink-400">ryuzeen._</span>).</p>
+                        <p class="mt-4 text-gray-300">Para suporte, por favor, entre no nosso servidor do Discord e procure os canais de ajuda apropriados ou me contate diretamente via DM (<span class="font-mono text-pink-400">ryuzeen._</span>).</p>
                     </details>
                     <!-- Pergunta 6 -->
                     <details class="bg-gray-800/50 p-6 rounded-lg faq-item">
@@ -623,8 +630,14 @@
             if (clickedElement) {
                 document.querySelectorAll('.nav-link').forEach(link => {
                     link.classList.remove('active');
+                    // Find corresponding mobile link and update it too
+                    const mobileLink = document.querySelector(`#mobile-menu .nav-link[onclick*="'${link.getAttribute('onclick').split("'")[1]}'"]`);
+                    if(mobileLink) mobileLink.classList.remove('active');
                 });
+                
                 clickedElement.classList.add('active');
+                const mobileClickedLink = document.querySelector(`#mobile-menu .nav-link[onclick*="'${pageId}'"]`);
+                if(mobileClickedLink) mobileClickedLink.classList.add('active');
             }
         }
         
@@ -667,26 +680,12 @@
             }, 410); // Espera a transição da página
         }
         
-        // Função para navegar para uma âncora em outra página
-        function goToAnchor(pageId, anchorId) {
-            const targetPageLink = document.querySelector(`.nav-link[onclick*='${pageId}']`);
-            showPage(pageId, targetPageLink);
-            
-            // Dá um pequeno tempo para a página ser exibida antes de rolar
-            setTimeout(() => {
-                const anchorElement = document.getElementById(anchorId);
-                if (anchorElement) {
-                    anchorElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            }, 410); // Espera a transição da página
-        }
-
         // Função para navegar para uma página e rolar para o topo
         function goToPage(pageId) {
             const targetPageLink = document.querySelector(`.nav-link[onclick*="'${pageId}'"]`);
             showPage(pageId, targetPageLink);
              setTimeout(() => {
-                 window.scrollTo({ top: 0, behavior: 'smooth' });
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
              }, 410); // Espera a transição da página
         }
 
@@ -760,13 +759,9 @@
                 setTimeout(() => {
                     loadingScreen.style.display = 'none';
                 }, 500); // Deve corresponder à duração da transição (duration-500)
-            }, 2000); // Tempo que a tela de carregamento fica visível (2 segundos)
+            }, 1500); // Tempo que a tela de carregamento fica visível (1.5 segundos)
         });
     </script>
 
 </body>
 </html>
-
-
-
-
