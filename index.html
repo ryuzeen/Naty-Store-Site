@@ -127,7 +127,6 @@
 </head>
 <body class="text-white">
 
-    <!-- Tela de Carregamento -->
     <div id="loading-screen" class="fixed inset-0 bg-gray-900 flex flex-col items-center justify-center z-[100] transition-opacity duration-500 ease-in-out">
         <div class="flex items-center">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-pink-400 mr-4 animate-pulse" viewBox="0 0 20 20" fill="currentColor">
@@ -137,7 +136,6 @@
         </div>
     </div>
 
-    <!-- Cabeçalho e Navegação -->
     <header class="bg-gray-800/50 backdrop-blur-sm sticky top-0 z-50 shadow-lg">
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
@@ -149,7 +147,6 @@
                         <span class="text-xl font-bold text-white">Naty Store</span>
                     </a>
                 </div>
-                <!-- Desktop Menu -->
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
                         <a href="#" class="nav-link active px-3 py-2 rounded-md text-sm font-medium" onclick="showPage('home', this)">Início</a>
@@ -159,7 +156,6 @@
                         <a href="#" class="nav-link text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium" onclick="showPage('faq', this)">FAQ</a>
                     </div>
                 </div>
-                <!-- Mobile menu button -->
                 <div class="-mr-2 flex md:hidden">
                     <button type="button" onclick="toggleMobileMenu()" class="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
                         <span class="sr-only">Abrir menu principal</span>
@@ -168,8 +164,7 @@
                     </button>
                 </div>
             </div>
-             <!-- Mobile menu, show/hide based on menu state. -->
-            <div class="md:hidden hidden" id="mobile-menu">
+             <div class="md:hidden hidden" id="mobile-menu">
                 <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                     <a href="#" class="nav-link active block px-3 py-2 rounded-md text-base font-medium" onclick="showPage('home', this); toggleMobileMenu();">Início</a>
                     <a href="#" class="nav-link text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium" onclick="showPage('precos', this); toggleMobileMenu();">Preços</a>
@@ -182,14 +177,12 @@
     </header>
 
     <main class="max-w-7xl mx-auto sm:px-6 lg:px-8 py-6">
-        <!-- Página de Entrada (Home) -->
         <div id="home" class="page-content">
             <div class="px-4">
                 <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4">Bem-vindo(a) à <span class="text-pink-400">Naty Store</span></h1>
                 <p class="text-lg sm:text-xl text-gray-300 mb-12 max-w-2xl mx-auto">Agradecemos a sua preferência! Explore nossos produtos e encontre o que você precisa para a sua jornada.</p>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-                    <!-- Card Preços -->
                     <a href="#" onclick="goToPage('precos')" class="entry-card block bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 border border-gray-700">
                         <div class="flex justify-center mb-4">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-pink-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -199,7 +192,6 @@
                         <h2 class="text-2xl font-bold text-white mb-2">Nossos Preços</h2>
                         <p class="text-gray-400">Confira as melhores ofertas e pacotes com desconto.</p>
                     </a>
-                    <!-- Card Funções -->
                     <a href="#" onclick="goToPage('features')" class="entry-card block bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 border border-gray-700">
                         <div class="flex justify-center mb-4">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-pink-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" /></svg>
@@ -207,7 +199,6 @@
                         <h2 class="text-2xl font-bold text-white mb-2">Lista de Funções</h2>
                         <p class="text-gray-400">Descubra todas as funcionalidades dos nossos produtos.</p>
                     </a>
-                    <!-- Card Como Comprar -->
                     <a href="#" onclick="goToPage('comprar')" class="entry-card block bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 border border-gray-700">
                         <div class="flex justify-center mb-4">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-pink-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
@@ -215,11 +206,10 @@
                         <h2 class="text-2xl font-bold text-white mb-2">Como Comprar</h2>
                         <p class="text-gray-400">Siga nosso guia para adquirir seus produtos com segurança.</p>
                     </a>
-                    <!-- Card FAQ -->
                     <a href="#" onclick="goToPage('faq')" class="entry-card block bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 border border-gray-700">
                         <div class="flex justify-center mb-4">
                              <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-pink-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                 <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                              </svg>
                         </div>
                         <h2 class="text-2xl font-bold text-white mb-2">FAQ</h2>
@@ -229,162 +219,192 @@
             </div>
         </div>
 
-        <!-- Página de Preços -->
         <div id="precos" class="page-content">
              <div class="max-w-6xl mx-auto">
-                 <div>
-                     <header class="text-center mb-12">
-                         <h1 class="text-3xl sm:text-4xl font-bold text-pink-400">Nossos Produtos e Preços</h1>
-                         <p class="text-gray-400 mt-2">Escolha o plano ideal para você e comece a jogar em outro nível!</p>
-                     </header>
+                  <div>
+                       <header class="text-center mb-12">
+                           <h1 class="text-3xl sm:text-4xl font-bold text-pink-400">Nossos Produtos e Preços</h1>
+                           <p class="text-gray-400 mt-2">Escolha o plano ideal para você e comece a jogar em outro nível!</p>
+                       </header>
 
-                     <!-- Nova Seção de Serviços e Assinaturas -->
-                     <div class="mb-16">
-                         <div class="flex items-center mb-8 justify-center">
-                             <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mr-4 text-pink-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                                 <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 15l.813.904m-2.826-.904L6 15l.187.904m1.64-2.708L8 12.5l.813.904m-2.826-.904L5 12.5l.187.904m1.64-2.708L7 10l.813.904m-2.826-.904L4 10l.187.904m1.64-2.708l1.813-1.813.904.813-1.813 1.813-.904-.813zm-2.708 1.64l1.813-1.813.904.813-1.813 1.813-.904-.813zm2.708-1.64l1.813-1.813.904.813-1.813 1.813-.904-.813zM9 3.75l1.5 1.5-1.5 1.5" />
-                                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v18m-3-3h6" />
-                             </svg>
-                             <h2 class="text-3xl font-bold text-center text-white">Serviços e Assinaturas</h2>
-                         </div>
-                         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                             <!-- Unicore -->
-                            <div class="animated-gradient-border rounded-lg">
-                                <a href="#" onclick="goToFeature('unicore')" class="block w-full bg-gray-800 rounded-md shadow-lg p-6 flex flex-col h-full">
-                                    <p class="text-sm text-center text-gray-400 mb-1">Genshin Impact</p>
-                                    <h3 class="text-xl font-bold text-center mb-4 text-cyan-400">Unicore</h3>
-                                    <ul class="space-y-3 text-center flex-grow text-gray-300">
-                                        <li><span class="font-semibold">2 dias:</span> <span class="font-mono text-pink-300">R$ 16,90</span></li>
-                                        <li><span class="font-semibold">7 dias:</span> <span class="font-mono text-pink-300">R$ 38,90</span></li>
-                                        <li><span class="font-semibold">30 dias:</span> <span class="font-mono text-pink-300">R$ 79,80</span></li>
-                                    </ul>
-                                </a>
-                            </div>
+                       <div class="mb-16">
+                           <div class="flex items-center mb-8 justify-center">
+                               <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 mr-4 text-pink-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                   <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 15l.813.904m-2.826-.904L6 15l.187.904m1.64-2.708L8 12.5l.813.904m-2.826-.904L5 12.5l.187.904m1.64-2.708L7 10l.813.904m-2.826-.904L4 10l.187.904m1.64-2.708l1.813-1.813.904.813-1.813 1.813-.904-.813zm-2.708 1.64l1.813-1.813.904.813-1.813 1.813-.904-.813zm2.708-1.64l1.813-1.813.904.813-1.813 1.813-.904-.813zM9 3.75l1.5 1.5-1.5 1.5" />
+                                   <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v18m-3-3h6" />
+                               </svg>
+                               <h2 class="text-3xl font-bold text-center text-white">Serviços e Assinaturas</h2>
+                           </div>
+                           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                               <div class="animated-gradient-border rounded-lg">
+                                   <a href="#" onclick="goToFeature('unicore')" class="block w-full bg-gray-800 rounded-md shadow-lg p-6 flex flex-col h-full">
+                                       <p class="text-sm text-center text-gray-400 mb-1">Genshin Impact</p>
+                                       <h3 class="text-xl font-bold text-center mb-4 text-cyan-400">Unicore</h3>
+                                       <ul class="space-y-3 text-center flex-grow text-gray-300">
+                                           <li><span class="font-semibold">2 dias:</span> <span class="font-mono text-pink-300">R$ 16,90</span></li>
+                                           <li><span class="font-semibold">7 dias:</span> <span class="font-mono text-pink-300">R$ 38,90</span></li>
+                                           <li><span class="font-semibold">30 dias:</span> <span class="font-mono text-pink-300">R$ 79,80</span></li>
+                                       </ul>
+                                   </a>
+                               </div>
 
-                            <!-- Uniwaves -->
-                            <div class="animated-gradient-border rounded-lg">
-                                <a href="#" onclick="goToFeature('uniwaves')" class="block w-full bg-gray-800 rounded-md shadow-lg p-6 flex flex-col h-full">
-                                    <p class="text-sm text-center text-gray-400 mb-1">Wuthering Waves</p>
-                                    <h3 class="text-xl font-bold text-center mb-4 text-blue-400">Uniwaves</h3>
-                                    <ul class="space-y-3 text-center flex-grow text-gray-300">
-                                        <li><span class="font-semibold">2 dias:</span> <span class="font-mono text-pink-300">R$ 16,90</span></li>
-                                        <li><span class="font-semibold">7 dias:</span> <span class="font-mono text-pink-300">R$ 38,90</span></li>
-                                        <li><span class="font-semibold">30 dias:</span> <span class="font-mono text-pink-300">R$ 79,80</span></li>
-                                    </ul>
-                                </a>
-                            </div>
+                               <div class="animated-gradient-border rounded-lg">
+                                   <a href="#" onclick="goToFeature('uniwaves')" class="block w-full bg-gray-800 rounded-md shadow-lg p-6 flex flex-col h-full">
+                                       <p class="text-sm text-center text-gray-400 mb-1">Wuthering Waves</p>
+                                       <h3 class="text-xl font-bold text-center mb-4 text-blue-400">Uniwaves</h3>
+                                       <ul class="space-y-3 text-center flex-grow text-gray-300">
+                                           <li><span class="font-semibold">2 dias:</span> <span class="font-mono text-pink-300">R$ 16,90</span></li>
+                                           <li><span class="font-semibold">7 dias:</span> <span class="font-mono text-pink-300">R$ 38,90</span></li>
+                                           <li><span class="font-semibold">30 dias:</span> <span class="font-mono text-pink-300">R$ 79,80</span></li>
+                                       </ul>
+                                   </a>
+                               </div>
 
-                            <!-- Unizone -->
-                            <div class="animated-gradient-border rounded-lg">
-                                <a href="#" onclick="goToFeature('unizone')" class="block w-full bg-gray-800 rounded-md shadow-lg p-6 flex flex-col h-full">
-                                    <p class="text-sm text-center text-gray-400 mb-1">Zenless Zone Zero</p>
-                                    <h3 class="text-xl font-bold text-center mb-4 text-indigo-400">Unizone</h3>
-                                    <ul class="space-y-3 text-center flex-grow text-gray-300">
-                                        <li><span class="font-semibold">2 dias:</span> <span class="font-mono text-pink-300">R$ 16,90</span></li>
-                                        <li><span class="font-semibold">7 dias:</span> <span class="font-mono text-pink-300">R$ 38,90</span></li>
-                                        <li><span class="font-semibold">30 dias:</span> <span class="font-mono text-pink-300">R$ 79,80</span></li>
-                                    </ul>
-                                </a>
-                            </div>
+                               <div class="animated-gradient-border rounded-lg">
+                                   <a href="#" onclick="goToFeature('unizone')" class="block w-full bg-gray-800 rounded-md shadow-lg p-6 flex flex-col h-full">
+                                       <p class="text-sm text-center text-gray-400 mb-1">Zenless Zone Zero</p>
+                                       <h3 class="text-xl font-bold text-center mb-4 text-indigo-400">Unizone</h3>
+                                       <ul class="space-y-3 text-center flex-grow text-gray-300">
+                                           <li><span class="font-semibold">2 dias:</span> <span class="font-mono text-pink-300">R$ 16,90</span></li>
+                                           <li><span class="font-semibold">7 dias:</span> <span class="font-mono text-pink-300">R$ 38,90</span></li>
+                                           <li><span class="font-semibold">30 dias:</span> <span class="font-mono text-pink-300">R$ 79,80</span></li>
+                                       </ul>
+                                   </a>
+                               </div>
 
-                            <!-- Unistar -->
-                            <div class="animated-gradient-border rounded-lg">
-                                <a href="#" onclick="goToFeature('unistar')" class="block w-full bg-gray-800 rounded-md shadow-lg p-6 flex flex-col h-full">
-                                    <p class="text-sm text-center text-gray-400 mb-1">Honkai: Star Rail</p>
-                                    <h3 class="text-xl font-bold text-center mb-4 text-yellow-400">Unistar</h3>
-                                    <ul class="space-y-3 text-center flex-grow text-gray-300">
-                                        <li><span class="font-semibold">2 dias:</span> <span class="font-mono text-pink-300">R$ 11,90</span></li>
-                                        <li><span class="font-semibold">7 dias:</span> <span class="font-mono text-pink-300">R$ 27,90</span></li>
-                                        <li><span class="font-semibold">30 dias:</span> <span class="font-mono text-pink-300">R$ 55,90</span></li>
-                                    </ul>
-                                </a>
-                            </div>
+                               <div class="animated-gradient-border rounded-lg">
+                                   <a href="#" onclick="goToFeature('unistar')" class="block w-full bg-gray-800 rounded-md shadow-lg p-6 flex flex-col h-full">
+                                       <p class="text-sm text-center text-gray-400 mb-1">Honkai: Star Rail</p>
+                                       <h3 class="text-xl font-bold text-center mb-4 text-yellow-400">Unistar</h3>
+                                       <ul class="space-y-3 text-center flex-grow text-gray-300">
+                                           <li><span class="font-semibold">2 dias:</span> <span class="font-mono text-pink-300">R$ 11,90</span></li>
+                                           <li><span class="font-semibold">7 dias:</span> <span class="font-mono text-pink-300">R$ 27,90</span></li>
+                                           <li><span class="font-semibold">30 dias:</span> <span class="font-mono text-pink-300">R$ 55,90</span></li>
+                                       </ul>
+                                   </a>
+                               </div>
 
-                            <!-- Slash -->
-                             <div class="animated-gradient-border rounded-lg">
-                                <a href="#" onclick="goToFeature('slash')" class="block w-full bg-gray-800 rounded-md shadow-lg p-6 flex flex-col h-full">
-                                    <p class="text-sm text-center text-gray-400 mb-1">ByPass / Wuwa & Solo Leveling</p>
-                                    <h3 class="text-xl font-bold text-center mb-4 text-green-400">Slash</h3>
-                                    <ul class="space-y-3 text-center flex-grow text-gray-300">
-                                        <li><span class="font-semibold">3 dias:</span> <span class="font-mono text-pink-300">R$ 21,90</span></li>
-                                        <li><span class="font-semibold">7 dias:</span> <span class="font-mono text-pink-300">R$ 32,90</span></li>
-                                        <li><span class="font-semibold">30 dias:</span> <span class="font-mono text-pink-300">R$ 53,90</span></li>
-                                    </ul>
-                                </a>
-                            </div>
+                               <div class="animated-gradient-border rounded-lg">
+                                   <a href="#" onclick="goToFeature('slash')" class="block w-full bg-gray-800 rounded-md shadow-lg p-6 flex flex-col h-full">
+                                       <p class="text-sm text-center text-gray-400 mb-1">ByPass / Wuwa & Solo Leveling</p>
+                                       <h3 class="text-xl font-bold text-center mb-4 text-green-400">Slash</h3>
+                                       <ul class="space-y-3 text-center flex-grow text-gray-300">
+                                           <li><span class="font-semibold">3 dias:</span> <span class="font-mono text-pink-300">R$ 21,90</span></li>
+                                           <li><span class="font-semibold">7 dias:</span> <span class="font-mono text-pink-300">R$ 32,90</span></li>
+                                           <li><span class="font-semibold">30 dias:</span> <span class="font-mono text-pink-300">R$ 53,90</span></li>
+                                       </ul>
+                                   </a>
+                               </div>
 
-                            <!-- KittenWaves -->
-                            <div class="animated-gradient-border rounded-lg">
-                                <a href="#" onclick="goToFeature('kittenwaves')" class="block w-full bg-gray-800 rounded-md shadow-lg p-6 flex flex-col h-full">
-                                    <p class="text-sm text-center text-gray-400 mb-1">Wuthering Waves</p>
-                                    <h3 class="text-xl font-bold text-center mb-4 text-rose-400">KittenWaves</h3>
-                                    <ul class="space-y-3 text-center flex-grow text-gray-300">
-                                        <li><span class="font-semibold text-yellow-300">Vitalício:</span> <span class="font-mono text-pink-300 text-2xl">R$ 139,90</span></li>
-                                    </ul>
-                                </a>
-                            </div>
-                         </div>
-                     </div>
+                               <div class="animated-gradient-border rounded-lg">
+                                   <a href="#" onclick="goToFeature('kittenwaves')" class="block w-full bg-gray-800 rounded-md shadow-lg p-6 flex flex-col h-full">
+                                       <p class="text-sm text-center text-gray-400 mb-1">Wuthering Waves</p>
+                                       <h3 class="text-xl font-bold text-center mb-4 text-rose-400">KittenWaves</h3>
+                                       <ul class="space-y-3 text-center flex-grow text-gray-300">
+                                           <li><span class="font-semibold text-yellow-300">Vitalício:</span> <span class="font-mono text-pink-300 text-2xl">R$ 139,90</span></li>
+                                       </ul>
+                                   </a>
+                               </div>
+                           </div>
+                       </div>
+                       
+                       <div class="text-center mb-16">
+                           <h2 class="text-3xl font-bold text-center text-white">Recargas (Genshin Impact)</h2>
+                       </div>
 
-                     <!-- Cristais Gênesis -->
-                     <div class="mb-12">
-                         <div class="flex items-center mb-6">
-                             <img src="https://skycoach.gg/storage/uploads/products/genshin-impact-genesis-crystals1707515203_picture_item_small.png" alt="Ícone de Cristal Gênesis" class="h-10 w-10 mr-4 rounded-full" onerror="this.style.display='none'">
-                             <h2 class="text-2xl font-semibold border-l-4 border-pink-400 pl-4">Cristais Gênesis (Genshin Impact)</h2>
-                         </div>
-                         <div class="overflow-x-auto rounded-lg shadow-lg bg-gray-800">
-                             <table class="w-full text-left">
-                                 <thead class="bg-gray-700">
-                                     <tr>
-                                         <th class="p-4 font-semibold">Quantidade</th>
-                                         <th class="p-4 font-semibold text-right">Preço Original</th>
-                                         <th class="p-4 font-semibold text-right">Preço Naty Store</th>
-                                     </tr>
-                                 </thead>
-                                 <tbody class="divide-y divide-gray-700">
-                                     <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4">60 Cristais</td><td class="p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 4,90</s></td><td class="p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 4,20</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
-                                     <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4">300 + 30 Cristais</td><td class="p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 25,90</s></td><td class="p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 22,25</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
-                                     <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4">980 + 110 Cristais</td><td class="p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 76,90</s></td><td class="p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 66,90</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
-                                     <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4">1.980 + 260 Cristais</td><td class="p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 154,90</s></td><td class="p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 130,90</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
-                                     <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4">3.280 + 600 Cristais</td><td class="p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 254,90</s></td><td class="p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 209,90</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
-                                     <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4">6480 + 1600 Cristais</td><td class="p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 499,90</s></td><td class="p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 409,90</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
-                                     <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4 font-bold">Todos os Pacotes</td><td class="p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 1.017,40</s></td><td class="p-4 text-right font-bold font-mono text-pink-300"><div class="flex items-center justify-end gap-4"><span>R$ 814,90</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
-                                 </tbody>
-                             </table>
-                         </div>
-                     </div>
-                     <!-- Itens e Pacotes Especiais -->
-                     <div class="mb-12">
-                         <div class="flex items-center mb-6">
-                             <img src="https://files.softicons.com/download/folder-icons/plastic-folders-icons-by-sirubico/ico/Folder-Pink.ico" alt="Ícone da Bênção da Lua Nova" class="h-10 w-10 mr-4 rounded-full" onerror="this.style.display='none'">
-                             <h2 class="text-2xl font-semibold border-l-4 border-pink-400 pl-4">Itens e Pacotes Especiais (Genshin Impact)</h2>
-                         </div>
-                         <div class="overflow-x-auto rounded-lg shadow-lg bg-gray-800">
-                              <table class="w-full text-left">
-                                 <thead class="bg-gray-700"><tr><th class="p-4 font-semibold">Item</th><th class="p-4 font-semibold text-right">Preço Original</th><th class="p-4 font-semibold text-right">Preço Naty Store</th></tr></thead>
-                                 <tbody class="divide-y divide-gray-700">
-                                     <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4">Bênção da Lua Nova</td><td class="p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 25,90</s></td><td class="p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 22,25</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
-                                     <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4">Passe de Batalha</td><td class="p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 49,90</s></td><td class="p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 43,90</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
-                                     <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4">Passe de Batalha (Avançado)</td><td class="p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 99,99</s></td><td class="p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 85,90</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
-                                     <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4">Garantia Arma 5★ (100%)</td><td class="p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 831,70</s></td><td class="p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 671,70</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
-                                     <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4">All in one (Todos os Gênesis, 3x Bênção, Passe Atualizado)</td><td class="p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 1.195,09</s></td><td class="p-4 text-right font-bold font-mono text-pink-300"><div class="flex items-center justify-end gap-4"><span>R$ 996,70</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
-                                     <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4">Garantia Personagem de Banner (100%)</td><td class="p-4 text-right font-mono text-gray-500"><s class="opacity-80">R$ 1.831,50</s></td><td class="p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 1.476,50</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
-                                 </tbody>
-                             </table>
-                         </div>
-                     </div>
-                 </div>
+                       <div class="mb-12">
+                           <div class="flex items-center mb-6">
+                               <img src="https://skycoach.gg/storage/uploads/products/genshin-impact-genesis-crystals1707515203_picture_item_small.png" alt="Ícone de Cristal Gênesis" class="h-10 w-10 mr-4 rounded-full" onerror="this.style.display='none'">
+                               <h3 class="text-2xl font-semibold border-l-4 border-pink-400 pl-4">Cristais Gênesis</h3>
+                           </div>
+                           <div class="overflow-x-auto rounded-lg shadow-lg bg-gray-800">
+                               <table class="w-full text-left">
+                                   <thead class="bg-gray-700">
+                                       <tr>
+                                           <th class="p-4 font-semibold">Quantidade</th>
+                                           <th class="p-4 font-semibold text-right">Preço Naty Store</th>
+                                       </tr>
+                                   </thead>
+                                   <tbody class="divide-y divide-gray-700">
+                                       <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4">60 Cristais</td><td class="p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 4,32</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
+                                       <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4">300 Cristais</td><td class="p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 21,60</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
+                                       <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4">980 Cristais</td><td class="p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 62,05</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
+                                       <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4">1.980 Cristais</td><td class="p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 116,05</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
+                                       <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4">3.280 Cristais</td><td class="p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 186,25</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
+                                       <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4">6.480 Cristais</td><td class="p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 372,60</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
+                                       <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4 font-bold">Todos os Pacotes de Cristais</td><td class="p-4 text-right font-bold font-mono text-pink-300"><div class="flex items-center justify-end gap-4"><span>R$ 728,73</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
+                                   </tbody>
+                               </table>
+                           </div>
+                       </div>
+
+                       <div class="mb-12">
+                           <div class="flex items-center mb-6">
+                               <img src="https://rerollcdn.com/GENSHIN/UI/item_blessing_of_the_welkin_moon.png" alt="Ícone da Bênção da Lua Nova" class="h-10 w-10 mr-4 rounded-full" onerror="this.style.display='none'">
+                               <h3 class="text-2xl font-semibold border-l-4 border-pink-400 pl-4">Bênção da Lua Nova (Welkin Moon)</h3>
+                           </div>
+                           <div class="overflow-x-auto rounded-lg shadow-lg bg-gray-800">
+                               <table class="w-full text-left">
+                                   <thead class="bg-gray-700"><tr><th class="p-4 font-semibold">Duração</th><th class="p-4 font-semibold text-right">Preço Naty Store</th></tr></thead>
+                                   <tbody class="divide-y divide-gray-700">
+                                       <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4">1x Bênção (30 dias)</td><td class="p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 21,60</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
+                                       <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4">2x Bênção (60 dias)</td><td class="p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 43,20</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
+                                       <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4">3x Bênção (90 dias)</td><td class="p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 64,80</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
+                                       <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4">4x Bênção (120 dias)</td><td class="p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 86,40</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
+                                       <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4">5x Bênção (150 dias)</td><td class="p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 105,30</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
+                                       <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4">6x Bênção (180 dias)</td><td class="p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 123,12</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
+                                   </tbody>
+                               </table>
+                           </div>
+                       </div>
+                       
+                       <div class="mb-12">
+                           <div class="flex items-center mb-6">
+                               <img src="https://rerollcdn.com/GENSHIN/UI/gacha-battle-pass-gnostic-hymn.png" alt="Ícone do Passe de Batalha" class="h-10 w-10 mr-4 rounded-full" onerror="this.style.display='none'">
+                               <h3 class="text-2xl font-semibold border-l-4 border-pink-400 pl-4">Passe de Batalha (Battle Pass)</h3>
+                           </div>
+                           <div class="overflow-x-auto rounded-lg shadow-lg bg-gray-800">
+                               <table class="w-full text-left">
+                                   <thead class="bg-gray-700"><tr><th class="p-4 font-semibold">Item</th><th class="p-4 font-semibold text-right">Preço Naty Store</th></tr></thead>
+                                   <tbody class="divide-y divide-gray-700">
+                                       <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4">Hino Gnóstico</td><td class="p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 41,53</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
+                                       <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4">Coro Gnóstico</td><td class="p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 79,87</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
+                                       <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4">Upgrade Hino para Coro</td><td class="p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 48,33</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
+                                   </tbody>
+                               </table>
+                           </div>
+                       </div>
+                       
+                        <div class="mb-12">
+                           <div class="flex items-center mb-6">
+                               <img src="https://static.wikia.nocookie.net/gensin-impact/images/5/58/Item_Intertwined_Fate.png" alt="Ícone de Pacotes" class="h-10 w-10 mr-4" onerror="this.style.display='none'">
+                               <h3 class="text-2xl font-semibold border-l-4 border-pink-400 pl-4">Pacotes Especiais e Combos</h3>
+                           </div>
+                           <div class="overflow-x-auto rounded-lg shadow-lg bg-gray-800">
+                               <table class="w-full text-left">
+                                   <thead class="bg-gray-700"><tr><th class="p-4 font-semibold">Pacote</th><th class="p-4 font-semibold text-right">Preço Naty Store</th></tr></thead>
+                                   <tbody class="divide-y divide-gray-700">
+                                       <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4">Passe (Hino Gnóstico) + Bênção da Lua</td><td class="p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 59,35</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
+                                       <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4">Passe Avançado (Coro Gnóstico) + Bênção da Lua</td><td class="p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 97,15</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
+                                       <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4">All In One (Todos Cristais + 3x Bênção + Hino Gnóstico)</td><td class="p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 820,53</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
+                                       <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4">All In One+ (Todos Cristais + 3x Bênção + Coro Gnóstico)</td><td class="p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 858,33</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
+                                       <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4">Garantia Arma 5★ (13.050 Cristais)</td><td class="p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 609,93</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
+                                       <tr class="group hover:bg-gray-700/50 transition-colors duration-300 cursor-pointer" onclick="goToPage('comprar')"><td class="p-4">Garantia Personagem 5★ (29.180 Cristais)</td><td class="p-4 text-right font-mono text-pink-300 font-bold"><div class="flex items-center justify-end gap-4"><span>R$ 1.344,60</span><span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs text-white">COMPRAR →</span></div></td></tr>
+                                   </tbody>
+                               </table>
+                           </div>
+                       </div>
+
+                  </div>
              </div>
         </div>
 
-        <!-- Página de Features -->
         <div id="features" class="page-content">
              <header class="text-center mb-10">
                  <h1 class="text-3xl sm:text-4xl font-bold text-pink-400">Funções dos Produtos</h1>
                  <p class="text-gray-400 mt-2">Selecione um produto para ver suas funcionalidades detalhadas.</p>
              </header>
 
-             <!-- Abas de Navegação das Features -->
              <div id="features-nav" class="mb-8 border-b border-gray-700">
                  <div class="flex flex-wrap -mb-px space-x-2 sm:space-x-4 justify-center">
                      <button id="unicore-tab" class="feature-tab active inline-block p-3 sm:p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-300 hover:border-gray-500 font-semibold" onclick="showFeature('unicore', this)">Unicore</button>
@@ -396,9 +416,7 @@
                  </div>
              </div>
 
-             <!-- Conteúdo das Features -->
              <div class="bg-gray-800 rounded-lg p-6 shadow-xl">
-                 <!-- Unicore -->
                  <div id="unicore-content" class="feature-content active">
                      <h3 class="text-2xl font-bold text-cyan-400 mb-4">Unicore <span class="text-sm text-gray-400 font-normal">- Genshin Impact</span></h3>
                      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-gray-300">
@@ -410,7 +428,6 @@
                          <div><h4 class="font-semibold text-white mb-2">Profile</h4><ul class="list-disc list-inside space-y-1"><li>UID Changer</li><li>Name Changer</li><li>AR Level Changer</li><li>World Level Changer</li></ul></div>
                      </div>
                  </div>
-                 <!-- Uniwaves -->
                  <div id="uniwaves-content" class="feature-content">
                       <h3 class="text-2xl font-bold text-blue-400 mb-4">Uniwaves <span class="text-sm text-gray-400 font-normal">- Wuthering Waves</span></h3>
                       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-gray-300">
@@ -422,7 +439,6 @@
                           <div><h4 class="font-semibold text-white mb-2">Profile</h4><ul class="list-disc list-inside space-y-1"><li>UID Changer</li><li>Name Changer</li><li>AR Level Changer</li><li>Config Management</li></ul></div>
                       </div>
                  </div>
-                 <!-- Unizone -->
                  <div id="unizone-content" class="feature-content">
                      <h3 class="text-2xl font-bold text-indigo-400 mb-4">Unizone <span class="text-sm text-gray-400 font-normal">- Zenless Zone Zero</span></h3>
                      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-gray-300">
@@ -433,7 +449,6 @@
                          <div><h4 class="font-semibold text-white mb-2">Utility</h4><ul class="list-disc list-inside space-y-1"><li>Camera FOV</li><li>Hide UI</li><li>UID Changer</li><li>Speedup Dialogs/Battle</li></ul></div>
                      </div>
                  </div>
-                 <!-- Unistar -->
                  <div id="unistar-content" class="feature-content">
                      <h3 class="text-2xl font-bold text-yellow-400 mb-4">Unistar <span class="text-sm text-gray-400 font-normal">- Honkai: Star Rail</span></h3>
                      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-gray-300">
@@ -444,14 +459,12 @@
                          <div><h4 class="font-semibold text-white mb-2">Profile</h4><ul class="list-disc list-inside space-y-1"><li>UID Changer</li><li>Config Management</li></ul></div>
                      </div>
                  </div>
-                 <!-- Slash -->
                  <div id="slash-content" class="feature-content">
-                    <h3 class="text-2xl font-bold text-green-400 mb-4">Slash <span class="text-sm text-gray-400 font-normal">- Wuthering Waves & Solo Leveling</span></h3>
-                    <div class="text-gray-300">
-                        <p>As funções detalhadas para o Slash serão adicionadas em breve. Fique de olho!</p>
-                    </div>
+                      <h3 class="text-2xl font-bold text-green-400 mb-4">Slash <span class="text-sm text-gray-400 font-normal">- Wuthering Waves & Solo Leveling</span></h3>
+                      <div class="text-gray-300">
+                          <p>As funções detalhadas para o Slash serão adicionadas em breve. Fique de olho!</p>
+                      </div>
                  </div>
-                 <!-- Kittenwaves -->
                  <div id="kittenwaves-content" class="feature-content">
                      <h3 class="text-2xl font-bold text-rose-400 mb-4">KittenWaves <span class="text-sm text-gray-400 font-normal">- Wuthering Waves</span></h3>
                       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-gray-300">
@@ -466,7 +479,6 @@
              </div>
         </div>
         
-        <!-- Página Como Comprar -->
         <div id="comprar" class="page-content">
              <div class="max-w-2xl mx-auto px-4">
                  <header class="text-center mb-10">
@@ -475,7 +487,6 @@
                  </header>
 
                  <div class="bg-gray-800 rounded-lg shadow-xl p-8 flex flex-col items-center">
-                     <!-- Profile Icon -->
                      <div class="w-32 h-32 mb-6">
                          <img src="https://risibank.fr/cache/medias/0/2/227/22729/full.png" alt="Foto de Perfil" class="w-full h-full rounded-full object-cover border-4 border-gray-700" onerror="this.onerror=null; this.src='https://placehold.co/128x128/374151/E5E7EB?text=Perfil';">
                      </div>
@@ -483,7 +494,6 @@
                      <h2 class="text-2xl font-bold text-white mb-2">Contato Oficial</h2>
                      <p class="text-lg text-gray-300 mb-4">Envie uma DM no Discord para comprar:</p>
                      
-                     <!-- Elemento para Copiar -->
                      <div id="copy-container" onclick="copyToClipboard(this)" class="relative bg-gray-900 text-xl font-mono py-3 px-6 rounded-lg mb-8 cursor-pointer group">
                          <span id="copy-text" class="text-pink-300 pink-gradient-text-hover">ryuzeen._</span>
                          <div id="tooltip" class="absolute -top-10 left-1/2 -translate-x-1/2 bg-gray-700 text-white text-sm rounded-md py-1 px-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
@@ -515,7 +525,6 @@
              </div>
         </div>
 
-        <!-- Página de FAQ -->
         <div id="faq" class="page-content">
             <div class="max-w-4xl mx-auto">
                 <header class="text-center mb-10">
@@ -528,7 +537,6 @@
                 </div>
 
                 <div class="space-y-4" id="faq-container">
-                    <!-- Pergunta 1 -->
                     <details class="bg-gray-800/50 p-6 rounded-lg faq-item">
                         <summary class="font-semibold text-lg cursor-pointer flex justify-between items-center">
                             Como recebo o produto após a compra?
@@ -538,7 +546,6 @@
                         </summary>
                         <p class="mt-4 text-gray-300">Após a confirmação do pagamento, enviaremos sua chave de acesso e um tutorial completo de instalação diretamente para você via Discord.</p>
                     </details>
-                    <!-- Pergunta 2 -->
                     <details class="bg-gray-800/50 p-6 rounded-lg faq-item">
                         <summary class="font-semibold text-lg cursor-pointer flex justify-between items-center">
                             Quais métodos de pagamento são aceitos?
@@ -548,7 +555,6 @@
                         </summary>
                         <p class="mt-4 text-gray-300">Aceitamos Pix, Criptomoedas (via Binance) e PayPal. Para pagamentos com PayPal, as taxas da plataforma ficam por conta do comprador.</p>
                     </details>
-                    <!-- Pergunta 3 -->
                     <details class="bg-gray-800/50 p-6 rounded-lg faq-item">
                         <summary class="font-semibold text-lg cursor-pointer flex justify-between items-center">
                             Por quanto tempo minha chave é válida?
@@ -558,7 +564,6 @@
                         </summary>
                         <p class="mt-4 text-gray-300">A validade da sua chave corresponde ao plano que você adquiriu (diário, semanal, mensal, vitalício, etc.), conforme descrito na nossa tabela de preços.</p>
                     </details>
-                    <!-- Pergunta 4 -->
                     <details class="bg-gray-800/50 p-6 rounded-lg faq-item">
                         <summary class="font-semibold text-lg cursor-pointer flex justify-between items-center">
                             Posso usar a chave em mais de um computador?
@@ -568,7 +573,6 @@
                         </summary>
                         <p class="mt-4 text-gray-300">Não. Cada chave é válida para apenas **UM** dispositivo. Essa medida foi implementada para evitar fraudes e garantir a segurança de todos os clientes. A tentativa de uso em um segundo dispositivo resultará no bloqueio da chave, e a responsabilidade será inteiramente do usuário.</p>
                     </details>
-                    <!-- Pergunta 5 (Atualizada) -->
                     <details class="bg-gray-800/50 p-6 rounded-lg faq-item">
                         <summary class="font-semibold text-lg cursor-pointer flex justify-between items-center">
                             Como obtenho suporte se precisar de ajuda?
@@ -578,7 +582,6 @@
                         </summary>
                         <p class="mt-4 text-gray-300">Para suporte, por favor, entre no nosso servidor do Discord e procure os canais de ajuda apropriados ou me contate diretamente via DM (<span class="font-mono text-pink-400">ryuzeen._</span>).</p>
                     </details>
-                    <!-- Pergunta 6 -->
                     <details class="bg-gray-800/50 p-6 rounded-lg faq-item">
                         <summary class="font-semibold text-lg cursor-pointer flex justify-between items-center">
                             Posso ser banido?
@@ -769,6 +772,5 @@
             }, 1500); // Tempo que a tela de carregamento fica visível (1.5 segundos)
         });
     </script>
-
 </body>
 </html>
