@@ -6,6 +6,7 @@
     <title>Naty Store - Comunicado</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -20,6 +21,107 @@
         .btn-link:hover {
             transform: translateY(-4px);
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Estilos do botão Koban */
+        .btn-koban {
+            font-family: 'Share Tech Mono', monospace;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #fff;
+            color: #fff;
+            background-color: #0a0a0a; /* Fundo preto */
+            transition: color 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+            z-index: 1;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .btn-koban:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            transition: left 0.4s ease-in-out;
+            z-index: -1;
+        }
+        .btn-koban:hover {
+            color: #0a0a0a;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); /* Borda brilhante */
+        }
+        .btn-koban:hover:before {
+            left: 0;
+        }
+
+        /* Animação do texto "glitch" */
+        .glitch-text {
+            position: relative;
+            display: inline-block;
+            animation: glitch-skew 1s infinite linear alternate-reverse;
+        }
+        .glitch-text::before,
+        .glitch-text::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: #0a0a0a;
+            color: #fff;
+            transition: background 0.4s ease-in-out, color 0.4s ease-in-out;
+        }
+        .btn-koban:hover .glitch-text::before,
+        .btn-koban:hover .glitch-text::after {
+             background: #fff;
+             color: #0a0a0a;
+        }
+        
+        .glitch-text::before {
+            left: 2px;
+            text-shadow: -2px 0 #ffffff;
+            animation: glitch-anim-1 2s infinite linear alternate-reverse;
+        }
+         .btn-koban:hover .glitch-text::before {
+             text-shadow: -2px 0 #0a0a0a;
+        }
+
+        .glitch-text::after {
+            left: -2px;
+            text-shadow: -2px 0 #ffffff, 2px 2px #ffffff;
+            animation: glitch-anim-2 2s infinite linear alternate-reverse;
+        }
+        .btn-koban:hover .glitch-text::after {
+            text-shadow: -2px 0 #0a0a0a, 2px 2px #0a0a0a;
+        }
+
+        @keyframes glitch-anim-1 {
+            0% { clip-path: inset(15% 0 86% 0); }
+            20% { clip-path: inset(55% 0 26% 0); }
+            40% { clip-path: inset(30% 0 50% 0); }
+            60% { clip-path: inset(80% 0 10% 0); }
+            80% { clip-path: inset(45% 0 45% 0); }
+            100% { clip-path: inset(90% 0 5% 0); }
+        }
+        @keyframes glitch-anim-2 {
+            0% { clip-path: inset(78% 0 10% 0); }
+            20% { clip-path: inset(1% 0 80% 0); }
+            40% { clip-path: inset(60% 0 30% 0); }
+            60% { clip-path: inset(30% 0 40% 0); }
+            80% { clip-path: inset(85% 0 5% 0); }
+            100% { clip-path: inset(50% 0 20% 0); }
+        }
+        @keyframes glitch-skew {
+            0% { transform: skewX(0deg); }
+            10% { transform: skewX(0); }
+            50% { transform: skewX(0); }
+            51% { transform: skewX(1deg); }
+            55% { transform: skewX(-1deg); }
+            60% { transform: skewX(0); }
+            100% { transform: skewX(0); }
         }
     </style>
 </head>
@@ -47,8 +149,8 @@
                 <div>
                     <p class="text-gray-400 mb-3">Convido você a conhecer meu novo projeto:</p>
                     <a href="https://ryuzeen.github.io/koban/" target="_blank" rel="noopener noreferrer" 
-                       class="btn-link inline-block bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-3 px-8 rounded-lg text-lg">
-                       Conhecer o Projeto Koban
+                       class="btn-link btn-koban inline-block font-bold py-3 px-8 rounded-lg text-lg">
+                       Conhecer o Projeto <span class="glitch-text" data-text="KOBAN 小判">KOBAN 小判</span>
                     </a>
                 </div>
                 
@@ -78,3 +180,4 @@
 
 </body>
 </html>
+
